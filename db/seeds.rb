@@ -1,5 +1,6 @@
 require 'csv'
 
+# 'file.csv' => Model
 files = {
   'pokemon.csv' => Pokemon
 }
