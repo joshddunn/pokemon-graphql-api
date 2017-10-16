@@ -1,0 +1,12 @@
+{
+  "editor": "mvim",
+  "command": {
+    "test": "echo 'qc has been installed properly and is ready to use.'",
+    "rw": "docker-compose run web",
+    "ub": "docker-compose up --build",
+    "dbc": "docker-compose run web rake db:create",
+    "u": "docker-compose up",
+    "d": "docker-compose down",
+    "s": "rm tmp/pids/server.pid; docker-compose up"
+  }
+}

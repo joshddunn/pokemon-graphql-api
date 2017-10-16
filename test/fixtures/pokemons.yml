@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  identifier: MyString
+  species_id: 1
+  height: 1
+  weight: 1
+  base_experience: 1
+  order: 1
+  is_default: false
+
+two:
+  identifier: MyString
+  species_id: 1
+  height: 1
+  weight: 1
+  base_experience: 1
+  order: 1
+  is_default: false
