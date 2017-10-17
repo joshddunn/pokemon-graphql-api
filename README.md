@@ -1,24 +1,7 @@
-# README
+## Accessing data via foreign keys
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The property of a foreign key is accessed by the model name
 
-Things you may want to cover:
+so foreign_key -> species_id refers to the PokemonSpecy model and is accessed by
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Pokemon.first.pokemon_specy

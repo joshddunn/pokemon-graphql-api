@@ -2,7 +2,8 @@ require 'csv'
 
 # 'file.csv' => Model
 files = {
-  'pokemon.csv' => Pokemon
+  'pokemon_species.csv' => PokemonSpecy,
+  'pokemon.csv' => Pokemon,
 }
 
 # add all data in each csv file to the database 

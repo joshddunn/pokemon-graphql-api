@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  identifier: MyString
+  generation_id: 1
+  evolves_from_species_id: 1
+  evolution_chain_id: 1
+  color_id: 1
+  shape_id: 1
+  habitat_id: 1
+  gender_rate: 1
+  capture_rate: 1
+  base_happiness: 1
+  is_baby: false
+  hatch_counter: 1
+  has_gender_differences: false
+  growth_rate_id: 1
+  forms_switchable: false
+  order: 1
+  conquest_order: 1
+
+two:
+  identifier: MyString
+  generation_id: 1
+  evolves_from_species_id: 1
+  evolution_chain_id: 1
+  color_id: 1
+  shape_id: 1
+  habitat_id: 1
+  gender_rate: 1
+  capture_rate: 1
+  base_happiness: 1
+  is_baby: false
+  hatch_counter: 1
+  has_gender_differences: false
+  growth_rate_id: 1
+  forms_switchable: false
+  order: 1
+  conquest_order: 1

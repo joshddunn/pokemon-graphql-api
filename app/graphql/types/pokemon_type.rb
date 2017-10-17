@@ -6,7 +6,7 @@ Types::PokemonType = GraphQL::ObjectType.define do
   # it has the following fields
   field :id, !types.ID
   field :identifier, !types.String
-  field :speciesId, !types.Int, property: :species_id
+  field :species, ->{ Types::PokemonSpeciesType }, property: :pokemon_specy
   field :height, !types.Int
   field :weight, !types.Int
   field :baseExperience, !types.Int, property: :base_experience

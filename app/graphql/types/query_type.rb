@@ -12,4 +12,10 @@ Types::QueryType = GraphQL::ObjectType.define do
       source
     }
   end
+
+  field :Species, !types[Types::PokemonSpeciesType] do
+    resolve -> (obj, args, ctx) { 
+      PokemonSpecy.all
+    }
+  end
 end
