@@ -35,8 +35,8 @@ files = {
   'encounters.csv' => Encounter,
 }
 
-connection = ActiveRecord::Base.connection()
-connection.execute("SET FOREIGN_KEY_CHECKS = 0;")
+# connection = ActiveRecord::Base.connection()
+# connection.execute("SET FOREIGN_KEY_CHECKS = 0;")
 
 # add all data in each csv file to the database 
 files.keys.each do |file|
@@ -50,7 +50,7 @@ files.keys.each do |file|
       t[header] = row[header]
     end
 
-    t.save!
+    t.save
   end
 
   puts "#{file} added to the database. #{files[file].count} entries."
