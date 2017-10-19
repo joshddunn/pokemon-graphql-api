@@ -1,0 +1,2 @@
+class AbilityChangelogProse < ApplicationRecord
+end

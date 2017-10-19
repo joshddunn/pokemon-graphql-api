@@ -1,0 +1,2 @@
+class EncounterMethodProse < ApplicationRecord
+end

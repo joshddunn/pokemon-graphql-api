@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  version_id: 1
+  location_area_id: 1
+  encounter_slot_id: 1
+  pokemon_id: 1
+  min_level: 1
+  max_level: 1
+
+two:
+  version_id: 1
+  location_area_id: 1
+  encounter_slot_id: 1
+  pokemon_id: 1
+  min_level: 1
+  max_level: 1

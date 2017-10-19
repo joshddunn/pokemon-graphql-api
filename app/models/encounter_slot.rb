@@ -1,0 +1,2 @@
+class EncounterSlot < ApplicationRecord
+end

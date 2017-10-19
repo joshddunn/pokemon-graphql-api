@@ -1,0 +1,2 @@
+class Berry < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class AbilityProse < ApplicationRecord
+end

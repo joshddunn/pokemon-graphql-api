@@ -1,0 +1,2 @@
+class BerryFirmness < ApplicationRecord
+end

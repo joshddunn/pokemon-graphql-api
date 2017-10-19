@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stat_id: 
+  gene_mod_5: 
+
+two:
+  stat_id: 
+  gene_mod_5: 

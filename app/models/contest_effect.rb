@@ -1,0 +1,2 @@
+class ContestEffect < ApplicationRecord
+end

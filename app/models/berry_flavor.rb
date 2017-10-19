@@ -1,0 +1,2 @@
+class BerryFlavor < ApplicationRecord
+end

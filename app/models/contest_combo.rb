@@ -1,0 +1,2 @@
+class ContestCombo < ApplicationRecord
+end

@@ -1,7 +1,12 @@
 version: '3'
 services:
   db:
-    image: postgres
+    image: mysql2
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: root
   web:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'

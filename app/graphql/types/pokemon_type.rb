@@ -5,10 +5,10 @@ Types::PokemonType = GraphQL::ObjectType.define do
 
   # it has the following fields
   field :id, !types.ID
-  field :identifier, !types.String
-  field :species, ->{ Types::PokemonSpeciesType }, property: :pokemon_specy
-  field :height, !types.Int
-  field :weight, !types.Int
+  field :identifier, !types.String, "The Pokemon's common name"
+  field :species, Types::PokemonSpeciesType, "The Pokemon's species information", property: :pokemon_specy
+  field :height, !types.Int, "The Pokemon's height"
+  field :weight, !types.Int, "The Pokemon's weight"
   field :baseExperience, !types.Int, property: :base_experience
   field :order, !types.Int
   field :isDefault, !types.Int, property: :is_default

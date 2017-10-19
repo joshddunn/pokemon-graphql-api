@@ -1,0 +1,2 @@
+class EncounterConditionValueMap < ApplicationRecord
+end

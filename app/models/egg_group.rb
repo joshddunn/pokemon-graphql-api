@@ -1,0 +1,2 @@
+class EggGroup < ApplicationRecord
+end

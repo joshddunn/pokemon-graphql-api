@@ -1,0 +1,2 @@
+class BerryFirmnessName < ApplicationRecord
+end

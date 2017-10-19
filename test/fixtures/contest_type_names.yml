@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contest_type_id: 
+  local_language_id: 
+  name: MyString
+  flavor: MyString
+  color: MyString
+
+two:
+  contest_type_id: 
+  local_language_id: 
+  name: MyString
+  flavor: MyString
+  color: MyString

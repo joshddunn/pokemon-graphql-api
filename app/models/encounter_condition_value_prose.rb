@@ -1,0 +1,2 @@
+class EncounterConditionValueProse < ApplicationRecord
+end

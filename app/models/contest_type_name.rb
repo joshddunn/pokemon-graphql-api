@@ -1,0 +1,2 @@
+class ContestTypeName < ApplicationRecord
+end

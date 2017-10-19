@@ -1,0 +1,2 @@
+class ContestEffectProse < ApplicationRecord
+end

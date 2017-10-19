@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  characteristic_id: 
+  local_language_id: 
+  message: MyString
+
+two:
+  characteristic_id: 
+  local_language_id: 
+  message: MyString

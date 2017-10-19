@@ -1,0 +1,2 @@
+class AbilityChangelog < ApplicationRecord
+end

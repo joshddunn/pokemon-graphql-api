@@ -1,0 +1,2 @@
+class AbilityFlavorText < ApplicationRecord
+end

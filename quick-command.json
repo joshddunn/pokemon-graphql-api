@@ -7,6 +7,10 @@
     "dbc": "docker-compose run web rake db:create",
     "u": "docker-compose up",
     "d": "docker-compose down",
-    "s": "rm tmp/pids/server.pid; docker-compose up"
+    "s": "rm tmp/pids/server.pid; docker-compose up",
+    "db:reset": "qc rw rails db:reset",
+    "db:migrate": "qc rw rails db:migrate",
+    "rails": "qc rw rails",
+    "wipe": "qc rails db:drop; qc rails db:create; qc rails db:migrate; qc rails db:seed"
   }
 }
