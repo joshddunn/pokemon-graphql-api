@@ -1,0 +1,2 @@
+class LocationAreaEncounterRate < ApplicationRecord
+end

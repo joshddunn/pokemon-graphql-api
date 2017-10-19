@@ -1,0 +1,2 @@
+class PokemonSpeciesProse < ApplicationRecord
+end

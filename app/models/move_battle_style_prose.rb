@@ -1,0 +1,2 @@
+class MoveBattleStyleProse < ApplicationRecord
+end

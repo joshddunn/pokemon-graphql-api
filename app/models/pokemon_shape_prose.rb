@@ -1,0 +1,2 @@
+class PokemonShapeProse < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class MoveDamageClass < ApplicationRecord
+end

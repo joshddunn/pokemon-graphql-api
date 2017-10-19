@@ -1,0 +1,2 @@
+class MoveEffect < ApplicationRecord
+end

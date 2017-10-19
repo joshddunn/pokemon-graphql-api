@@ -1,0 +1,2 @@
+class MoveTarget < ApplicationRecord
+end

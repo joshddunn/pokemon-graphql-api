@@ -1,0 +1,2 @@
+class TypeEfficacy < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class GrowthRate < ApplicationRecord
+end

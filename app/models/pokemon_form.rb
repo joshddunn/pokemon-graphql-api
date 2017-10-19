@@ -1,0 +1,2 @@
+class PokemonForm < ApplicationRecord
+end

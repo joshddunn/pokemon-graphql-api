@@ -1,0 +1,2 @@
+class MoveFlag < ApplicationRecord
+end

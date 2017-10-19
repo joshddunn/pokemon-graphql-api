@@ -1,0 +1,2 @@
+class PokedexProse < ApplicationRecord
+end

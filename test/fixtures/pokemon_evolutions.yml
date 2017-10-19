@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  evolved_species_id: 1
+  evolution_trigger_id: 1
+  trigger_item_id: 1
+  minimum_level: 1
+  gender_id: 1
+  location_id: 1
+  held_item_id: 1
+  time_of_day: MyString
+  known_move_id: 1
+  known_move_type_id: 1
+  minimum_happiness: 1
+  minimum_beauty: 1
+  minimum_affection: 1
+  relative_physical_stats: 1
+  party_species_id: 1
+  trade_species_id: 1
+  needs_overworld_rain: false
+  turn_upside_down: false
+
+two:
+  evolved_species_id: 1
+  evolution_trigger_id: 1
+  trigger_item_id: 1
+  minimum_level: 1
+  gender_id: 1
+  location_id: 1
+  held_item_id: 1
+  time_of_day: MyString
+  known_move_id: 1
+  known_move_type_id: 1
+  minimum_happiness: 1
+  minimum_beauty: 1
+  minimum_affection: 1
+  relative_physical_stats: 1
+  party_species_id: 1
+  trade_species_id: 1
+  needs_overworld_rain: false
+  turn_upside_down: false

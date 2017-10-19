@@ -1,0 +1,2 @@
+class EvolutionTrigger < ApplicationRecord
+end

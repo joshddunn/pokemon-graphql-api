@@ -1,0 +1,2 @@
+class ItemFlagMap < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class VersionGroupPokemonMoveMethod < ApplicationRecord
+end

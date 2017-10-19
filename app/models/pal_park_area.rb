@@ -1,0 +1,2 @@
+class PalParkArea < ApplicationRecord
+end

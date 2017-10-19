@@ -1,0 +1,2 @@
+class ItemPocketName < ApplicationRecord
+end

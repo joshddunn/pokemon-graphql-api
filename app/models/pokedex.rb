@@ -1,0 +1,2 @@
+class Pokedex < ApplicationRecord
+end

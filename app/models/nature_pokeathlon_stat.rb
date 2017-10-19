@@ -1,0 +1,2 @@
+class NaturePokeathlonStat < ApplicationRecord
+end

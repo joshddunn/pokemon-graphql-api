@@ -1,0 +1,2 @@
+class PokemonHabitatName < ApplicationRecord
+end

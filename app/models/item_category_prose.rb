@@ -1,0 +1,2 @@
+class ItemCategoryProse < ApplicationRecord
+end

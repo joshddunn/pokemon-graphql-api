@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  generation_id: 1
+  local_language_id: 1
+  name: MyString
+
+two:
+  generation_id: 1
+  local_language_id: 1
+  name: MyString

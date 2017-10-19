@@ -1,0 +1,2 @@
+class ItemGameIndicy < ApplicationRecord
+end

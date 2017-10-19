@@ -1,0 +1,2 @@
+class PokemonShape < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class MoveMetaCategoryProse < ApplicationRecord
+end

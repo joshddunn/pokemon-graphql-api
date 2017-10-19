@@ -1,0 +1,2 @@
+class MoveFlavorSummary < ApplicationRecord
+end

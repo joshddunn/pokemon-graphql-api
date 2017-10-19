@@ -1,0 +1,2 @@
+class MoveName < ApplicationRecord
+end

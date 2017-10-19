@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pokemon_id: 1
+  version_id: 1
+  item_id: 1
+  rarity: 1
+
+two:
+  pokemon_id: 1
+  version_id: 1
+  item_id: 1
+  rarity: 1

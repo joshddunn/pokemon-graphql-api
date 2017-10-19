@@ -1,0 +1,2 @@
+class GenerationName < ApplicationRecord
+end

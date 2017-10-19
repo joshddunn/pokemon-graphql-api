@@ -1,0 +1,2 @@
+class LocationName < ApplicationRecord
+end

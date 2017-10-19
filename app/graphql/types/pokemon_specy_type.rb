@@ -1,13 +1,12 @@
-# defines a new GraphQL type
-Types::PokemonSpeciesType = GraphQL::ObjectType.define do
+Types::PokemonSpecyType = GraphQL::ObjectType.define do
   name 'PokemonSpecy'
 
   field :id, !types.ID
   field :identifier, !types.String
   field :generationId, !types.Int, property: :generation_id
-  field :evolvesFromSpecies, Types::PokemonSpeciesType, property: :pokemon_specy
+  field :evolvesFromSpecies, Types::PokemonSpecyType, property: :pokemon_specy
   field :evolutionChainId, !types.Int, property: :evolution_chain_id
-  field :color, Types::PokemonColorsType, property: :pokemon_color
+  field :color, Types::PokemonColorType, property: :pokemon_color
   field :shapeId, !types.Int, property: :shape_id
   field :habitatId, !types.Int, property: :habitat_id
   field :genderRate, !types.Int, property: :gender_rate

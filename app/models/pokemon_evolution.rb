@@ -1,0 +1,2 @@
+class PokemonEvolution < ApplicationRecord
+end

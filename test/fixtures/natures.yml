@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  identifier: MyString
+  decreased_stat_id: 1
+  increased_stat_id: 1
+  hates_flavor_id: 1
+  likes_flavor_id: 1
+  game_index: 1
+
+two:
+  identifier: MyString
+  decreased_stat_id: 1
+  increased_stat_id: 1
+  hates_flavor_id: 1
+  likes_flavor_id: 1
+  game_index: 1

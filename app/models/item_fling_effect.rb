@@ -1,0 +1,2 @@
+class ItemFlingEffect < ApplicationRecord
+end

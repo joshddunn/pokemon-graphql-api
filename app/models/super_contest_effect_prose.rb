@@ -1,0 +1,2 @@
+class SuperContestEffectProse < ApplicationRecord
+end

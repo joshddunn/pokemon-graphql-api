@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pokemon_id: 1
+  ability_id: 1
+  is_hidden: false
+  slot: 1
+
+two:
+  pokemon_id: 1
+  ability_id: 1
+  is_hidden: false
+  slot: 1

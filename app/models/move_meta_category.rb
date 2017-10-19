@@ -1,0 +1,2 @@
+class MoveMetaCategory < ApplicationRecord
+end

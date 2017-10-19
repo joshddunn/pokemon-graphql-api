@@ -1,0 +1,2 @@
+class LocationGameIndex < ApplicationRecord
+end

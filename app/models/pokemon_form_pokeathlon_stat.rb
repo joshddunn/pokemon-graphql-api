@@ -1,0 +1,2 @@
+class PokemonFormPokeathlonStat < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class MoveChangelog < ApplicationRecord
+end

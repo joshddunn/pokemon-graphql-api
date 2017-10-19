@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  super_contest_effect_id: 1
+  local_language_id: 1
+  flavor_text: MyString
+
+two:
+  super_contest_effect_id: 1
+  local_language_id: 1
+  flavor_text: MyString

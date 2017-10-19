@@ -1,0 +1,2 @@
+class ItemFlagProse < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class GrowthRateProse < ApplicationRecord
+end

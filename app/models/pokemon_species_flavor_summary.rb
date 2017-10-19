@@ -1,0 +1,2 @@
+class PokemonSpeciesFlavorSummary < ApplicationRecord
+end

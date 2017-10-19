@@ -1,0 +1,2 @@
+class MoveTargetProse < ApplicationRecord
+end

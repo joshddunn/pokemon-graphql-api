@@ -1,0 +1,2 @@
+class PokemonMoveMethod < ApplicationRecord
+end

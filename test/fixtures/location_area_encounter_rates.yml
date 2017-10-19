@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location_area_id: 1
+  encounter_method_id: 1
+  version_id: 1
+  rate: 1
+
+two:
+  location_area_id: 1
+  encounter_method_id: 1
+  version_id: 1
+  rate: 1

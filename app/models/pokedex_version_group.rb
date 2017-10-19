@@ -1,0 +1,2 @@
+class PokedexVersionGroup < ApplicationRecord
+end

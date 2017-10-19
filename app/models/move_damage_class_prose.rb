@@ -1,0 +1,2 @@
+class MoveDamageClassProse < ApplicationRecord
+end

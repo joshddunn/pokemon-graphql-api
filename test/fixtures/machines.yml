@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  machine_number: 1
+  version_group_id: 1
+  item_id: 1
+  move_id: 1
+
+two:
+  machine_number: 1
+  version_group_id: 1
+  item_id: 1
+  move_id: 1

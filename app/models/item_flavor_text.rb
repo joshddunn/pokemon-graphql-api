@@ -1,0 +1,2 @@
+class ItemFlavorText < ApplicationRecord
+end

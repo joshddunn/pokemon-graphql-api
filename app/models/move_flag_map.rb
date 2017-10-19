@@ -1,0 +1,2 @@
+class MoveFlagMap < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class NatureBattleStylePreference < ApplicationRecord
+end

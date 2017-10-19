@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  move_battle_style_id: 1
+  local_language_id: 1
+  name: MyString
+
+two:
+  move_battle_style_id: 1
+  local_language_id: 1
+  name: MyString

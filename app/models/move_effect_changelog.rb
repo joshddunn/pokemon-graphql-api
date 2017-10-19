@@ -1,0 +1,2 @@
+class MoveEffectChangelog < ApplicationRecord
+end

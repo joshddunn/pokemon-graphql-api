@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  effect_id: 1
+  changed_in_version_group_id: 1
+
+two:
+  effect_id: 1
+  changed_in_version_group_id: 1

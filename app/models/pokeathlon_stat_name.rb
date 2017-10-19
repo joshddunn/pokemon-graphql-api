@@ -1,0 +1,2 @@
+class PokeathlonStatName < ApplicationRecord
+end

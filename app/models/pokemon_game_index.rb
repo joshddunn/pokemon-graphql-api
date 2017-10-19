@@ -1,0 +1,2 @@
+class PokemonGameIndex < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class SuperContestEffect < ApplicationRecord
+end

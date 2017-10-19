@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  evolution_trigger_id: 1
+  local_languages_id: 1
+  name: MyString
+
+two:
+  evolution_trigger_id: 1
+  local_languages_id: 1
+  name: MyString

@@ -1,0 +1,2 @@
+class ItemFlingEffectProse < ApplicationRecord
+end

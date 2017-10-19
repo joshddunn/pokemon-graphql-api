@@ -1,0 +1,2 @@
+class MoveMetaStatChange < ApplicationRecord
+end

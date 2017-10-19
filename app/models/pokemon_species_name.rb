@@ -1,0 +1,2 @@
+class PokemonSpeciesName < ApplicationRecord
+end

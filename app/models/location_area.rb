@@ -1,0 +1,2 @@
+class LocationArea < ApplicationRecord
+end

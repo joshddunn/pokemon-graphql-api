@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  species_id: 1
+  area_id: 1
+  base_score: 1
+  rate: 1
+
+two:
+  species_id: 1
+  area_id: 1
+  base_score: 1
+  rate: 1

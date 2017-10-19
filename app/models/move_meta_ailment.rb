@@ -1,0 +1,2 @@
+class MoveMetaAilment < ApplicationRecord
+end

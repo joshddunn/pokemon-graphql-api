@@ -1,0 +1,2 @@
+class TypeName < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class EvolutionTriggerProse < ApplicationRecord
+end

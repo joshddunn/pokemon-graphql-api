@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pokemon_form_id: 1
+  generation_id: 1
+  game_index: 1
+
+two:
+  pokemon_form_id: 1
+  generation_id: 1
+  game_index: 1

@@ -1,0 +1,2 @@
+class MoveMetum < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class VersionGroupRegion < ApplicationRecord
+end

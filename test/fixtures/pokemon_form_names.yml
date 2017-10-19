@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pokemon_form_id: 1
+  local_language_id: 1
+  form_name: MyString
+  pokemon_name: MyString
+
+two:
+  pokemon_form_id: 1
+  local_language_id: 1
+  form_name: MyString
+  pokemon_name: MyString

@@ -1,0 +1,2 @@
+class MoveFlagProse < ApplicationRecord
+end

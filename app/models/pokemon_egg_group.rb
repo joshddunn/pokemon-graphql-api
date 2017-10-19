@@ -1,0 +1,2 @@
+class PokemonEggGroup < ApplicationRecord
+end
