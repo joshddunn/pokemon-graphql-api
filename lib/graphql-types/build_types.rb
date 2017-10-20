@@ -1,4 +1,4 @@
-# load './lib/graphql/build_types.rb'
+# load './lib/graphql-types/build_types.rb'
 
 blacklist = [
  "schema_migrations",
