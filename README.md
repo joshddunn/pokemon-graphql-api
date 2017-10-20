@@ -9,3 +9,4 @@ Pokemon.first.pokemon_specy
 ## Automated graphql types
 
 Write a script to take the defined models and build the basic graphql types
+Write a script for the query_types as well
