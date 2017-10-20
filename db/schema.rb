@@ -761,12 +761,6 @@ ActiveRecord::Schema.define(version: 20171019071223) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pokathlon_stats", force: :cascade do |t|
-    t.string "identifier"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "pokeathlon_stat_names", force: :cascade do |t|
     t.integer "pokeathlon_stat_id"
     t.integer "local_language_id"
