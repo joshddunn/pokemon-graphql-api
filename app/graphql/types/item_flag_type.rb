@@ -1,5 +1,5 @@
-Types::PokemonColorType = GraphQL::ObjectType.define do
-  name "PokemonColor"
+Types::ItemFlagType = GraphQL::ObjectType.define do
+  name "ItemFlag"
   description ""
 
   field :id, !types.ID, "", property: :id

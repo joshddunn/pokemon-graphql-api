@@ -17,8 +17,8 @@ def build_field accessor, type, property
 end
 
 ActiveRecord::Base.connection.tables.each_with_index do |table, index|
-  if not blacklist.include? table and table == "pokemons"
-    file_name = "#{table.singularize}_type_test.rb"
+  if not blacklist.include? table
+    file_name = "#{table.singularize}_type.rb"
     file_path = "./app/graphql/types/#{file_name}"
     output = ""
 
@@ -40,7 +40,7 @@ ActiveRecord::Base.connection.tables.each_with_index do |table, index|
     # build the fields depending on primary key / foreign key / type
     model.columns.each do |column|
       if foreign_keys[column.name]
-        output += build_field column.name, "Types::#{foreign_keys[column.name].capitalize.camelcase}Type", foreign_keys[column.name]
+        output += build_field column.name, "Types::#{foreign_keys[column.name].singularize.capitalize.camelcase}Type", foreign_keys[column.name]
       elsif column.name == model.primary_key
         output += build_field "id",  type_keys[:id], "id"
       elsif column.type.to_s != "datetime" 
