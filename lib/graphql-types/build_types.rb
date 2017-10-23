@@ -48,7 +48,7 @@ ActiveRecord::Base.connection.tables.each_with_index do |table, index|
       end
     end
 
-    output += "end"
+    output += "end\n"
 
     puts "#{file_name} created."
 
