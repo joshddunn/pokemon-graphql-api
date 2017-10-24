@@ -17,7 +17,7 @@ def build_field accessor, type, property
 end
 
 ActiveRecord::Base.connection.tables.each_with_index do |table, index|
-  if not blacklist.include? table
+  if not blacklist.include? table and table == "pokemon_species"
     file_name = "#{table.singularize}_type.rb"
     file_path = "./app/graphql/types/#{file_name}"
     output = ""
@@ -28,9 +28,14 @@ ActiveRecord::Base.connection.tables.each_with_index do |table, index|
     model = model_name.constantize
 
     # build hash with the columns' foreign keys
-    foreign_keys = {}
+    belongs_to = {}
+    has_many = {}
     model.reflections.each_pair do |k,v|
-      foreign_keys[v.options[:foreign_key].to_s] = k
+      if v.macro == :belongs_to
+        belongs_to[v.options[:foreign_key].to_s] = k
+      elsif v.macro == :has_many
+        has_many[v.options[:foreign_key].to_s] = k
+      end
     end
 
     output += "Types::#{model_name}Type = GraphQL::ObjectType.define do\n"
@@ -39,13 +44,20 @@ ActiveRecord::Base.connection.tables.each_with_index do |table, index|
 
     # build the fields depending on primary key / foreign key / type
     model.columns.each do |column|
-      if foreign_keys[column.name]
-        output += build_field column.name, "Types::#{foreign_keys[column.name].singularize.capitalize.camelcase}Type", foreign_keys[column.name]
+      if belongs_to[column.name]
+        output += build_field column.name, "Types::#{belongs_to[column.name].singularize.capitalize.camelcase}Type", belongs_to[column.name]
       elsif column.name == model.primary_key
         output += build_field "id",  type_keys[:id], "id"
       elsif column.type.to_s != "datetime" 
         output += build_field column.name, type_keys[column.type], column.name
       end
+    end
+
+    output += "\n"
+
+    # build the fields for parent classes
+    has_many.each do |k,v|
+      output += build_field "#{k}2", "Types::#{v.singularize.capitalize.camelcase}Type", v 
     end
 
     output += "end\n"

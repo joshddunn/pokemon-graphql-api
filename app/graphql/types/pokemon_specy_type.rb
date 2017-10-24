@@ -5,7 +5,7 @@ Types::PokemonSpecyType = GraphQL::ObjectType.define do
   field :id, !types.ID, "", property: :id
   field :identifier, !types.String, "", property: :identifier
   field :generation, !types.Int, "", property: :generation_id
-  field :evolvesFromSpecies, Types::PokemonSpecyType, "", property: :pokemon_species
+  field :evolvesFromSpecies, Types::PokemonSpecyType, "", property: :pokemon_specy
   field :evolutionChain, !types.Int, "", property: :evolution_chain_id
   field :color, Types::PokemonColorType, "", property: :pokemon_color
   field :shape, !types.Int, "", property: :shape_id
@@ -20,4 +20,7 @@ Types::PokemonSpecyType = GraphQL::ObjectType.define do
   field :formsSwitchable, !types.Boolean, "", property: :forms_switchable
   field :order, !types.Int, "", property: :order
   field :conquestOrder, !types.Int, "", property: :conquest_order
+
+  field :speciesId2, Types::PokemonType, "", property: :pokemons
+  field :evolvesFromSpeciesId2, Types::PokemonSpecyType, "", property: :pokemon_species
 end
