@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025103402) do
+ActiveRecord::Schema.define(version: 20171025110019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1261,6 +1261,17 @@ ActiveRecord::Schema.define(version: 20171025103402) do
   add_foreign_key "items", "item_fling_effects", column: "fling_effect_id"
   add_foreign_key "language_names", "languages"
   add_foreign_key "language_names", "languages", column: "local_language_id"
+  add_foreign_key "location_area_encounter_rates", "encounter_methods"
+  add_foreign_key "location_area_encounter_rates", "location_areas"
+  add_foreign_key "location_area_encounter_rates", "versions"
+  add_foreign_key "location_area_proses", "languages", column: "local_language_id"
+  add_foreign_key "location_area_proses", "location_areas"
+  add_foreign_key "location_areas", "locations"
+  add_foreign_key "location_game_indices", "generations"
+  add_foreign_key "location_game_indices", "locations"
+  add_foreign_key "location_names", "languages", column: "local_language_id"
+  add_foreign_key "location_names", "locations"
+  add_foreign_key "locations", "regions"
   add_foreign_key "pokemon_species", "pokemon_colors", column: "color_id"
   add_foreign_key "pokemon_species", "pokemon_species", column: "evolves_from_species_id"
   add_foreign_key "pokemons", "pokemon_species", column: "species_id"
