@@ -8,4 +8,7 @@ class Language < ApplicationRecord
   has_many :contest_effect_proses, foreign_key: :local_language_id
   has_many :contest_type_names, foreign_key: :local_language_id
   has_many :egg_group_proses, foreign_key: :local_language_id
+  has_many :encounter_condition_proses, foreign_key: :local_language_id
+  has_many :encounter_condition_value_proses, foreign_key: :local_language_id
+  has_many :encounter_method_proses, foreign_key: :local_language_id
 end

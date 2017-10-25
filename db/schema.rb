@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025054520) do
+ActiveRecord::Schema.define(version: 20171025055454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1211,6 +1211,21 @@ ActiveRecord::Schema.define(version: 20171025054520) do
   add_foreign_key "contest_type_names", "languages", column: "local_language_id"
   add_foreign_key "egg_group_proses", "egg_groups"
   add_foreign_key "egg_group_proses", "languages", column: "local_language_id"
+  add_foreign_key "encounter_condition_proses", "encounter_conditions"
+  add_foreign_key "encounter_condition_proses", "languages", column: "local_language_id"
+  add_foreign_key "encounter_condition_value_maps", "encounter_condition_values"
+  add_foreign_key "encounter_condition_value_maps", "encounters"
+  add_foreign_key "encounter_condition_value_proses", "encounter_condition_values"
+  add_foreign_key "encounter_condition_value_proses", "languages", column: "local_language_id"
+  add_foreign_key "encounter_condition_values", "encounter_conditions"
+  add_foreign_key "encounter_method_proses", "encounter_methods"
+  add_foreign_key "encounter_method_proses", "languages", column: "local_language_id"
+  add_foreign_key "encounter_slots", "encounter_methods"
+  add_foreign_key "encounter_slots", "version_groups"
+  add_foreign_key "encounters", "encounter_slots"
+  add_foreign_key "encounters", "location_areas"
+  add_foreign_key "encounters", "pokemons"
+  add_foreign_key "encounters", "versions"
   add_foreign_key "pokemon_species", "pokemon_colors", column: "color_id"
   add_foreign_key "pokemon_species", "pokemon_species", column: "evolves_from_species_id"
   add_foreign_key "pokemons", "pokemon_species", column: "species_id"
