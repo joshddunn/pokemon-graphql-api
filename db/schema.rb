@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025055454) do
+ActiveRecord::Schema.define(version: 20171025085003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -372,7 +372,7 @@ ActiveRecord::Schema.define(version: 20171025055454) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "item_game_indicies", force: :cascade do |t|
+  create_table "item_game_indices", force: :cascade do |t|
     t.integer "item_id"
     t.integer "generation_id"
     t.integer "game_index"
@@ -1226,6 +1226,39 @@ ActiveRecord::Schema.define(version: 20171025055454) do
   add_foreign_key "encounters", "location_areas"
   add_foreign_key "encounters", "pokemons"
   add_foreign_key "encounters", "versions"
+  add_foreign_key "evolution_chains", "items", column: "baby_trigger_item_id"
+  add_foreign_key "evolution_trigger_proses", "evolution_triggers"
+  add_foreign_key "evolution_trigger_proses", "languages", column: "local_language_id"
+  add_foreign_key "experiences", "growth_rates"
+  add_foreign_key "generation_names", "generations"
+  add_foreign_key "generation_names", "languages", column: "local_language_id"
+  add_foreign_key "generations", "regions", column: "main_region_id"
+  add_foreign_key "growth_rate_proses", "growth_rates"
+  add_foreign_key "growth_rate_proses", "languages", column: "local_language_id"
+  add_foreign_key "item_categories", "item_pockets", column: "pocket_id"
+  add_foreign_key "item_category_proses", "item_categories"
+  add_foreign_key "item_category_proses", "languages", column: "local_language_id"
+  add_foreign_key "item_flag_maps", "item_flags"
+  add_foreign_key "item_flag_maps", "items"
+  add_foreign_key "item_flag_proses", "item_flags"
+  add_foreign_key "item_flag_proses", "languages", column: "local_language_id"
+  add_foreign_key "item_flavor_summaries", "items"
+  add_foreign_key "item_flavor_summaries", "languages", column: "local_language_id"
+  add_foreign_key "item_flavor_texts", "items"
+  add_foreign_key "item_flavor_texts", "languages"
+  add_foreign_key "item_flavor_texts", "version_groups"
+  add_foreign_key "item_fling_effect_proses", "item_fling_effects"
+  add_foreign_key "item_fling_effect_proses", "languages", column: "local_language_id"
+  add_foreign_key "item_game_indices", "generations"
+  add_foreign_key "item_game_indices", "items"
+  add_foreign_key "item_names", "items"
+  add_foreign_key "item_names", "languages", column: "local_language_id"
+  add_foreign_key "item_pocket_names", "item_pockets"
+  add_foreign_key "item_pocket_names", "languages", column: "local_language_id"
+  add_foreign_key "item_proses", "items"
+  add_foreign_key "item_proses", "languages", column: "local_language_id"
+  add_foreign_key "items", "item_categories", column: "category_id"
+  add_foreign_key "items", "item_fling_effects", column: "fling_effect_id"
   add_foreign_key "pokemon_species", "pokemon_colors", column: "color_id"
   add_foreign_key "pokemon_species", "pokemon_species", column: "evolves_from_species_id"
   add_foreign_key "pokemons", "pokemon_species", column: "species_id"

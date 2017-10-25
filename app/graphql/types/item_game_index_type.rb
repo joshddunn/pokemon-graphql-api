@@ -1,5 +1,5 @@
-Types::ItemGameIndicyType = GraphQL::ObjectType.define do
-  name "ItemGameIndicy"
+Types::ItemGameIndexType = GraphQL::ObjectType.define do
+  name "ItemGameIndex"
   description ""
 
   field :id, !types.ID, "", property: :id
