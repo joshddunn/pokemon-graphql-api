@@ -22,4 +22,6 @@ class Language < ApplicationRecord
   has_many :item_names, foreign_key: :local_language_id
   has_many :item_pocket_names, foreign_key: :local_language_id
   has_many :item_proses, foreign_key: :local_language_id
+  has_many :language_names, foreign_key: :language_id
+  has_many :local_language_names, class_name: "LanguageName", foreign_key: :local_language_id
 end
