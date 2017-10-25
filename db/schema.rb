@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171019071223) do
+ActiveRecord::Schema.define(version: 20171025050647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1181,6 +1181,18 @@ ActiveRecord::Schema.define(version: 20171019071223) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "abilities", "generations"
+  add_foreign_key "ability_changelog_proses", "ability_changelogs"
+  add_foreign_key "ability_changelog_proses", "languages", column: "local_language_id"
+  add_foreign_key "ability_changelogs", "abilities"
+  add_foreign_key "ability_changelogs", "version_groups", column: "changed_in_version_group_id"
+  add_foreign_key "ability_flavor_texts", "abilities"
+  add_foreign_key "ability_flavor_texts", "languages"
+  add_foreign_key "ability_flavor_texts", "version_groups"
+  add_foreign_key "ability_names", "abilities"
+  add_foreign_key "ability_names", "languages", column: "local_language_id"
+  add_foreign_key "ability_proses", "abilities"
+  add_foreign_key "ability_proses", "languages", column: "local_language_id"
   add_foreign_key "pokemon_species", "pokemon_colors", column: "color_id"
   add_foreign_key "pokemon_species", "pokemon_species", column: "evolves_from_species_id"
   add_foreign_key "pokemons", "pokemon_species", column: "species_id"
