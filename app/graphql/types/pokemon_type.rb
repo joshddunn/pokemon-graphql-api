@@ -10,4 +10,5 @@ Types::PokemonType = GraphQL::ObjectType.define do
   field :baseExperience, !types.Int, "", property: :base_experience
   field :order, !types.Int, "", property: :order
   field :isDefault, !types.Boolean, "", property: :is_default
+
 end

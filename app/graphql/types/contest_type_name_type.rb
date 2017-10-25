@@ -8,4 +8,5 @@ Types::ContestTypeNameType = GraphQL::ObjectType.define do
   field :name, !types.String, "", property: :name
   field :flavor, !types.String, "", property: :flavor
   field :color, !types.String, "", property: :color
+
 end

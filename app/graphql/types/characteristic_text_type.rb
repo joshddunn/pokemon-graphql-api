@@ -6,4 +6,5 @@ Types::CharacteristicTextType = GraphQL::ObjectType.define do
   field :characteristic, !types.Int, "", property: :characteristic_id
   field :localLanguage, !types.Int, "", property: :local_language_id
   field :message, !types.String, "", property: :message
+
 end

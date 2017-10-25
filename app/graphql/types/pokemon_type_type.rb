@@ -6,4 +6,5 @@ Types::PokemonTypeType = GraphQL::ObjectType.define do
   field :pokemon, !types.Int, "", property: :pokemon_id
   field :type, !types.Int, "", property: :type_id
   field :slot, !types.Int, "", property: :slot
+
 end

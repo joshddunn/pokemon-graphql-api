@@ -4,4 +4,5 @@ Types::ItemFlingEffectType = GraphQL::ObjectType.define do
 
   field :id, !types.ID, "", property: :id
   field :name, !types.String, "", property: :name
+
 end

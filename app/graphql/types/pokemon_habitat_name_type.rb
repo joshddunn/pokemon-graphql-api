@@ -6,4 +6,5 @@ Types::PokemonHabitatNameType = GraphQL::ObjectType.define do
   field :pokemonHabitat, !types.Int, "", property: :pokemon_habitat_id
   field :localLanguage, !types.Int, "", property: :local_language_id
   field :name, !types.String, "", property: :name
+
 end

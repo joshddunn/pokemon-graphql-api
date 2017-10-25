@@ -7,4 +7,5 @@ Types::PokemonStatType = GraphQL::ObjectType.define do
   field :stat, !types.Int, "", property: :stat_id
   field :baseStat, !types.Int, "", property: :base_stat
   field :effort, !types.Int, "", property: :effort
+
 end

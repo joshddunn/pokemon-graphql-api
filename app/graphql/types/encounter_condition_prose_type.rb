@@ -6,4 +6,5 @@ Types::EncounterConditionProseType = GraphQL::ObjectType.define do
   field :encounterCondition, !types.Int, "", property: :encounter_condition_id
   field :localLanguage, !types.Int, "", property: :local_language_id
   field :name, !types.String, "", property: :name
+
 end

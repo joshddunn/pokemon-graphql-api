@@ -8,4 +8,5 @@ Types::LanguageType = GraphQL::ObjectType.define do
   field :identifier, !types.String, "", property: :identifier
   field :official, !types.Boolean, "", property: :official
   field :order, !types.Int, "", property: :order
+
 end

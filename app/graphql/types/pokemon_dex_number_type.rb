@@ -6,4 +6,5 @@ Types::PokemonDexNumberType = GraphQL::ObjectType.define do
   field :species, !types.Int, "", property: :species_id
   field :pokedex, !types.Int, "", property: :pokedex_id
   field :pokedexNumber, !types.Int, "", property: :pokedex_number
+
 end

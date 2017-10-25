@@ -11,4 +11,5 @@ Types::MoveChangelogType = GraphQL::ObjectType.define do
   field :accuracy, !types.Int, "", property: :accuracy
   field :effect, !types.Int, "", property: :effect_id
   field :effectChance, !types.Int, "", property: :effect_chance
+
 end

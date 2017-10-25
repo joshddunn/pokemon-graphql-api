@@ -7,4 +7,5 @@ Types::EncounterSlotType = GraphQL::ObjectType.define do
   field :encounterMethod, !types.Int, "", property: :encounter_method_id
   field :slot, !types.Int, "", property: :slot
   field :rarity, !types.Int, "", property: :rarity
+
 end

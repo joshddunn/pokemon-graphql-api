@@ -6,4 +6,5 @@ Types::NaturePokeathlonStatType = GraphQL::ObjectType.define do
   field :nature, !types.Int, "", property: :nature_id
   field :pokeathlonStat, !types.Int, "", property: :pokeathlon_stat_id
   field :maxChange, !types.Int, "", property: :max_change
+
 end

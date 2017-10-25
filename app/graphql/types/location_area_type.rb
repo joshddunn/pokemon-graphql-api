@@ -6,4 +6,5 @@ Types::LocationAreaType = GraphQL::ObjectType.define do
   field :location, !types.Int, "", property: :location_id
   field :gameIndex, !types.Int, "", property: :game_index
   field :identifier, !types.String, "", property: :identifier
+
 end

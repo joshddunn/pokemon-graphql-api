@@ -4,4 +4,5 @@ Types::SuperContestEffectType = GraphQL::ObjectType.define do
 
   field :id, !types.ID, "", property: :id
   field :appeal, !types.Int, "", property: :appeal
+
 end

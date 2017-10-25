@@ -16,4 +16,5 @@ Types::MoveMetumType = GraphQL::ObjectType.define do
   field :ailmentChance, !types.Int, "", property: :ailment_chance
   field :flinchChance, !types.Int, "", property: :flinch_chance
   field :statChance, !types.Int, "", property: :stat_chance
+
 end

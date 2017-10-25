@@ -7,4 +7,5 @@ Types::ContestEffectProseType = GraphQL::ObjectType.define do
   field :localLanguage, !types.Int, "", property: :local_language_id
   field :flavorText, !types.String, "", property: :flavor_text
   field :effect, !types.String, "", property: :effect
+
 end

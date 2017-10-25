@@ -6,4 +6,5 @@ Types::EncounterConditionValueType = GraphQL::ObjectType.define do
   field :encounterCondition, !types.Int, "", property: :encounter_condition_id
   field :identifier, !types.String, "", property: :identifier
   field :isDefault, !types.Boolean, "", property: :is_default
+
 end

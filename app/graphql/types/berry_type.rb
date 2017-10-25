@@ -12,4 +12,5 @@ Types::BerryType = GraphQL::ObjectType.define do
   field :growthTime, !types.Int, "", property: :growth_time
   field :soilDryness, !types.Int, "", property: :soil_dryness
   field :smoothness, !types.Int, "", property: :smoothness
+
 end

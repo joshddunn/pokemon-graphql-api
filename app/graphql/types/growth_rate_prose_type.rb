@@ -6,4 +6,5 @@ Types::GrowthRateProseType = GraphQL::ObjectType.define do
   field :growthRate, !types.Int, "", property: :growth_rate_id
   field :localLanguage, !types.Int, "", property: :local_language_id
   field :name, !types.String, "", property: :name
+
 end

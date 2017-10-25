@@ -7,4 +7,5 @@ Types::StatType = GraphQL::ObjectType.define do
   field :identifier, !types.String, "", property: :identifier
   field :isBattleOnly, !types.Boolean, "", property: :is_battle_only
   field :gameIndex, !types.Int, "", property: :game_index
+
 end

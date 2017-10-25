@@ -7,4 +7,5 @@ Types::PokemonItemType = GraphQL::ObjectType.define do
   field :version, !types.Int, "", property: :version_id
   field :item, !types.Int, "", property: :item_id
   field :rarity, !types.Int, "", property: :rarity
+
 end

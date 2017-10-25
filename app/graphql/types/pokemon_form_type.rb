@@ -12,4 +12,5 @@ Types::PokemonFormType = GraphQL::ObjectType.define do
   field :isMega, !types.Boolean, "", property: :is_mega
   field :formOrder, !types.Int, "", property: :form_order
   field :order, !types.Int, "", property: :order
+
 end

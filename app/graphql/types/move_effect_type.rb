@@ -3,4 +3,5 @@ Types::MoveEffectType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
+
 end

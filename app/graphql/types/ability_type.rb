@@ -6,4 +6,5 @@ Types::AbilityType = GraphQL::ObjectType.define do
   field :identifier, !types.String, "", property: :identifier
   field :generation, !types.Int, "", property: :generation_id
   field :isMainSeries, !types.Boolean, "", property: :is_main_series
+
 end

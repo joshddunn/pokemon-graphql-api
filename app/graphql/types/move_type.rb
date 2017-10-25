@@ -17,4 +17,5 @@ Types::MoveType = GraphQL::ObjectType.define do
   field :contestType, !types.Int, "", property: :contest_type_id
   field :contestEffect, !types.Int, "", property: :contest_effect_id
   field :superContestEffect, !types.Int, "", property: :super_contest_effect_id
+
 end

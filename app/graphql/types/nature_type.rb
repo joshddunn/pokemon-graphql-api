@@ -9,4 +9,5 @@ Types::NatureType = GraphQL::ObjectType.define do
   field :hatesFlavor, !types.Int, "", property: :hates_flavor_id
   field :likesFlavor, !types.Int, "", property: :likes_flavor_id
   field :gameIndex, !types.Int, "", property: :game_index
+
 end

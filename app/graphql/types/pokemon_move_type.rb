@@ -9,4 +9,5 @@ Types::PokemonMoveType = GraphQL::ObjectType.define do
   field :pokemonMoveMethod, !types.Int, "", property: :pokemon_move_method_id
   field :level, !types.Int, "", property: :level
   field :order, !types.Int, "", property: :order
+
 end

@@ -6,4 +6,5 @@ Types::MoveMetaAilmentNameType = GraphQL::ObjectType.define do
   field :moveMetaAilment, !types.Int, "", property: :move_meta_ailment_id
   field :localLanguage, !types.Int, "", property: :local_language_id
   field :name, !types.String, "", property: :name
+
 end

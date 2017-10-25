@@ -8,4 +8,5 @@ Types::PokemonFormPokeathlonStatType = GraphQL::ObjectType.define do
   field :minimumStat, !types.Int, "", property: :minimum_stat
   field :baseStat, !types.Int, "", property: :base_stat
   field :maximumStat, !types.Int, "", property: :maximum_stat
+
 end

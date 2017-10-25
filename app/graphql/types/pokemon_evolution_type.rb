@@ -22,4 +22,5 @@ Types::PokemonEvolutionType = GraphQL::ObjectType.define do
   field :tradeSpecies, !types.Int, "", property: :trade_species_id
   field :needsOverworldRain, !types.Boolean, "", property: :needs_overworld_rain
   field :turnUpsideDown, !types.Boolean, "", property: :turn_upside_down
+
 end

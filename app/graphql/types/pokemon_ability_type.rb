@@ -7,4 +7,5 @@ Types::PokemonAbilityType = GraphQL::ObjectType.define do
   field :ability, !types.Int, "", property: :ability_id
   field :isHidden, !types.Boolean, "", property: :is_hidden
   field :slot, !types.Int, "", property: :slot
+
 end

@@ -6,4 +6,5 @@ Types::TypeGameIndexType = GraphQL::ObjectType.define do
   field :type, !types.Int, "", property: :type_id
   field :generation, !types.Int, "", property: :generation_id
   field :gameIndex, !types.Int, "", property: :game_index
+
 end

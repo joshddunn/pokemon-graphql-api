@@ -8,4 +8,5 @@ Types::ItemType = GraphQL::ObjectType.define do
   field :cost, !types.Int, "", property: :cost
   field :flingPower, !types.Int, "", property: :fling_power
   field :flingEffect, !types.Int, "", property: :fling_effect_id
+
 end

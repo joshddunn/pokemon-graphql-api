@@ -17,7 +17,7 @@ def build_field accessor, type, property
 end
 
 ActiveRecord::Base.connection.tables.each_with_index do |table, index|
-  if not blacklist.include? table and table == "pokemon_species"
+  if not blacklist.include? table
     file_name = "#{table.singularize}_type.rb"
     file_path = "./app/graphql/types/#{file_name}"
     output = ""

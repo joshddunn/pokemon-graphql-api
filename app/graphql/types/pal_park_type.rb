@@ -7,4 +7,5 @@ Types::PalParkType = GraphQL::ObjectType.define do
   field :area, !types.Int, "", property: :area_id
   field :baseScore, !types.Int, "", property: :base_score
   field :rate, !types.Int, "", property: :rate
+
 end

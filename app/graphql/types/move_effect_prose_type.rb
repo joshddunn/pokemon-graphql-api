@@ -7,4 +7,5 @@ Types::MoveEffectProseType = GraphQL::ObjectType.define do
   field :localLanguage, !types.Int, "", property: :local_language_id
   field :shortEffect, !types.String, "", property: :short_effect
   field :effect, !types.String, "", property: :effect
+
 end
