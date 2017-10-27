@@ -10,4 +10,5 @@ class Item < ApplicationRecord
   has_many :item_game_indices, foreign_key: :item_id
   has_many :item_names, foreign_key: :item_id
   has_many :item_proses, foreign_key: :item_id
+  has_many :machines, foreign_key: :item_id
 end
