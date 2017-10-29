@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171029203506) do
+ActiveRecord::Schema.define(version: 20171029212751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1319,6 +1319,16 @@ ActiveRecord::Schema.define(version: 20171029203506) do
   add_foreign_key "moves", "move_targets", column: "target_id"
   add_foreign_key "moves", "super_contest_effects"
   add_foreign_key "moves", "types"
+  add_foreign_key "nature_battle_style_preferences", "move_battle_styles"
+  add_foreign_key "nature_battle_style_preferences", "natures"
+  add_foreign_key "nature_names", "languages", column: "local_language_id"
+  add_foreign_key "nature_names", "natures"
+  add_foreign_key "nature_pokeathlon_stats", "natures"
+  add_foreign_key "nature_pokeathlon_stats", "pokeathlon_stats"
+  add_foreign_key "natures", "berry_flavors", column: "hates_flavor_id"
+  add_foreign_key "natures", "berry_flavors", column: "likes_flavor_id"
+  add_foreign_key "natures", "stats", column: "decreased_stat_id"
+  add_foreign_key "natures", "stats", column: "increased_stat_id"
   add_foreign_key "pokemon_species", "pokemon_colors", column: "color_id"
   add_foreign_key "pokemon_species", "pokemon_species", column: "evolves_from_species_id"
   add_foreign_key "pokemons", "pokemon_species", column: "species_id"

@@ -37,4 +37,5 @@ class Language < ApplicationRecord
   has_many :move_meta_category_proses, foreign_key: :local_language_id
   has_many :move_names, foreign_key: :local_language_id
   has_many :move_target_proses, foreign_key: :local_language_id
+  has_many :nature_names, foreign_key: :local_language_id
 end
