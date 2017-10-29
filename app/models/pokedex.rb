@@ -3,4 +3,5 @@ class Pokedex < ApplicationRecord
 
   has_many :pokedex_proses, foreign_key: :pokedex_id
   has_many :pokedex_version_groups, foreign_key: :pokedex_id
+  has_many :pokemon_dex_numbers, foreign_key: :pokedex_id
 end

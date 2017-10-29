@@ -6,4 +6,6 @@ class Generation < ApplicationRecord
   has_many :item_game_indices, foreign_key: :generation_id
   has_many :location_game_indices, foreign_key: :generation_id
   has_many :moves, foreign_key: :generation_id
+  has_many :pokemon_form_generations, foreign_key: :generation_id
+  has_many :pokemon_species, foreign_key: :generation_id
 end

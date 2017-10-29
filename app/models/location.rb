@@ -4,4 +4,5 @@ class Location < ApplicationRecord
   has_many :location_areas, foreign_key: :location_id
   has_many :location_game_indices, foreign_key: :location_id
   has_many :location_names, foreign_key: :location_id
+  has_many :pokemon_evolutions, foreign_key: :location_id
 end

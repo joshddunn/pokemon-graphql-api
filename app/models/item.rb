@@ -11,4 +11,7 @@ class Item < ApplicationRecord
   has_many :item_names, foreign_key: :item_id
   has_many :item_proses, foreign_key: :item_id
   has_many :machines, foreign_key: :item_id
+  has_many :held_items, class_name: "PokemonEvolution", foreign_key: :held_item_id
+  has_many :trigger_items, class_name: "PokemonEvolution", foreign_key: :trigger_item_id
+  has_many :pokemon_items, foreign_key: :item_id
 end

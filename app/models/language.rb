@@ -41,4 +41,13 @@ class Language < ApplicationRecord
   has_many :pal_park_area_names, foreign_key: :local_language_id
   has_many :pokeathlon_stat_names, foreign_key: :local_language_id
   has_many :pokedex_proses, foreign_key: :local_language_id
+  has_many :pokemon_color_names, foreign_key: :local_language_id
+  has_many :pokemon_form_names, foreign_key: :local_language_id
+  has_many :pokemon_habitat_names, foreign_key: :local_language_id
+  has_many :pokemon_move_method_proses, foreign_key: :local_language_id
+  has_many :pokemon_shape_proses, foreign_key: :local_language_id
+  has_many :pokemon_species_flavor_summaries, foreign_key: :local_language_id
+  has_many :pokemon_species_flavor_texts, foreign_key: :language_id
+  has_many :pokemon_species_names, foreign_key: :local_language_id
+  has_many :pokemon_species_proses, foreign_key: :local_language_id
 end

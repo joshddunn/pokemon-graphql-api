@@ -18,4 +18,6 @@ class Move < ApplicationRecord
   has_many :move_meta, foreign_key: :move_id 
   has_many :move_meta_stat_changes, foreign_key: :move_id 
   has_many :move_names, foreign_key: :move_id 
+  has_many :pokemon_evolutions, foreign_key: :known_move_id 
+  has_many :pokemon_moves, foreign_key: :move_id 
 end
