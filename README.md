@@ -22,3 +22,7 @@ Child to parent (notice singular)
 Parent to child (notice plural)
 
   PokemonSpecy.first.pokemons
+
+## CSV Issues
+
+move_effects.csv only has an id column

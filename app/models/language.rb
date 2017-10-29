@@ -26,4 +26,15 @@ class Language < ApplicationRecord
   has_many :local_language_names, class_name: "LanguageName", foreign_key: :local_language_id
   has_many :location_area_proses, foreign_key: :local_language_id
   has_many :location_names, foreign_key: :local_language_id
+  has_many :move_battle_style_proses, foreign_key: :local_language_id
+  has_many :move_damage_class_proses, foreign_key: :local_language_id
+  has_many :move_effect_changelog_proses, foreign_key: :local_language_id
+  has_many :move_effect_proses, foreign_key: :local_language_id
+  has_many :move_flag_proses, foreign_key: :local_language_id
+  has_many :move_flavor_summaries, foreign_key: :local_language_id
+  has_many :move_flavor_texts, foreign_key: :language_id
+  has_many :move_meta_ailment_names, foreign_key: :local_language_id
+  has_many :move_meta_category_proses, foreign_key: :local_language_id
+  has_many :move_names, foreign_key: :local_language_id
+  has_many :move_target_proses, foreign_key: :local_language_id
 end
