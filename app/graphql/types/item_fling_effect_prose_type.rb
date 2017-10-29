@@ -3,8 +3,8 @@ Types::ItemFlingEffectProseType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :itemFlingEffect, !types.Int, "", property: :item_fling_effect_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :itemFlingEffect, Types::ItemFlingEffectType, "", property: :item_fling_effect
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :effect, !types.String, "", property: :effect
 
 end

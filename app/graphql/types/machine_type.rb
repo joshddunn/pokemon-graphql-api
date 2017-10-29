@@ -4,8 +4,8 @@ Types::MachineType = GraphQL::ObjectType.define do
 
   field :id, !types.ID, "", property: :id
   field :machineNumber, !types.Int, "", property: :machine_number
-  field :versionGroup, !types.Int, "", property: :version_group_id
-  field :item, !types.Int, "", property: :item_id
-  field :move, !types.Int, "", property: :move_id
+  field :versionGroup, Types::VersionGroupType, "", property: :version_group
+  field :item, Types::ItemType, "", property: :item
+  field :move, Types::MoveType, "", property: :move
 
 end

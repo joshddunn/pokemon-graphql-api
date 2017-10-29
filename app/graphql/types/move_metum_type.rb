@@ -3,9 +3,9 @@ Types::MoveMetumType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :move, !types.Int, "", property: :move_id
-  field :metaCategory, !types.Int, "", property: :meta_category_id
-  field :metaAilment, !types.Int, "", property: :meta_ailment_id
+  field :move, Types::MoveType, "", property: :move
+  field :metaCategory, Types::MoveMetaCategoryType, "", property: :move_meta_category
+  field :metaAilment, Types::MoveMetaAilmentType, "", property: :move_meta_ailment
   field :minHits, !types.Int, "", property: :min_hits
   field :maxHits, !types.Int, "", property: :max_hits
   field :minTurns, !types.Int, "", property: :min_turns

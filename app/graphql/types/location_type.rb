@@ -3,7 +3,8 @@ Types::LocationType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :region, !types.Int, "", property: :region_id
+  field :region, Types::RegionType, "", property: :region
   field :identifier, !types.String, "", property: :identifier
 
+  field :location, Types::PokemonEvolutionType, "", property: :pokemon_evolutions
 end

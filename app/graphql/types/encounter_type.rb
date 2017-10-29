@@ -3,11 +3,12 @@ Types::EncounterType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :version, !types.Int, "", property: :version_id
-  field :locationArea, !types.Int, "", property: :location_area_id
-  field :encounterSlot, !types.Int, "", property: :encounter_slot_id
-  field :pokemon, !types.Int, "", property: :pokemon_id
+  field :version, Types::VersionType, "", property: :version
+  field :locationArea, Types::LocationAreaType, "", property: :location_area
+  field :encounterSlot, Types::EncounterSlotType, "", property: :encounter_slot
+  field :pokemon, Types::PokemonType, "", property: :pokemon
   field :minLevel, !types.Int, "", property: :min_level
   field :maxLevel, !types.Int, "", property: :max_level
 
+  field :encounter, Types::EncounterConditionValueMapType, "", property: :encounter_condition_value_maps
 end

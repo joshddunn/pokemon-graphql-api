@@ -3,8 +3,8 @@ Types::VersionNameType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :version, !types.Int, "", property: :version_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :version, Types::VersionType, "", property: :version
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
 
 end

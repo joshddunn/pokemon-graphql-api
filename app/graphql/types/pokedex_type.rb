@@ -3,8 +3,9 @@ Types::PokedexType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :region, !types.Int, "", property: :region_id
+  field :region, Types::RegionType, "", property: :region
   field :identifier, !types.String, "", property: :identifier
   field :isMainSeries, !types.Boolean, "", property: :is_main_series
 
+  field :pokedex, Types::PokemonDexNumberType, "", property: :pokemon_dex_numbers
 end

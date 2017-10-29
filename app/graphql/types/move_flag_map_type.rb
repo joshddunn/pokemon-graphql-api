@@ -3,7 +3,7 @@ Types::MoveFlagMapType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :move, !types.Int, "", property: :move_id
-  field :moveFlag, !types.Int, "", property: :move_flag_id
+  field :move, Types::MoveType, "", property: :move
+  field :moveFlag, Types::MoveFlagType, "", property: :move_flag
 
 end

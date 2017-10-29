@@ -3,8 +3,8 @@ Types::ItemGameIndexType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :item, !types.Int, "", property: :item_id
-  field :generation, !types.Int, "", property: :generation_id
+  field :item, Types::ItemType, "", property: :item
+  field :generation, Types::GenerationType, "", property: :generation
   field :gameIndex, !types.Int, "", property: :game_index
 
 end

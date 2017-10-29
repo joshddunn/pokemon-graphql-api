@@ -3,8 +3,8 @@ Types::ItemPocketNameType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :itemPocket, !types.Int, "", property: :item_pocket_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :itemPocket, Types::ItemPocketType, "", property: :item_pocket
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
 
 end

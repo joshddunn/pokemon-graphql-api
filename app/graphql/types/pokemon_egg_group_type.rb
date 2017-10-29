@@ -3,7 +3,7 @@ Types::PokemonEggGroupType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :species, !types.Int, "", property: :species_id
-  field :eggGroup, !types.Int, "", property: :egg_group_id
+  field :species, Types::PokemonSpecyType, "", property: :pokemon_specy
+  field :eggGroup, Types::EggGroupType, "", property: :egg_group
 
 end

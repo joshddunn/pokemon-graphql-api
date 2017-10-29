@@ -11,4 +11,5 @@ Types::PokemonType = GraphQL::ObjectType.define do
   field :order, !types.Int, "", property: :order
   field :isDefault, !types.Boolean, "", property: :is_default
 
+  field :pokemon, Types::PokemonTypeType, "", property: :pokemon_types
 end

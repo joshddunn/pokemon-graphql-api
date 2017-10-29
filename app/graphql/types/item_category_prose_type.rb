@@ -3,8 +3,8 @@ Types::ItemCategoryProseType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :itemCategory, !types.Int, "", property: :item_category_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :itemCategory, Types::ItemCategoryType, "", property: :item_category
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
 
 end

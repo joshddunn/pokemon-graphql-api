@@ -57,7 +57,7 @@ ActiveRecord::Base.connection.tables.each_with_index do |table, index|
 
     # build the fields for parent classes
     has_many.each do |k,v|
-      output += build_field "#{k}2", "Types::#{v.singularize.capitalize.camelcase}Type", v 
+      output += build_field "#{k}", "Types::#{v.singularize.capitalize.camelcase}Type", v 
     end
 
     output += "end\n"

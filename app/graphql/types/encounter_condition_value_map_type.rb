@@ -3,7 +3,7 @@ Types::EncounterConditionValueMapType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :encounter, !types.Int, "", property: :encounter_id
-  field :encounterConditionValue, !types.Int, "", property: :encounter_condition_value_id
+  field :encounter, Types::EncounterType, "", property: :encounter
+  field :encounterConditionValue, Types::EncounterConditionValueType, "", property: :encounter_condition_value
 
 end

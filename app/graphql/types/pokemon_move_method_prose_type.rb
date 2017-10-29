@@ -3,8 +3,8 @@ Types::PokemonMoveMethodProseType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :pokemonMoveMethod, !types.Int, "", property: :pokemon_move_method_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :pokemonMoveMethod, Types::PokemonMoveMethodType, "", property: :pokemon_move_method
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
   field :description, !types.String, "", property: :description
 

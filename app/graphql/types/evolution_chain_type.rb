@@ -3,6 +3,7 @@ Types::EvolutionChainType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :babyTriggerItem, !types.Int, "", property: :baby_trigger_item_id
+  field :babyTriggerItem, Types::ItemType, "", property: :item
 
+  field :evolutionChain, Types::PokemonSpecyType, "", property: :pokemon_species
 end

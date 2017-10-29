@@ -3,8 +3,8 @@ Types::MoveMetaCategoryProseType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :moveMetaCategory, !types.Int, "", property: :move_meta_category_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :moveMetaCategory, Types::MoveMetaCategoryType, "", property: :move_meta_category
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :description, !types.String, "", property: :description
 
 end

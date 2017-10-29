@@ -3,8 +3,8 @@ Types::MoveEffectChangelogProseType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :moveEffectChangelog, !types.Int, "", property: :move_effect_changelog_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :moveEffectChangelog, Types::MoveEffectChangelogType, "", property: :move_effect_changelog
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :effect, !types.String, "", property: :effect
 
 end

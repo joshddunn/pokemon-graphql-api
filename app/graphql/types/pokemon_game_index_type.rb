@@ -3,8 +3,8 @@ Types::PokemonGameIndexType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :pokemon, !types.Int, "", property: :pokemon_id
-  field :version, !types.Int, "", property: :version_id
+  field :pokemon, Types::PokemonType, "", property: :pokemon
+  field :version, Types::VersionType, "", property: :version
   field :gameIndex, !types.Int, "", property: :game_index
 
 end

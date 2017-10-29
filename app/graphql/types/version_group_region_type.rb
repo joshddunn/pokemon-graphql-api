@@ -3,7 +3,7 @@ Types::VersionGroupRegionType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :versionGroup, !types.Int, "", property: :version_group_id
-  field :region, !types.Int, "", property: :region_id
+  field :versionGroup, Types::VersionGroupType, "", property: :version_group
+  field :region, Types::RegionType, "", property: :region
 
 end

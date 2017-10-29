@@ -3,8 +3,8 @@ Types::MoveFlagProseType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :moveFlag, !types.Int, "", property: :move_flag_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :moveFlag, Types::MoveFlagType, "", property: :move_flag
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
   field :description, !types.String, "", property: :description
 

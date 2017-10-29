@@ -3,8 +3,8 @@ Types::BerryFirmnessNameType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :berryFirmness, !types.Int, "", property: :berry_firmness_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :berryFirmness, Types::BerryFirmnessType, "", property: :berry_firmness
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
 
 end

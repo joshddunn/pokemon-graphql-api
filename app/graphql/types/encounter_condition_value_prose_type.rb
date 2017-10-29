@@ -3,8 +3,8 @@ Types::EncounterConditionValueProseType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :encounterConditionValue, !types.Int, "", property: :encounter_condition_value_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :encounterConditionValue, Types::EncounterConditionValueType, "", property: :encounter_condition_value
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
 
 end

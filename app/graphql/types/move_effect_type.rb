@@ -4,4 +4,6 @@ Types::MoveEffectType = GraphQL::ObjectType.define do
 
   field :id, !types.ID, "", property: :id
 
+  field :effect, Types::MoveType, "", property: :moves
+  field :moveEffect, Types::MoveEffectProseType, "", property: :move_effect_proses
 end

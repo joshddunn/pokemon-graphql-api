@@ -3,10 +3,10 @@ Types::PokemonMoveType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :pokemon, !types.Int, "", property: :pokemon_id
-  field :versionGroup, !types.Int, "", property: :version_group_id
-  field :move, !types.Int, "", property: :move_id
-  field :pokemonMoveMethod, !types.Int, "", property: :pokemon_move_method_id
+  field :pokemon, Types::PokemonType, "", property: :pokemon
+  field :versionGroup, Types::VersionGroupType, "", property: :version_group
+  field :move, Types::MoveType, "", property: :move
+  field :pokemonMoveMethod, Types::PokemonMoveMethodType, "", property: :pokemon_move_method
   field :level, !types.Int, "", property: :level
   field :order, !types.Int, "", property: :order
 

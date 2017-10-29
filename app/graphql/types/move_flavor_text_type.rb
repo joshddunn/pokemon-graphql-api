@@ -3,9 +3,9 @@ Types::MoveFlavorTextType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :move, !types.Int, "", property: :move_id
-  field :versionGroup, !types.Int, "", property: :version_group_id
-  field :language, !types.Int, "", property: :language_id
+  field :move, Types::MoveType, "", property: :move
+  field :versionGroup, Types::VersionGroupType, "", property: :version_group
+  field :language, Types::LanguageType, "", property: :language
   field :flavorText, !types.String, "", property: :flavor_text
 
 end

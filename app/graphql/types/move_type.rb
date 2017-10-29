@@ -4,18 +4,22 @@ Types::MoveType = GraphQL::ObjectType.define do
 
   field :id, !types.ID, "", property: :id
   field :identifier, !types.String, "", property: :identifier
-  field :generation, !types.Int, "", property: :generation_id
-  field :type, !types.Int, "", property: :type_id
+  field :generation, Types::GenerationType, "", property: :generation
+  field :type, Types::TypeType, "", property: :type
   field :power, !types.Int, "", property: :power
   field :pp, !types.Int, "", property: :pp
   field :accuracy, !types.Int, "", property: :accuracy
   field :priority, !types.Int, "", property: :priority
-  field :target, !types.Int, "", property: :target_id
-  field :damageClass, !types.Int, "", property: :damage_class_id
-  field :effect, !types.Int, "", property: :effect_id
+  field :target, Types::MoveTargetType, "", property: :move_target
+  field :damageClass, Types::MoveDamageClassType, "", property: :move_damage_class
+  field :effect, Types::MoveEffectType, "", property: :move_effect
   field :effectChance, !types.Int, "", property: :effect_chance
-  field :contestType, !types.Int, "", property: :contest_type_id
-  field :contestEffect, !types.Int, "", property: :contest_effect_id
-  field :superContestEffect, !types.Int, "", property: :super_contest_effect_id
+  field :contestType, Types::ContestTypType, "", property: :contest_typ
+  field :contestEffect, Types::ContestEffectType, "", property: :contest_effect
+  field :superContestEffect, Types::SuperContestEffectType, "", property: :super_contest_effect
 
+  field :firstMove, Types::SuperContestComboFirstMoveType, "", property: :super_contest_combo_first_moves
+  field :secondMove, Types::SuperContestComboSecondMoveType, "", property: :super_contest_combo_second_moves
+  field :move, Types::PokemonMoveType, "", property: :pokemon_moves
+  field :knownMove, Types::PokemonEvolutionType, "", property: :pokemon_evolutions
 end

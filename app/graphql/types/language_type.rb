@@ -9,4 +9,6 @@ Types::LanguageType = GraphQL::ObjectType.define do
   field :official, !types.Boolean, "", property: :official
   field :order, !types.Int, "", property: :order
 
+  field :localLanguage, Types::VersionNameType, "", property: :version_names
+  field :language, Types::PokemonSpeciesFlavorTextType, "", property: :pokemon_species_flavor_texts
 end

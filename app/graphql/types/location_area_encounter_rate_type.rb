@@ -3,9 +3,9 @@ Types::LocationAreaEncounterRateType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :locationArea, !types.Int, "", property: :location_area_id
-  field :encounterMethod, !types.Int, "", property: :encounter_method_id
-  field :version, !types.Int, "", property: :version_id
+  field :locationArea, Types::LocationAreaType, "", property: :location_area
+  field :encounterMethod, Types::EncounterMethodType, "", property: :encounter_method
+  field :version, Types::VersionType, "", property: :version
   field :rate, !types.Int, "", property: :rate
 
 end

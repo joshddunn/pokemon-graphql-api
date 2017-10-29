@@ -3,8 +3,8 @@ Types::EncounterMethodProseType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :encounterMethod, !types.Int, "", property: :encounter_method_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :encounterMethod, Types::EncounterMethodType, "", property: :encounter_method
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
 
 end

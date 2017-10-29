@@ -3,8 +3,8 @@ Types::ItemFlagProseType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :itemFlag, !types.Int, "", property: :item_flag_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :itemFlag, Types::ItemFlagType, "", property: :item_flag
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
   field :description, !types.String, "", property: :description
 

@@ -3,9 +3,9 @@ Types::AbilityFlavorTextType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :ability, !types.Int, "", property: :ability_id
-  field :versionGroup, !types.Int, "", property: :version_group_id
-  field :language, !types.Int, "", property: :language_id
+  field :ability, Types::AbilityType, "", property: :ability
+  field :versionGroup, Types::VersionGroupType, "", property: :version_group
+  field :language, Types::LanguageType, "", property: :language
   field :flavorText, !types.String, "", property: :flavor_text
 
 end

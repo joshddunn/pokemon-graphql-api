@@ -3,8 +3,8 @@ Types::GrowthRateProseType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :growthRate, !types.Int, "", property: :growth_rate_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :growthRate, Types::GrowthRateType, "", property: :growth_rate
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
 
 end

@@ -3,7 +3,8 @@ Types::CharacteristicType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :stat, !types.Int, "", property: :stat_id
+  field :stat, Types::StatType, "", property: :stat
   field :geneMod5, !types.Int, "", property: :gene_mod_5
 
+  field :characteristic, Types::CharacteristicTextType, "", property: :characteristic_texts
 end

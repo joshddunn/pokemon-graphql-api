@@ -3,8 +3,8 @@ Types::EggGroupProseType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :eggGroup, !types.Int, "", property: :egg_group_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :eggGroup, Types::EggGroupType, "", property: :egg_group
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
 
 end

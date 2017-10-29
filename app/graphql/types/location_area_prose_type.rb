@@ -3,8 +3,8 @@ Types::LocationAreaProseType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :locationArea, !types.Int, "", property: :location_area_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :locationArea, Types::LocationAreaType, "", property: :location_area
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
 
 end

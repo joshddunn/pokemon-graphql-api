@@ -5,5 +5,6 @@ Types::PokemonColorType = GraphQL::ObjectType.define do
   field :id, !types.ID, "", property: :id
   field :identifier, !types.String, "", property: :identifier
 
-  field :colorId2, Types::PokemonSpecyType, "", property: :pokemon_species
+  field :color, Types::PokemonSpecyType, "", property: :pokemon_species
+  field :pokemonColor, Types::PokemonColorNameType, "", property: :pokemon_color_names
 end

@@ -3,8 +3,8 @@ Types::SuperContestEffectProseType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :superContestEffect, !types.Int, "", property: :super_contest_effect_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :superContestEffect, Types::SuperContestEffectType, "", property: :super_contest_effect
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :flavorText, !types.String, "", property: :flavor_text
 
 end

@@ -3,8 +3,8 @@ Types::PokemonFormGenerationType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :pokemonForm, !types.Int, "", property: :pokemon_form_id
-  field :generation, !types.Int, "", property: :generation_id
+  field :pokemonForm, Types::PokemonFormType, "", property: :pokemon_form
+  field :generation, Types::GenerationType, "", property: :generation
   field :gameIndex, !types.Int, "", property: :game_index
 
 end

@@ -3,8 +3,8 @@ Types::PokemonTypeType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :pokemon, !types.Int, "", property: :pokemon_id
-  field :type, !types.Int, "", property: :type_id
+  field :pokemon, Types::PokemonType, "", property: :pokemon
+  field :type, Types::TypeType, "", property: :type
   field :slot, !types.Int, "", property: :slot
 
 end

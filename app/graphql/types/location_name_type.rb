@@ -3,8 +3,8 @@ Types::LocationNameType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :location, !types.Int, "", property: :location_id
-  field :localLanguage, !types.Int, "", property: :local_language_id
+  field :location, Types::LocationType, "", property: :location
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
 
 end

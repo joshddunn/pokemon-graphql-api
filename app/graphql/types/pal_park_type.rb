@@ -3,8 +3,8 @@ Types::PalParkType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :species, !types.Int, "", property: :species_id
-  field :area, !types.Int, "", property: :area_id
+  field :species, Types::PokemonSpecyType, "", property: :pokemon_specy
+  field :area, Types::PalParkAreaType, "", property: :pal_park_area
   field :baseScore, !types.Int, "", property: :base_score
   field :rate, !types.Int, "", property: :rate
 

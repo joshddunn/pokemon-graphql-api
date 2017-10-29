@@ -3,8 +3,8 @@ Types::MoveMetaStatChangeType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :move, !types.Int, "", property: :move_id
-  field :stat, !types.Int, "", property: :stat_id
+  field :move, Types::MoveType, "", property: :move
+  field :stat, Types::StatType, "", property: :stat
   field :change, !types.Int, "", property: :change
 
 end
