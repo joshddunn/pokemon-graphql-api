@@ -4,4 +4,5 @@ class PokemonSpecy < ApplicationRecord
   
   has_many :pokemons, foreign_key: :species_id
   has_many :pokemon_species, foreign_key: :evolves_from_species_id
+  has_many :pal_parks, foreign_key: :species_id
 end

@@ -38,4 +38,5 @@ class Language < ApplicationRecord
   has_many :move_names, foreign_key: :local_language_id
   has_many :move_target_proses, foreign_key: :local_language_id
   has_many :nature_names, foreign_key: :local_language_id
+  has_many :pal_park_area_names, foreign_key: :local_language_id
 end
