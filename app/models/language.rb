@@ -50,4 +50,9 @@ class Language < ApplicationRecord
   has_many :pokemon_species_flavor_texts, foreign_key: :language_id
   has_many :pokemon_species_names, foreign_key: :local_language_id
   has_many :pokemon_species_proses, foreign_key: :local_language_id
+  has_many :region_names, foreign_key: :local_language_id
+  has_many :stat_names, foreign_key: :local_language_id
+  has_many :super_contest_effect_proses, foreign_key: :local_language_id
+  has_many :type_names, foreign_key: :local_language_id
+  has_many :version_names, foreign_key: :local_language_id
 end

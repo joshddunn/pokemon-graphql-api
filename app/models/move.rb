@@ -20,4 +20,6 @@ class Move < ApplicationRecord
   has_many :move_names, foreign_key: :move_id 
   has_many :pokemon_evolutions, foreign_key: :known_move_id 
   has_many :pokemon_moves, foreign_key: :move_id 
+  has_many :super_contest_combo_first_moves, class_name: "SuperContestCombo", foreign_key: :first_move_id
+  has_many :super_contest_combo_second_moves, class_name: "SuperContestCombo", foreign_key: :second_move_id
 end

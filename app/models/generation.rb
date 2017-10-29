@@ -8,4 +8,7 @@ class Generation < ApplicationRecord
   has_many :moves, foreign_key: :generation_id
   has_many :pokemon_form_generations, foreign_key: :generation_id
   has_many :pokemon_species, foreign_key: :generation_id
+  has_many :type_game_indices, foreign_key: :generation_id
+  has_many :types, foreign_key: :generation_id
+  has_many :version_groups, foreign_key: :generation_id
 end

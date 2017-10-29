@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171029215613) do
+ActiveRecord::Schema.define(version: 20171029225530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1403,4 +1403,29 @@ ActiveRecord::Schema.define(version: 20171029215613) do
   add_foreign_key "pokemon_types", "pokemons"
   add_foreign_key "pokemon_types", "types"
   add_foreign_key "pokemons", "pokemon_species", column: "species_id"
+  add_foreign_key "region_names", "languages", column: "local_language_id"
+  add_foreign_key "region_names", "regions"
+  add_foreign_key "stat_names", "languages", column: "local_language_id"
+  add_foreign_key "stat_names", "stats"
+  add_foreign_key "stats", "move_damage_classes", column: "damage_class_id"
+  add_foreign_key "super_contest_combos", "moves", column: "first_move_id"
+  add_foreign_key "super_contest_combos", "moves", column: "second_move_id"
+  add_foreign_key "super_contest_effect_proses", "languages", column: "local_language_id"
+  add_foreign_key "super_contest_effect_proses", "super_contest_effects"
+  add_foreign_key "type_efficacies", "types", column: "damage_type_id"
+  add_foreign_key "type_efficacies", "types", column: "target_type_id"
+  add_foreign_key "type_game_indices", "generations"
+  add_foreign_key "type_game_indices", "types"
+  add_foreign_key "type_names", "languages", column: "local_language_id"
+  add_foreign_key "type_names", "types"
+  add_foreign_key "types", "generations"
+  add_foreign_key "types", "move_damage_classes", column: "damage_class_id"
+  add_foreign_key "version_group_pokemon_move_methods", "pokemon_move_methods"
+  add_foreign_key "version_group_pokemon_move_methods", "version_groups"
+  add_foreign_key "version_group_regions", "regions"
+  add_foreign_key "version_group_regions", "version_groups"
+  add_foreign_key "version_groups", "generations"
+  add_foreign_key "version_names", "languages", column: "local_language_id"
+  add_foreign_key "version_names", "versions"
+  add_foreign_key "versions", "version_groups"
 end
