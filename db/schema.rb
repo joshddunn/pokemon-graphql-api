@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171029214310) do
+ActiveRecord::Schema.define(version: 20171029214826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1333,6 +1333,13 @@ ActiveRecord::Schema.define(version: 20171029214310) do
   add_foreign_key "pal_park_area_names", "pal_park_areas"
   add_foreign_key "pal_parks", "pal_park_areas", column: "area_id"
   add_foreign_key "pal_parks", "pokemon_species", column: "species_id"
+  add_foreign_key "pokeathlon_stat_names", "languages", column: "local_language_id"
+  add_foreign_key "pokeathlon_stat_names", "pokeathlon_stats"
+  add_foreign_key "pokedex_proses", "languages", column: "local_language_id"
+  add_foreign_key "pokedex_proses", "pokedexes"
+  add_foreign_key "pokedex_version_groups", "pokedexes"
+  add_foreign_key "pokedex_version_groups", "version_groups"
+  add_foreign_key "pokedexes", "regions"
   add_foreign_key "pokemon_species", "pokemon_colors", column: "color_id"
   add_foreign_key "pokemon_species", "pokemon_species", column: "evolves_from_species_id"
   add_foreign_key "pokemons", "pokemon_species", column: "species_id"

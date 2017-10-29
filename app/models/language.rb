@@ -39,4 +39,6 @@ class Language < ApplicationRecord
   has_many :move_target_proses, foreign_key: :local_language_id
   has_many :nature_names, foreign_key: :local_language_id
   has_many :pal_park_area_names, foreign_key: :local_language_id
+  has_many :pokeathlon_stat_names, foreign_key: :local_language_id
+  has_many :pokedex_proses, foreign_key: :local_language_id
 end

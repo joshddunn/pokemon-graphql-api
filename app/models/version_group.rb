@@ -7,4 +7,5 @@ class VersionGroup < ApplicationRecord
   has_many :move_changelogs, foreign_key: :changed_in_version_group_id
   has_many :move_effect_changelogs, foreign_key: :changed_in_version_group_id
   has_many :move_flavor_texts, foreign_key: :version_group_id
+  has_many :pokedex_version_groups, foreign_key: :version_group_id
 end
