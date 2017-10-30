@@ -26,3 +26,9 @@ Parent to child (notice plural)
 ## CSV Issues
 
 move_effects.csv only has an id column
+
+## Graphql types
+
+When accessing a `has_many` attribute type you need to put it inside of the graphql array. For example
+
+    !types[Type::PokemonSpecyType]
