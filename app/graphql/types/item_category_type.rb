@@ -6,6 +6,6 @@ Types::ItemCategoryType = GraphQL::ObjectType.define do
   field :pocket, Types::ItemPocketType, "", property: :item_pocket
   field :identifier, !types.String, "", property: :identifier
 
-  field :itemCategory, Types::ItemCategoryProseType, "", property: :item_category_proses
-  field :category, Types::ItemType, "", property: :items
+  field :itemCategoryProses, !types[Types::ItemCategoryProseType], "", property: :item_category_proses
+  field :items, !types[Types::ItemType], "", property: :items
 end

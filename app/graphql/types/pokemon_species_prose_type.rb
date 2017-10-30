@@ -5,6 +5,6 @@ Types::PokemonSpeciesProseType = GraphQL::ObjectType.define do
   field :id, !types.ID, "", property: :id
   field :pokemonSpecies, Types::PokemonSpecyType, "", property: :pokemon_specy
   field :localLanguage, Types::LanguageType, "", property: :language
-  field :formDescription, , "", property: :form_description
+  field :formDescription, !types.String, "", property: :form_description
 
 end

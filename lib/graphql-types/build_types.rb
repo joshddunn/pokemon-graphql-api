@@ -8,6 +8,7 @@ blacklist = [
 type_keys = {
   id: "!types.ID",
   string: "!types.String",
+  text: "!types.String",
   integer: "!types.Int",
   boolean: "!types.Boolean",
 }
@@ -32,9 +33,9 @@ ActiveRecord::Base.connection.tables.each_with_index do |table, index|
     has_many = {}
     model.reflections.each_pair do |k,v|
       if v.macro == :belongs_to
-        belongs_to[v.options[:foreign_key].to_s] = k
+        belongs_to[v.options[:foreign_key].to_s] = v.class_name.to_s
       elsif v.macro == :has_many
-        has_many[v.options[:foreign_key].to_s] = k
+        has_many[k] = v.class_name.to_s
       end
     end
 
@@ -45,7 +46,7 @@ ActiveRecord::Base.connection.tables.each_with_index do |table, index|
     # build the fields depending on primary key / foreign key / type
     model.columns.each do |column|
       if belongs_to[column.name]
-        output += build_field column.name, "Types::#{belongs_to[column.name].singularize.capitalize.camelcase}Type", belongs_to[column.name]
+        output += build_field column.name, "Types::#{belongs_to[column.name]}Type", belongs_to[column.name].underscore
       elsif column.name == model.primary_key
         output += build_field "id",  type_keys[:id], "id"
       elsif column.type.to_s != "datetime" 
@@ -57,7 +58,7 @@ ActiveRecord::Base.connection.tables.each_with_index do |table, index|
 
     # build the fields for parent classes
     has_many.each do |k,v|
-      output += build_field "#{k}", "Types::#{v.singularize.capitalize.camelcase}Type", v 
+      output += build_field "#{k}", "!types[Types::#{v}Type]", k 
     end
 
     output += "end\n"

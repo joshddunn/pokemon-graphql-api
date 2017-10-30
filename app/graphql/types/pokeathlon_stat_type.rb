@@ -5,5 +5,7 @@ Types::PokeathlonStatType = GraphQL::ObjectType.define do
   field :id, !types.ID, "", property: :id
   field :identifier, !types.String, "", property: :identifier
 
-  field :pokeathlonStat, Types::PokemonFormPokeathlonStatType, "", property: :pokemon_form_pokeathlon_stats
+  field :naturePokeathlonStats, !types[Types::NaturePokeathlonStatType], "", property: :nature_pokeathlon_stats
+  field :pokeathlonStatNames, !types[Types::PokeathlonStatNameType], "", property: :pokeathlon_stat_names
+  field :pokemonFormPokeathlonStats, !types[Types::PokemonFormPokeathlonStatType], "", property: :pokemon_form_pokeathlon_stats
 end

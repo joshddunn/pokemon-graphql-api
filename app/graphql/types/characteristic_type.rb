@@ -6,5 +6,5 @@ Types::CharacteristicType = GraphQL::ObjectType.define do
   field :stat, Types::StatType, "", property: :stat
   field :geneMod5, !types.Int, "", property: :gene_mod_5
 
-  field :characteristic, Types::CharacteristicTextType, "", property: :characteristic_texts
+  field :characteristicTexts, !types[Types::CharacteristicTextType], "", property: :characteristic_texts
 end

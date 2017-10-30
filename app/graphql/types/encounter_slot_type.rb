@@ -8,5 +8,5 @@ Types::EncounterSlotType = GraphQL::ObjectType.define do
   field :slot, !types.Int, "", property: :slot
   field :rarity, !types.Int, "", property: :rarity
 
-  field :encounterSlot, Types::EncounterType, "", property: :encounters
+  field :encounters, !types[Types::EncounterType], "", property: :encounters
 end

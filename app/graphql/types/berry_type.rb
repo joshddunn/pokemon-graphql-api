@@ -13,5 +13,5 @@ Types::BerryType = GraphQL::ObjectType.define do
   field :soilDryness, !types.Int, "", property: :soil_dryness
   field :smoothness, !types.Int, "", property: :smoothness
 
-  field :berry, Types::BerryFlavorType, "", property: :berry_flavors
+  field :berryFlavors, !types[Types::BerryFlavorType], "", property: :berry_flavors
 end

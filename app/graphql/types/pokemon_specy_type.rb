@@ -21,10 +21,16 @@ Types::PokemonSpecyType = GraphQL::ObjectType.define do
   field :order, !types.Int, "", property: :order
   field :conquestOrder, !types.Int, "", property: :conquest_order
 
-  field :species, Types::PokemonSpeciesFlavorTextType, "", property: :pokemon_species_flavor_texts
-  field :evolvesFromSpecies, Types::PokemonSpecyType, "", property: :pokemon_species
-  field :evolvedSpecies, Types::EvolvedSpecyType, "", property: :evolved_species
-  field :partySpecies, Types::PartySpecyType, "", property: :party_species
-  field :tradeSpecies, Types::TradeSpecyType, "", property: :trade_species
-  field :pokemonSpecies, Types::PokemonSpeciesProseType, "", property: :pokemon_species_proses
+  field :pokemons, !types[Types::PokemonType], "", property: :pokemons
+  field :pokemonSpecies, !types[Types::PokemonSpecyType], "", property: :pokemon_species
+  field :palParks, !types[Types::PalParkType], "", property: :pal_parks
+  field :pokemonDexNumbers, !types[Types::PokemonDexNumberType], "", property: :pokemon_dex_numbers
+  field :pokemonEggGroups, !types[Types::PokemonEggGroupType], "", property: :pokemon_egg_groups
+  field :evolvedSpecies, !types[Types::PokemonEvolutionType], "", property: :evolved_species
+  field :partySpecies, !types[Types::PokemonEvolutionType], "", property: :party_species
+  field :tradeSpecies, !types[Types::PokemonEvolutionType], "", property: :trade_species
+  field :pokemonSpeciesFlavorSummaries, !types[Types::PokemonSpeciesFlavorSummaryType], "", property: :pokemon_species_flavor_summaries
+  field :pokemonSpeciesFlavorTexts, !types[Types::PokemonSpeciesFlavorTextType], "", property: :pokemon_species_flavor_texts
+  field :pokemonSpeciesNames, !types[Types::PokemonSpeciesNameType], "", property: :pokemon_species_names
+  field :pokemonSpeciesProses, !types[Types::PokemonSpeciesProseType], "", property: :pokemon_species_proses
 end

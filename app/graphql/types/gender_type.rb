@@ -5,5 +5,5 @@ Types::GenderType = GraphQL::ObjectType.define do
   field :id, !types.ID, "", property: :id
   field :identifier, !types.String, "", property: :identifier
 
-  field :gender, Types::PokemonEvolutionType, "", property: :pokemon_evolutions
+  field :pokemonEvolutions, !types[Types::PokemonEvolutionType], "", property: :pokemon_evolutions
 end

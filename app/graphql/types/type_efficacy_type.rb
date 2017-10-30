@@ -3,8 +3,8 @@ Types::TypeEfficacyType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :damageType, Types::DamageTypeType, "", property: :damage_type
-  field :targetType, Types::TargetTypeType, "", property: :target_type
+  field :damageType, Types::TypeType, "", property: :type
+  field :targetType, Types::TypeType, "", property: :type
   field :damageFactor, !types.Int, "", property: :damage_factor
 
 end

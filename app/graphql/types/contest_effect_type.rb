@@ -6,5 +6,6 @@ Types::ContestEffectType = GraphQL::ObjectType.define do
   field :appeal, !types.Int, "", property: :appeal
   field :jam, !types.Int, "", property: :jam
 
-  field :contestEffect, Types::MoveType, "", property: :moves
+  field :contestEffectProses, !types[Types::ContestEffectProseType], "", property: :contest_effect_proses
+  field :moves, !types[Types::MoveType], "", property: :moves
 end

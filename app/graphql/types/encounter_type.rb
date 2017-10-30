@@ -10,5 +10,5 @@ Types::EncounterType = GraphQL::ObjectType.define do
   field :minLevel, !types.Int, "", property: :min_level
   field :maxLevel, !types.Int, "", property: :max_level
 
-  field :encounter, Types::EncounterConditionValueMapType, "", property: :encounter_condition_value_maps
+  field :encounterConditionValueMaps, !types[Types::EncounterConditionValueMapType], "", property: :encounter_condition_value_maps
 end

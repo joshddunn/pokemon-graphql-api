@@ -4,7 +4,7 @@ Types::LanguageNameType = GraphQL::ObjectType.define do
 
   field :id, !types.ID, "", property: :id
   field :language, Types::LanguageType, "", property: :language
-  field :localLanguage, Types::LocalLanguageType, "", property: :local_language
+  field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
 
 end

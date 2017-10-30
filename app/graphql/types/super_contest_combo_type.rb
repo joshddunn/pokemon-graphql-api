@@ -3,7 +3,7 @@ Types::SuperContestComboType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :firstMove, Types::SuperContestComboFirstMoveType, "", property: :super_contest_combo_first_move
-  field :secondMove, Types::SuperContestComboSecondMoveType, "", property: :super_contest_combo_second_move
+  field :firstMove, Types::MoveType, "", property: :move
+  field :secondMove, Types::MoveType, "", property: :move
 
 end

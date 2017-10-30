@@ -7,6 +7,6 @@ Types::BerryFlavorType = GraphQL::ObjectType.define do
   field :contestType, Types::ContestTypeType, "", property: :contest_type
   field :flavor, !types.Int, "", property: :flavor
 
-  field :likesFlavor, Types::LikesFlavorType, "", property: :likes_flavors
-  field :hatesFlavor, Types::HatesFlavorType, "", property: :hates_flavors
+  field :likesFlavors, !types[Types::NatureType], "", property: :likes_flavors
+  field :hatesFlavors, !types[Types::NatureType], "", property: :hates_flavors
 end

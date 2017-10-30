@@ -13,5 +13,7 @@ Types::PokemonFormType = GraphQL::ObjectType.define do
   field :formOrder, !types.Int, "", property: :form_order
   field :order, !types.Int, "", property: :order
 
-  field :pokemonForm, Types::PokemonFormPokeathlonStatType, "", property: :pokemon_form_pokeathlon_stats
+  field :pokemonFormGenerations, !types[Types::PokemonFormGenerationType], "", property: :pokemon_form_generations
+  field :pokemonFormNames, !types[Types::PokemonFormNameType], "", property: :pokemon_form_names
+  field :pokemonFormPokeathlonStats, !types[Types::PokemonFormPokeathlonStatType], "", property: :pokemon_form_pokeathlon_stats
 end

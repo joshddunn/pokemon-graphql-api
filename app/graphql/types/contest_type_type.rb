@@ -5,5 +5,7 @@ Types::ContestTypeType = GraphQL::ObjectType.define do
   field :id, !types.ID, "", property: :id
   field :identifier, !types.String, "", property: :identifier
 
-  field :contestType, Types::MoveType, "", property: :moves
+  field :berryFlavors, !types[Types::BerryFlavorType], "", property: :berry_flavors
+  field :contestTypeNames, !types[Types::ContestTypeNameType], "", property: :contest_type_names
+  field :moves, !types[Types::MoveType], "", property: :moves
 end

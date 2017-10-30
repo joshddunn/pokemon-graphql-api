@@ -3,7 +3,7 @@ Types::MoveBattleStyleProseType = GraphQL::ObjectType.define do
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :moveBattleStyle, Types::MoveBattleStyleType, "", property: :move_battle_styles
+  field :moveBattleStyle, Types::MoveBattleStyleType, "", property: :move_battle_style
   field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
 

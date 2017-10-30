@@ -14,12 +14,22 @@ Types::MoveType = GraphQL::ObjectType.define do
   field :damageClass, Types::MoveDamageClassType, "", property: :move_damage_class
   field :effect, Types::MoveEffectType, "", property: :move_effect
   field :effectChance, !types.Int, "", property: :effect_chance
-  field :contestType, Types::ContestTypType, "", property: :contest_typ
+  field :contestType, Types::ContestTypeType, "", property: :contest_type
   field :contestEffect, Types::ContestEffectType, "", property: :contest_effect
   field :superContestEffect, Types::SuperContestEffectType, "", property: :super_contest_effect
 
-  field :firstMove, Types::SuperContestComboFirstMoveType, "", property: :super_contest_combo_first_moves
-  field :secondMove, Types::SuperContestComboSecondMoveType, "", property: :super_contest_combo_second_moves
-  field :move, Types::PokemonMoveType, "", property: :pokemon_moves
-  field :knownMove, Types::PokemonEvolutionType, "", property: :pokemon_evolutions
+  field :contestComboFirstMoves, !types[Types::ContestComboType], "", property: :contest_combo_first_moves
+  field :contestComboSecondMoves, !types[Types::ContestComboType], "", property: :contest_combo_second_moves
+  field :machines, !types[Types::MachineType], "", property: :machines
+  field :moveChangelogs, !types[Types::MoveChangelogType], "", property: :move_changelogs
+  field :moveFlagMaps, !types[Types::MoveFlagMapType], "", property: :move_flag_maps
+  field :moveFlavorSummaries, !types[Types::MoveFlavorSummaryType], "", property: :move_flavor_summaries
+  field :moveFlavorTexts, !types[Types::MoveFlavorTextType], "", property: :move_flavor_texts
+  field :moveMeta, !types[Types::MoveMetumType], "", property: :move_meta
+  field :moveMetaStatChanges, !types[Types::MoveMetaStatChangeType], "", property: :move_meta_stat_changes
+  field :moveNames, !types[Types::MoveNameType], "", property: :move_names
+  field :pokemonEvolutions, !types[Types::PokemonEvolutionType], "", property: :pokemon_evolutions
+  field :pokemonMoves, !types[Types::PokemonMoveType], "", property: :pokemon_moves
+  field :superContestComboFirstMoves, !types[Types::SuperContestComboType], "", property: :super_contest_combo_first_moves
+  field :superContestComboSecondMoves, !types[Types::SuperContestComboType], "", property: :super_contest_combo_second_moves
 end

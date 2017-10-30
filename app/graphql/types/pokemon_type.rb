@@ -11,5 +11,12 @@ Types::PokemonType = GraphQL::ObjectType.define do
   field :order, !types.Int, "", property: :order
   field :isDefault, !types.Boolean, "", property: :is_default
 
-  field :pokemon, Types::PokemonTypeType, "", property: :pokemon_types
+  field :encounters, !types[Types::EncounterType], "", property: :encounters
+  field :pokemonAbilities, !types[Types::PokemonAbilityType], "", property: :pokemon_abilities
+  field :pokemonForms, !types[Types::PokemonFormType], "", property: :pokemon_forms
+  field :pokemonGameIndices, !types[Types::PokemonGameIndexType], "", property: :pokemon_game_indices
+  field :pokemonItems, !types[Types::PokemonItemType], "", property: :pokemon_items
+  field :pokemonMoves, !types[Types::PokemonMoveType], "", property: :pokemon_moves
+  field :pokemonStats, !types[Types::PokemonStatType], "", property: :pokemon_stats
+  field :pokemonTypes, !types[Types::PokemonTypeType], "", property: :pokemon_types
 end

@@ -8,7 +8,10 @@ Types::StatType = GraphQL::ObjectType.define do
   field :isBattleOnly, !types.Boolean, "", property: :is_battle_only
   field :gameIndex, !types.Int, "", property: :game_index
 
-  field :stat, Types::StatNameType, "", property: :stat_names
-  field :decreasedStat, Types::DecreasedStatType, "", property: :decreased_stats
-  field :increasedStat, Types::IncreasedStatType, "", property: :increased_stats
+  field :characteristics, !types[Types::CharacteristicType], "", property: :characteristics
+  field :moveMetaStatChanges, !types[Types::MoveMetaStatChangeType], "", property: :move_meta_stat_changes
+  field :decreasedStats, !types[Types::NatureType], "", property: :decreased_stats
+  field :increasedStats, !types[Types::NatureType], "", property: :increased_stats
+  field :pokemonStats, !types[Types::PokemonStatType], "", property: :pokemon_stats
+  field :statNames, !types[Types::StatNameType], "", property: :stat_names
 end

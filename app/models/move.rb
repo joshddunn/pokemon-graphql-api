@@ -4,7 +4,7 @@ class Move < ApplicationRecord
   belongs_to :move_target, foreign_key: :target_id
   belongs_to :move_damage_class, foreign_key: :damage_class_id
   belongs_to :move_effect, foreign_key: :effect_id
-  belongs_to :contest_typ, foreign_key: :contest_type_id
+  belongs_to :contest_type, foreign_key: :contest_type_id
   belongs_to :contest_effect, foreign_key: :contest_effect_id
   belongs_to :super_contest_effect, foreign_key: :super_contest_effect_id
 
