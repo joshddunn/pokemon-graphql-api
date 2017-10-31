@@ -33,4 +33,10 @@ Types::PokemonSpecyType = GraphQL::ObjectType.define do
   field :pokemonSpeciesFlavorTexts, !types[Types::PokemonSpeciesFlavorTextType], "", property: :pokemon_species_flavor_texts
   field :pokemonSpeciesNames, !types[Types::PokemonSpeciesNameType], "", property: :pokemon_species_names
   field :pokemonSpeciesProses, !types[Types::PokemonSpeciesProseType], "", property: :pokemon_species_proses
+  field :conquestMaxLinks, !types[Types::ConquestMaxLinkType], "", property: :conquest_max_links
+  field :conquestPokemonAbilities, !types[Types::ConquestPokemonAbilityType], "", property: :conquest_pokemon_abilities
+  field :conquestPokemonEvolutions, !types[Types::ConquestPokemonEvolutionType], "", property: :conquest_pokemon_evolutions
+  field :conquestPokemonMoves, !types[Types::ConquestPokemonMoveType], "", property: :conquest_pokemon_moves
+  field :conquestPokemonStats, !types[Types::ConquestPokemonStatType], "", property: :conquest_pokemon_stats
+  field :conquestTransformationPokemons, !types[Types::ConquestTransformationPokemonType], "", property: :conquest_transformation_pokemons
 end

@@ -32,4 +32,6 @@ Types::MoveType = GraphQL::ObjectType.define do
   field :pokemonMoves, !types[Types::PokemonMoveType], "", property: :pokemon_moves
   field :superContestComboFirstMoves, !types[Types::SuperContestComboType], "", property: :super_contest_combo_first_moves
   field :superContestComboSecondMoves, !types[Types::SuperContestComboType], "", property: :super_contest_combo_second_moves
+  field :conquestMoveData, !types[Types::ConquestMoveDatumType], "", property: :conquest_move_data
+  field :conquestPokemonMoves, !types[Types::ConquestPokemonMoveType], "", property: :conquest_pokemon_moves
 end

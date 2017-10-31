@@ -21,4 +21,5 @@ Types::ItemType = GraphQL::ObjectType.define do
   field :heldItems, !types[Types::PokemonEvolutionType], "", property: :held_items
   field :triggerItems, !types[Types::PokemonEvolutionType], "", property: :trigger_items
   field :pokemonItems, !types[Types::PokemonItemType], "", property: :pokemon_items
+  field :conquestPokemonEvolutions, !types[Types::ConquestPokemonEvolutionType], "", property: :conquest_pokemon_evolutions
 end

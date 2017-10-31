@@ -7,4 +7,5 @@ Types::MoveTargetType = GraphQL::ObjectType.define do
 
   field :moveTargetProses, !types[Types::MoveTargetProseType], "", property: :move_target_proses
   field :moves, !types[Types::MoveType], "", property: :moves
+  field :moveChangelogs, !types[Types::MoveChangelogType], "", property: :move_changelogs
 end

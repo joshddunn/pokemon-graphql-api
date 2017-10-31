@@ -14,4 +14,5 @@ Types::StatType = GraphQL::ObjectType.define do
   field :increasedStats, !types[Types::NatureType], "", property: :increased_stats
   field :pokemonStats, !types[Types::PokemonStatType], "", property: :pokemon_stats
   field :statNames, !types[Types::StatNameType], "", property: :stat_names
+  field :conquestPokemonEvolutions, !types[Types::ConquestPokemonEvolutionType], "", property: :conquest_pokemon_evolutions
 end

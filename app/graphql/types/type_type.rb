@@ -17,4 +17,7 @@ Types::TypeType = GraphQL::ObjectType.define do
   field :targetTypes, !types[Types::TypeEfficacyType], "", property: :target_types
   field :typeGameIndices, !types[Types::TypeGameIndexType], "", property: :type_game_indices
   field :typeNames, !types[Types::TypeNameType], "", property: :type_names
+  field :conquestKingdoms, !types[Types::ConquestKingdomType], "", property: :conquest_kingdoms
+  field :conquestWarriorSpecialties, !types[Types::ConquestWarriorSpecialtyType], "", property: :conquest_warrior_specialties
+  field :conquestWarriorTransformations, !types[Types::ConquestWarriorTransformationType], "", property: :conquest_warrior_transformations
 end

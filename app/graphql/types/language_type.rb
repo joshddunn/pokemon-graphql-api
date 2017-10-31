@@ -9,6 +9,14 @@ Types::LanguageType = GraphQL::ObjectType.define do
   field :official, !types.Boolean, "", property: :official
   field :order, !types.Int, "", property: :order
 
+  field :conquestKingdomNames, !types[Types::ConquestKingdomNameType], "", property: :conquest_kingdom_names
+  field :conquestWarriorNames, !types[Types::ConquestWarriorNameType], "", property: :conquest_warrior_names
+  field :conquestWarriorSkillNames, !types[Types::ConquestWarriorSkillNameType], "", property: :conquest_warrior_skill_names
+  field :conquestWarriorStatNames, !types[Types::ConquestWarriorStatNameType], "", property: :conquest_warrior_stat_names
+  field :conquestStatNames, !types[Types::ConquestStatNameType], "", property: :conquest_stat_names
+  field :conquestMoveRangeProses, !types[Types::ConquestMoveRangeProseType], "", property: :conquest_move_range_proses
+  field :conquestMoveEffectProses, !types[Types::ConquestMoveEffectProseType], "", property: :conquest_move_effect_proses
+  field :conquestMoveDisplacementProses, !types[Types::ConquestMoveDisplacementProseType], "", property: :conquest_move_displacement_proses
   field :abilityChangelogProses, !types[Types::AbilityChangelogProseType], "", property: :ability_changelog_proses
   field :abilityFlavorTexts, !types[Types::AbilityFlavorTextType], "", property: :ability_flavor_texts
   field :abilityNames, !types[Types::AbilityNameType], "", property: :ability_names
@@ -65,4 +73,5 @@ Types::LanguageType = GraphQL::ObjectType.define do
   field :superContestEffectProses, !types[Types::SuperContestEffectProseType], "", property: :super_contest_effect_proses
   field :typeNames, !types[Types::TypeNameType], "", property: :type_names
   field :versionNames, !types[Types::VersionNameType], "", property: :version_names
+  field :conquestEpisodeNames, !types[Types::ConquestEpisodeNameType], "", property: :conquest_episode_names
 end

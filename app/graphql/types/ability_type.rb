@@ -12,4 +12,5 @@ Types::AbilityType = GraphQL::ObjectType.define do
   field :abilityNames, !types[Types::AbilityNameType], "", property: :ability_names
   field :abilityProse, !types[Types::AbilityProseType], "", property: :ability_prose
   field :pokemonAbilities, !types[Types::PokemonAbilityType], "", property: :pokemon_abilities
+  field :conquestPokemonAbilities, !types[Types::ConquestPokemonAbilityType], "", property: :conquest_pokemon_abilities
 end

@@ -1,12 +1,11 @@
-Types::PokemonShapeProseType = GraphQL::ObjectType.define do
-  name "PokemonShapeProse"
+Types::ConquestMoveRangeProseType = GraphQL::ObjectType.define do
+  name "ConquestMoveRangeProse"
   description ""
 
   field :id, !types.ID, "", property: :id
-  field :pokemonShape, Types::PokemonShapeType, "", property: :pokemon_shape
+  field :conquestMoveRange, Types::ConquestMoveRangeType, "", property: :conquest_move_range
   field :localLanguage, Types::LanguageType, "", property: :language
   field :name, !types.String, "", property: :name
-  field :awesomeName, !types.String, "", property: :awesome_name
   field :description, !types.String, "", property: :description
 
 end
