@@ -3,4 +3,5 @@ class MoveChangelog < ApplicationRecord
   belongs_to :version_group, foreign_key: :changed_in_version_group_id
   belongs_to :type, foreign_key: :type_id
   belongs_to :move_effect, foreign_key: :effect_id
+  belongs_to :move_target, foreign_key: :target_id
 end

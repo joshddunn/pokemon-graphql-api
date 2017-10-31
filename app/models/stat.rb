@@ -7,4 +7,5 @@ class Stat < ApplicationRecord
   has_many :increased_stats, class_name: "Nature", foreign_key: :increased_stat_id
   has_many :pokemon_stats, foreign_key: :stat_id
   has_many :stat_names, foreign_key: :stat_id
+  has_many :conquest_pokemon_evolutions, foreign_key: :stat_id
 end

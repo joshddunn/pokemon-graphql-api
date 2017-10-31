@@ -1,4 +1,12 @@
 class Language < ApplicationRecord
+  has_many :conquest_kingdom_names, foreign_key: :local_language_id
+  has_many :conquest_warrior_names, foreign_key: :local_language_id
+  has_many :conquest_warrior_skill_names, foreign_key: :local_language_id
+  has_many :conquest_warrior_stat_names, foreign_key: :local_language_id
+  has_many :conquest_stat_names, foreign_key: :local_language_id
+  has_many :conquest_move_range_proses, foreign_key: :local_language_id
+  has_many :conquest_move_effect_proses, foreign_key: :local_language_id
+  has_many :conquest_move_displacement_proses, foreign_key: :local_language_id
   has_many :ability_changelog_proses, foreign_key: :local_language_id
   has_many :ability_flavor_texts, foreign_key: :language_id
   has_many :ability_names, foreign_key: :local_language_id
@@ -55,4 +63,5 @@ class Language < ApplicationRecord
   has_many :super_contest_effect_proses, foreign_key: :local_language_id
   has_many :type_names, foreign_key: :local_language_id
   has_many :version_names, foreign_key: :local_language_id
+  has_many :conquest_episode_names, foreign_key: :local_language_id
 end

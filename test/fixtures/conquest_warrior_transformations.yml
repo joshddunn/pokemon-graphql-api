@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transformed_warrior_rank_id: 1
+  is_automatic: false
+  required_link: 1
+  completed_episode_id: 1
+  current_episode_id: 1
+  distant_warrior_id: 1
+  female_warlord_count: 1
+  pokemon_count: 1
+  collection_type_id: 1
+  warrior_count: 1
+
+two:
+  transformed_warrior_rank_id: 1
+  is_automatic: false
+  required_link: 1
+  completed_episode_id: 1
+  current_episode_id: 1
+  distant_warrior_id: 1
+  female_warlord_count: 1
+  pokemon_count: 1
+  collection_type_id: 1
+  warrior_count: 1

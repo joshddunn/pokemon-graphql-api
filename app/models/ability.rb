@@ -6,4 +6,5 @@ class Ability < ApplicationRecord
   has_many :ability_names, foreign_key: :ability_id
   has_many :ability_prose, foreign_key: :ability_id
   has_many :pokemon_abilities, foreign_key: :ability_id
+  has_many :conquest_pokemon_abilities, foreign_key: :ability_id
 end

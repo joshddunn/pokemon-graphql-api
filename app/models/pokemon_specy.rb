@@ -19,4 +19,10 @@ class PokemonSpecy < ApplicationRecord
   has_many :pokemon_species_flavor_texts, foreign_key: :species_id
   has_many :pokemon_species_names, foreign_key: :pokemon_species_id
   has_many :pokemon_species_proses, foreign_key: :pokemon_species_id
+  has_many :conquest_max_links, foreign_key: :pokemon_species_id
+  has_many :conquest_pokemon_abilities, foreign_key: :pokemon_species_id
+  has_many :conquest_pokemon_evolutions, foreign_key: :evolved_species_id
+  has_many :conquest_pokemon_moves, foreign_key: :pokemon_species_id
+  has_many :conquest_pokemon_stats, foreign_key: :pokemon_species_id
+  has_many :conquest_transformation_pokemons, foreign_key: :pokemon_species_id
 end

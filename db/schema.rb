@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171029225530) do
+ActiveRecord::Schema.define(version: 20171031021522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,6 +111,263 @@ ActiveRecord::Schema.define(version: 20171029225530) do
   create_table "characteristics", force: :cascade do |t|
     t.integer "stat_id"
     t.integer "gene_mod_5"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_episode_names", force: :cascade do |t|
+    t.integer "episode_id"
+    t.integer "local_language_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_episode_warriors", force: :cascade do |t|
+    t.integer "episode_id"
+    t.integer "warrior_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_episodes", force: :cascade do |t|
+    t.string "identifier"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_kingdom_names", force: :cascade do |t|
+    t.integer "kingdom_id"
+    t.integer "local_language_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_kingdoms", force: :cascade do |t|
+    t.string "identifier"
+    t.integer "type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_max_links", force: :cascade do |t|
+    t.integer "warrior_rank_id"
+    t.integer "pokemon_species_id"
+    t.integer "max_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_move_data", force: :cascade do |t|
+    t.integer "move_id"
+    t.integer "power"
+    t.integer "accuracy"
+    t.integer "effect_chance"
+    t.integer "effect_id"
+    t.integer "range_id"
+    t.integer "displacement_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_move_displacement_proses", force: :cascade do |t|
+    t.integer "move_displacement_id"
+    t.integer "local_language_id"
+    t.string "name"
+    t.string "short_effect"
+    t.string "effect"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_move_displacements", force: :cascade do |t|
+    t.string "identifier"
+    t.boolean "affects_target"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_move_effect_proses", force: :cascade do |t|
+    t.integer "conquest_move_effect_id"
+    t.integer "local_language_id"
+    t.string "short_effect"
+    t.string "effect"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_move_effects", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_move_range_proses", force: :cascade do |t|
+    t.integer "conquest_move_range_id"
+    t.integer "local_language_id"
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_move_ranges", force: :cascade do |t|
+    t.string "identifier"
+    t.integer "targets"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_pokemon_abilities", force: :cascade do |t|
+    t.integer "pokemon_species_id"
+    t.integer "slot"
+    t.integer "ability_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_pokemon_evolutions", force: :cascade do |t|
+    t.integer "evolved_species_id"
+    t.integer "required_stat_id"
+    t.integer "minimum_stat"
+    t.integer "minimum_link"
+    t.integer "kingdom_id"
+    t.integer "warrior_gender_id"
+    t.integer "item_id"
+    t.boolean "recruiting_ko_required"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_pokemon_moves", force: :cascade do |t|
+    t.integer "pokemon_species_id"
+    t.integer "move_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_pokemon_stats", force: :cascade do |t|
+    t.integer "pokemon_species_id"
+    t.integer "conquest_stat_id"
+    t.integer "base_stat"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_stat_names", force: :cascade do |t|
+    t.integer "conquest_stat_id"
+    t.integer "local_language_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_stats", force: :cascade do |t|
+    t.string "identifier"
+    t.boolean "is_base"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_transformation_pokemons", force: :cascade do |t|
+    t.integer "transformation_id"
+    t.integer "pokemon_species_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_transformation_warriors", force: :cascade do |t|
+    t.integer "transformation_id"
+    t.integer "present_warrior_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_warrior_archetypes", force: :cascade do |t|
+    t.string "identifier"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_warrior_names", force: :cascade do |t|
+    t.integer "warrior_id"
+    t.integer "local_language_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_warrior_rank_stat_maps", force: :cascade do |t|
+    t.integer "warrior_rank_id"
+    t.integer "warrior_stat_id"
+    t.integer "base_stat"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_warrior_ranks", force: :cascade do |t|
+    t.integer "warrior_id"
+    t.integer "rank"
+    t.integer "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_warrior_skill_names", force: :cascade do |t|
+    t.integer "skill_id"
+    t.integer "local_language_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_warrior_skills", force: :cascade do |t|
+    t.string "identifier"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_warrior_specialties", force: :cascade do |t|
+    t.integer "warrior_id"
+    t.integer "type_id"
+    t.integer "slot"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_warrior_stat_names", force: :cascade do |t|
+    t.integer "warrior_stat_id"
+    t.integer "local_language_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_warrior_stats", force: :cascade do |t|
+    t.string "identifier"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_warrior_transformations", force: :cascade do |t|
+    t.integer "transformed_warrior_rank_id"
+    t.boolean "is_automatic"
+    t.integer "required_link"
+    t.integer "completed_episode_id"
+    t.integer "current_episode_id"
+    t.integer "distant_warrior_id"
+    t.integer "female_warlord_count"
+    t.integer "pokemon_count"
+    t.integer "collection_type_id"
+    t.integer "warrior_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conquest_warriors", force: :cascade do |t|
+    t.string "identifier"
+    t.integer "gender_id"
+    t.integer "archetype_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -367,7 +624,7 @@ ActiveRecord::Schema.define(version: 20171029225530) do
   end
 
   create_table "item_fling_effects", force: :cascade do |t|
-    t.string "name"
+    t.string "identifier"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -521,6 +778,8 @@ ActiveRecord::Schema.define(version: 20171029225530) do
     t.integer "effect_chance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "priority"
+    t.integer "target_id"
   end
 
   create_table "move_damage_class_proses", force: :cascade do |t|
@@ -966,6 +1225,7 @@ ActiveRecord::Schema.define(version: 20171029225530) do
     t.string "awesome_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
   end
 
   create_table "pokemon_shapes", force: :cascade do |t|
@@ -1203,6 +1463,61 @@ ActiveRecord::Schema.define(version: 20171029225530) do
   add_foreign_key "characteristic_texts", "characteristics"
   add_foreign_key "characteristic_texts", "languages", column: "local_language_id"
   add_foreign_key "characteristics", "stats"
+  add_foreign_key "conquest_episode_names", "conquest_episodes", column: "episode_id"
+  add_foreign_key "conquest_episode_names", "languages", column: "local_language_id"
+  add_foreign_key "conquest_episode_warriors", "conquest_episodes", column: "episode_id"
+  add_foreign_key "conquest_episode_warriors", "conquest_warriors", column: "warrior_id"
+  add_foreign_key "conquest_kingdom_names", "conquest_kingdoms", column: "kingdom_id"
+  add_foreign_key "conquest_kingdom_names", "languages", column: "local_language_id"
+  add_foreign_key "conquest_kingdoms", "types"
+  add_foreign_key "conquest_max_links", "conquest_warrior_ranks", column: "warrior_rank_id"
+  add_foreign_key "conquest_max_links", "pokemon_species", column: "pokemon_species_id"
+  add_foreign_key "conquest_move_data", "conquest_move_displacements", column: "displacement_id"
+  add_foreign_key "conquest_move_data", "conquest_move_effects", column: "effect_id"
+  add_foreign_key "conquest_move_data", "conquest_move_ranges", column: "range_id"
+  add_foreign_key "conquest_move_data", "moves"
+  add_foreign_key "conquest_move_displacement_proses", "conquest_move_displacements", column: "move_displacement_id"
+  add_foreign_key "conquest_move_displacement_proses", "languages", column: "local_language_id"
+  add_foreign_key "conquest_move_effect_proses", "conquest_move_effects"
+  add_foreign_key "conquest_move_effect_proses", "languages", column: "local_language_id"
+  add_foreign_key "conquest_move_range_proses", "conquest_move_ranges"
+  add_foreign_key "conquest_move_range_proses", "languages", column: "local_language_id"
+  add_foreign_key "conquest_pokemon_abilities", "abilities"
+  add_foreign_key "conquest_pokemon_abilities", "pokemon_species", column: "pokemon_species_id"
+  add_foreign_key "conquest_pokemon_evolutions", "conquest_kingdoms", column: "kingdom_id"
+  add_foreign_key "conquest_pokemon_evolutions", "genders", column: "warrior_gender_id"
+  add_foreign_key "conquest_pokemon_evolutions", "items"
+  add_foreign_key "conquest_pokemon_evolutions", "pokemon_species", column: "evolved_species_id"
+  add_foreign_key "conquest_pokemon_evolutions", "stats", column: "required_stat_id"
+  add_foreign_key "conquest_pokemon_moves", "moves"
+  add_foreign_key "conquest_pokemon_moves", "pokemon_species", column: "pokemon_species_id"
+  add_foreign_key "conquest_pokemon_stats", "conquest_stats"
+  add_foreign_key "conquest_pokemon_stats", "pokemon_species", column: "pokemon_species_id"
+  add_foreign_key "conquest_stat_names", "conquest_stats"
+  add_foreign_key "conquest_stat_names", "languages", column: "local_language_id"
+  add_foreign_key "conquest_transformation_pokemons", "conquest_warrior_ranks", column: "transformation_id"
+  add_foreign_key "conquest_transformation_pokemons", "pokemon_species", column: "pokemon_species_id"
+  add_foreign_key "conquest_transformation_warriors", "conquest_warrior_ranks", column: "transformation_id"
+  add_foreign_key "conquest_transformation_warriors", "conquest_warriors", column: "present_warrior_id"
+  add_foreign_key "conquest_warrior_names", "conquest_warriors", column: "warrior_id"
+  add_foreign_key "conquest_warrior_names", "languages", column: "local_language_id"
+  add_foreign_key "conquest_warrior_rank_stat_maps", "conquest_warrior_ranks", column: "warrior_rank_id"
+  add_foreign_key "conquest_warrior_rank_stat_maps", "conquest_warrior_stats", column: "warrior_stat_id"
+  add_foreign_key "conquest_warrior_ranks", "conquest_warrior_skills", column: "skill_id"
+  add_foreign_key "conquest_warrior_ranks", "conquest_warriors", column: "warrior_id"
+  add_foreign_key "conquest_warrior_skill_names", "conquest_warrior_skills", column: "skill_id"
+  add_foreign_key "conquest_warrior_skill_names", "languages", column: "local_language_id"
+  add_foreign_key "conquest_warrior_specialties", "conquest_warriors", column: "warrior_id"
+  add_foreign_key "conquest_warrior_specialties", "types"
+  add_foreign_key "conquest_warrior_stat_names", "conquest_warrior_stats", column: "warrior_stat_id"
+  add_foreign_key "conquest_warrior_stat_names", "languages", column: "local_language_id"
+  add_foreign_key "conquest_warrior_transformations", "conquest_episodes", column: "completed_episode_id"
+  add_foreign_key "conquest_warrior_transformations", "conquest_episodes", column: "current_episode_id"
+  add_foreign_key "conquest_warrior_transformations", "conquest_warrior_ranks", column: "transformed_warrior_rank_id"
+  add_foreign_key "conquest_warrior_transformations", "conquest_warriors", column: "distant_warrior_id"
+  add_foreign_key "conquest_warrior_transformations", "types", column: "collection_type_id"
+  add_foreign_key "conquest_warriors", "conquest_warrior_archetypes", column: "archetype_id"
+  add_foreign_key "conquest_warriors", "genders"
   add_foreign_key "contest_combos", "moves", column: "first_move_id"
   add_foreign_key "contest_combos", "moves", column: "second_move_id"
   add_foreign_key "contest_effect_proses", "contest_effects"
@@ -1278,6 +1593,7 @@ ActiveRecord::Schema.define(version: 20171029225530) do
   add_foreign_key "move_battle_style_proses", "languages", column: "local_language_id"
   add_foreign_key "move_battle_style_proses", "move_battle_styles"
   add_foreign_key "move_changelogs", "move_effects", column: "effect_id"
+  add_foreign_key "move_changelogs", "move_targets", column: "target_id"
   add_foreign_key "move_changelogs", "moves"
   add_foreign_key "move_changelogs", "types"
   add_foreign_key "move_changelogs", "version_groups", column: "changed_in_version_group_id"

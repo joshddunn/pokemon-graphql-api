@@ -142,6 +142,38 @@ files = {
   'version_groups.csv' => VersionGroup,
   'version_names.csv' => VersionName,
   'versions.csv' => Version,
+  'conquest_episode_names.csv' => ConquestEpisodeName,
+  'conquest_episode_warriors.csv' => ConquestEpisodeWarrior,
+  'conquest_episodes.csv' => ConquestEpisode,
+  'conquest_kingdom_names.csv' => ConquestKingdomName,
+  'conquest_kingdoms.csv' => ConquestKingdom,
+  'conquest_max_links.csv' => ConquestMaxLink,
+  'conquest_move_data.csv' => ConquestMoveDatum,
+  'conquest_move_displacement_prose.csv' => ConquestMoveDisplacementProse,
+  'conquest_move_displacements.csv' => ConquestMoveDisplacement,
+  'conquest_move_effect_prose.csv' => ConquestMoveEffectProse,
+  'conquest_move_effects.csv' => ConquestMoveEffect,
+  'conquest_move_range_prose.csv' => ConquestMoveRangeProse,
+  'conquest_move_ranges.csv' => ConquestMoveRange,
+  'conquest_pokemon_abilities.csv' => ConquestPokemonAbility,
+  'conquest_pokemon_evolution.csv' => ConquestPokemonEvolution,
+  'conquest_pokemon_moves.csv' => ConquestPokemonMove,
+  'conquest_pokemon_stats.csv' => ConquestPokemonStat,
+  'conquest_stat_names.csv' => ConquestStatName,
+  'conquest_stats.csv' => ConquestStat,
+  'conquest_transformation_pokemon.csv' => ConquestTransformationPokemon,
+  'conquest_transformation_warriors.csv' => ConquestTransformationWarrior,
+  'conquest_warrior_archetypes.csv' => ConquestWarriorArchetype,
+  'conquest_warrior_names.csv' => ConquestWarriorName,
+  'conquest_warrior_rank_stat_map.csv' => ConquestWarriorRankStatMap,
+  'conquest_warrior_ranks.csv' => ConquestWarriorRank,
+  'conquest_warrior_skill_names.csv' => ConquestWarriorSkillName,
+  'conquest_warrior_skills.csv' => ConquestWarriorSkill,
+  'conquest_warrior_specialties.csv' => ConquestWarriorSpecialty,
+  'conquest_warrior_stat_names.csv' => ConquestWarriorStatName,
+  'conquest_warrior_stats.csv' => ConquestWarriorStat,
+  'conquest_warrior_transformation.csv' => ConquestWarriorTransformation,
+  'conquest_warriors.csv' => ConquestWarrior,
 }
 
 connection = ActiveRecord::Base.connection()
@@ -149,7 +181,7 @@ connection = ActiveRecord::Base.connection()
 # add all data in each csv file to the database 
 files.keys.each do |file|
   if files[file].count == 0
-    csv_text = File.read(Rails.root.join('lib', 'seeds', file))
+    csv_text = File.read(Rails.root.join('lib', 'seeds', 'v2', file))
     csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 
     # need to temporarily disable the triggers because of foreign keys

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  conquest_move_range_id: 1
+  local_language_id: 1
+  name: MyString
+  description: MyString
+
+two:
+  conquest_move_range_id: 1
+  local_language_id: 1
+  name: MyString
+  description: MyString

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  warrior_stat_id: 1
+  local_language_id: 1
+  name: MyString
+
+two:
+  warrior_stat_id: 1
+  local_language_id: 1
+  name: MyString

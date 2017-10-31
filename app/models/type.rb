@@ -12,4 +12,7 @@ class Type < ApplicationRecord
   has_many :target_types, class_name: "TypeEfficacy", foreign_key: :target_type_id
   has_many :type_game_indices, foreign_key: :type_id
   has_many :type_names, foreign_key: :type_id
+  has_many :conquest_kingdoms, foreign_key: :type_id
+  has_many :conquest_warrior_specialties, foreign_key: :type_id
+  has_many :conquest_warrior_transformations, foreign_key: :collection_type_id
 end
