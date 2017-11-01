@@ -1,5 +1,6 @@
 Types::QueryType = GraphQL::ObjectType.define do
   name "Query"
+  description ""
   
   field :Pokemon, !types[Types::PokemonType] do
     description "Pokemon!"

@@ -22,12 +22,16 @@ Types::PokemonType = GraphQL::ObjectType.define do
 
   field :sprite, !types.String do 
     resolve ->(obj, args, ctx) {
-      "https://github.com/PokeAPI/pokeapi/tree/master/data/v2/sprites/pokemon/#{obj.id}.png"
+      file = obj.id
+      file = "#{obj.species_id}-alola" if obj.identifier.include? "alola"  
+      "https://github.com/PokeAPI/pokeapi/tree/master/data/v2/sprites/pokemon/#{file}.png"
     }
   end
   field :shinySprite, !types.String do 
     resolve ->(obj, args, ctx) {
-      "https://github.com/PokeAPI/pokeapi/tree/master/data/v2/sprites/pokemon/shiny/#{obj.id}.png"
+      file = obj.id
+      file = "#{obj.species_id}-alola" if obj.identifier.include? "alola"  
+      "https://github.com/PokeAPI/pokeapi/tree/master/data/v2/sprites/pokemon/shiny/#{file}.png"
     }
   end
 end
