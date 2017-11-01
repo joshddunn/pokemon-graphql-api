@@ -22,4 +22,10 @@ Types::ItemType = GraphQL::ObjectType.define do
   field :triggerItems, !types[Types::PokemonEvolutionType], "", property: :trigger_items
   field :pokemonItems, !types[Types::PokemonItemType], "", property: :pokemon_items
   field :conquestPokemonEvolutions, !types[Types::ConquestPokemonEvolutionType], "", property: :conquest_pokemon_evolutions
+
+  field :sprite, !types.String do 
+    resolve ->(obj, args, ctx) {
+      "https://github.com/PokeAPI/pokeapi/tree/master/data/v2/sprites/items/#{obj.identifier}.png"
+    }
+  end
 end

@@ -19,4 +19,15 @@ Types::PokemonType = GraphQL::ObjectType.define do
   field :pokemonMoves, !types[Types::PokemonMoveType], "", property: :pokemon_moves
   field :pokemonStats, !types[Types::PokemonStatType], "", property: :pokemon_stats
   field :pokemonTypes, !types[Types::PokemonTypeType], "", property: :pokemon_types
+
+  field :sprite, !types.String do 
+    resolve ->(obj, args, ctx) {
+      "https://github.com/PokeAPI/pokeapi/tree/master/data/v2/sprites/pokemon/#{obj.id}.png"
+    }
+  end
+  field :shinySprite, !types.String do 
+    resolve ->(obj, args, ctx) {
+      "https://github.com/PokeAPI/pokeapi/tree/master/data/v2/sprites/pokemon/shiny/#{obj.id}.png"
+    }
+  end
 end
