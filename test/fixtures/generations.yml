@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  main_region_id: 1
-  identifier: 
-
-two:
-  main_region_id: 1
-  identifier: 

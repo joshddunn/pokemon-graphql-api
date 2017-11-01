@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  first_move_id: 1
-  second_move_id: 1
-
-two:
-  first_move_id: 1
-  second_move_id: 1

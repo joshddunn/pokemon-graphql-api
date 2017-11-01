@@ -20,18 +20,6 @@ Types::PokemonType = GraphQL::ObjectType.define do
   field :pokemonStats, !types[Types::PokemonStatType], "", property: :pokemon_stats
   field :pokemonTypes, !types[Types::PokemonTypeType], "", property: :pokemon_types
 
-  field :sprite, !types.String do 
-    resolve ->(obj, args, ctx) {
-      file = obj.id
-      file = "#{obj.species_id}-alola" if obj.identifier.include? "alola"  
-      "https://github.com/PokeAPI/pokeapi/tree/master/data/v2/sprites/pokemon/#{file}.png"
-    }
-  end
-  field :shinySprite, !types.String do 
-    resolve ->(obj, args, ctx) {
-      file = obj.id
-      file = "#{obj.species_id}-alola" if obj.identifier.include? "alola"  
-      "https://github.com/PokeAPI/pokeapi/tree/master/data/v2/sprites/pokemon/shiny/#{file}.png"
-    }
-  end
+  field :sprite, function: Resolvers::PokemonSprite.new
+  field :shinySprite, function: Resolvers::PokemonShinySprite.new
 end

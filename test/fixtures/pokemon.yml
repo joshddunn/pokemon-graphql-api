@@ -1,0 +1,8 @@
+one:
+  id: 1
+  identifier: bulbasaur
+
+two:
+  id: 2
+  identifier: bulbasaur-alola
+  species_id: 22
