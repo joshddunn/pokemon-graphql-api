@@ -20,14 +20,10 @@ Types::PokemonType = GraphQL::ObjectType.define do
   field :pokemonStats, !types[Types::PokemonStatType], "", property: :pokemon_stats
   field :pokemonTypes, !types[Types::PokemonTypeType], "", property: :pokemon_types
 
+  # this is my best guess for passing graphql query structure to child types...
   field :sprites, Types::PokemonSpriteType do
     resolve -> (obj, args, ctx) {
-      file = obj.id
-      file = "#{obj.species_id}-#{obj.identifier.sub(/\w+-/, "")}" if obj.identifier.include? "-"  
-      obj = {
-        obj: obj,
-        file: file
-      }
+      {obj: obj}
     }
   end
 end
