@@ -4,15 +4,13 @@ Types::PokemonSpriteGenderType = GraphQL::ObjectType.define do
 
   field :male, Types::PokemonSpriteOrientationType do
     resolve -> (obj, args, ctx) {
-      obj[:gender] = ""
-      obj
+      obj.merge(gender: "")
     }
   end
 
   field :female, Types::PokemonSpriteOrientationType do
     resolve -> (obj, args, ctx) {
-      obj[:gender] = "female/"
-      obj
+      obj.merge(gender: "female/")
     }
   end
 end
