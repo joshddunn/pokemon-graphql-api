@@ -20,6 +20,14 @@ Types::PokemonType = GraphQL::ObjectType.define do
   field :pokemonStats, !types[Types::PokemonStatType], "", property: :pokemon_stats
   field :pokemonTypes, !types[Types::PokemonTypeType], "", property: :pokemon_types
 
-  field :sprite, function: Resolvers::PokemonSprite.new
-  field :shinySprite, function: Resolvers::PokemonShinySprite.new
+  field :sprites, Types::PokemonSpriteType do
+    resolve -> (obj, args, ctx) {
+      file = obj.id
+      file = "#{obj.species_id}-#{obj.identifier.sub(/\w+-/, "")}" if obj.identifier.include? "-"  
+      obj = {
+        obj: obj,
+        file: file
+      }
+    }
+  end
 end

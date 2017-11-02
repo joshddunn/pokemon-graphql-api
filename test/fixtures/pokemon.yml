@@ -3,6 +3,11 @@ one:
   identifier: bulbasaur
 
 two:
-  id: 2
-  identifier: bulbasaur-alola
-  species_id: 22
+  id: 10112
+  identifier: grimer-alola
+  species_id: 88
+
+three:
+  id: 10011
+  identifier: rotom-fan
+  species_id: 479

@@ -9,6 +9,6 @@ class Resolvers::ItemSpriteTest < ActiveSupport::TestCase
     link = perform(Item.all.where(identifier: "master-ball").first)
 
     assert_not link.nil?
-    assert link.include? "sprites/items/master-ball.png"
+    assert_equal link, Rails.application.config.url + "/sprites/items/master-ball.png"
   end
 end

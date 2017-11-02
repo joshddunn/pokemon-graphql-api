@@ -9,13 +9,20 @@ class Resolvers::PokemonShinySpriteTest < ActiveSupport::TestCase
     link = perform(Pokemon.all.where(identifier: "bulbasaur").first)
 
     assert_not link.nil?
-    assert link.include? "sprites/pokemon/shiny/1.png"
+    assert_equal link, Rails.application.config.url + "/sprites/pokemon/shiny/1.png"
   end
 
   test 'pokemon shiny sprite link works for alolan pokemon (uses species_id instead of id)' do
-    link = perform(Pokemon.all.where(identifier: "bulbasaur-alola").first)
+    link = perform(Pokemon.all.where(identifier: "grimer-alola").first)
 
     assert_not link.nil?
-    assert link.include? "sprites/pokemon/shiny/22-alola.png"
+    assert_equal link, Rails.application.config.url + "/sprites/pokemon/shiny/88-alola.png"
+  end
+
+  test 'pokemon sprite link works for form pokemon (uses species_id instead of id)' do
+    link = perform(Pokemon.all.where(identifier: "rotom-fan").first)
+
+    assert_not link.nil?
+    assert_equal link, Rails.application.config.url + "/sprites/pokemon/shiny/479-fan.png"
   end
 end

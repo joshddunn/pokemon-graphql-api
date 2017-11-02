@@ -3,7 +3,7 @@ class Resolvers::PokemonSprite < GraphQL::Function
   
   def call(_obj, args, ctx)
     file = _obj.id
-    file = "#{_obj.species_id}-alola" if _obj.identifier.include? "alola"  
-    "https://github.com/PokeAPI/pokeapi/tree/master/data/v2/sprites/pokemon/#{file}.png"
+    file = "#{_obj.species_id}-#{_obj.identifier.gsub(/^.+-/, "")}" if _obj.identifier.include? "-"  
+    Rails.application.config.url + "/sprites/pokemon/#{file}.png"
   end
 end
