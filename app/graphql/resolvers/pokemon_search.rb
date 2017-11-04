@@ -11,7 +11,8 @@ class Resolvers::PokemonSearch < GraphQL::Function
     name 'PokemonFilter'
 
     argument :OR, -> { types[PokemonFilter] }
-    argument :identifierContains, types.String
+    # implement and and not
+    argument :identifierContains, types[types.String]
   end
 
   option :filter, type: PokemonFilter, with: :apply_filter
@@ -23,7 +24,12 @@ class Resolvers::PokemonSearch < GraphQL::Function
 
   def normalize_filters(value, branches = [])
     scope = Pokemon.all
-    scope = scope.where('identifier LIKE ?', "%#{value['identifierContains']}%") if value['identifierContains']
+
+    if value['identifierContains']
+      value['identifierContains'].each do |term|
+        scope = scope.where("identifier like ?", "%#{term}%") 
+      end
+    end
 
     branches << scope
 
