@@ -163,11 +163,11 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :ItemAttributes, !types[Types::ItemAttributeType] do
+  field :ItemAttributes, !types[Types::ItemFlagType] do
     description "Item attributes!"
 
     resolve -> (obj, args, ctx) { 
-      ItemAttribute.all
+      ItemFlag.all
     }
   end
 
@@ -214,8 +214,16 @@ Types::QueryType = GraphQL::ObjectType.define do
   field :Moves, !types[Types::MoveType] do
     description "Moves!"
 
+    argument :identifier, types.String, default_value: nil
+    argument :identifierLike, types.String, default_value: nil
+    argument :limit, types.Int, default_value: nil
+
     resolve -> (obj, args, ctx) { 
-      Move.all
+      source = Move.all
+      source = source.where(identifier: args[:identifier]) if args[:identifier]
+      source = source.where("identifier like ?", "%#{args[:identifierLike]}%") if args[:identifierLike]
+      source = source.limit(args[:limit]) if args[:limit]
+      source
     }
   end
 
