@@ -32,3 +32,5 @@ move_effects.csv only has an id column
 When accessing a `has_many` attribute type you need to put it inside of the graphql array. For example
 
     !types[Type::PokemonSpecyType]
+
+## Don't be dumb. If a test isnt working, you probably didn't seed your test database.

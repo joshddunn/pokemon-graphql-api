@@ -11,3 +11,15 @@ three:
   id: 10011
   identifier: rotom-fan
   species_id: 479
+
+four:
+  id: 150
+  identifier: mew
+  height: 4
+  weight: 40
+
+five:
+  id: 151
+  identifier: mewtwo
+  height: 20
+  weight: 1220
