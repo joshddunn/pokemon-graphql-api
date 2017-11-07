@@ -6,19 +6,19 @@ Types::QueryType = GraphQL::ObjectType.define do
   # Berry access points
   # ###################
   
-  connection :Berries, Types::BerryType.connection_type, {max_page_size: 2} do 
+  connection :BerriesPagination, Types::BerryType.connection_type, {max_page_size: 2} do 
     resolve ->(obj, args, ctx) {
       Berry.all
     }
   end
 
-  # field :Berries, !types[Types::BerryType] do
-  #   description "Berries!"
+  field :Berries, !types[Types::BerryType] do
+    description "Berries!"
 
-  #   resolve -> (obj, args, ctx) { 
-  #     Berry.all
-  #   }
-  # end
+    resolve -> (obj, args, ctx) { 
+      Berry.all
+    }
+  end
 
   field :BerryFirmnesses, !types[Types::BerryFirmnessType] do
     description "Berry Firmness!"
