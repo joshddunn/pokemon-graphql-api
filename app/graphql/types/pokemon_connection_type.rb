@@ -1,5 +1,5 @@
-Types::BerryConnectionType = Types::BerryType.define_connection do
-  name "BerryConnection"
+Types::PokemonConnectionType = Types::PokemonType.define_connection do
+  name "PokemonConnection"
   description ""
 
   field :totalCount do

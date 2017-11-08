@@ -9,18 +9,16 @@ Types::QueryType = GraphQL::ObjectType.define do
   connection :Berries, Types::BerryConnectionType do 
     description "Berries!"
 
+    argument :identifier, types.String
+    argument :identifierLike, types.String
+
     resolve ->(obj, args, ctx) {
-      Berry.all
+      berry = Berry.all
+      berry = berry.joins(:item).where("items.identifier": args[:identifier]) if args[:identifier]
+      berry = berry.joins(:item).where("items.identifier like ?", "%#{args[:identifierLike]}%") if args[:identifierLike]
+      berry
     }
   end
-
-  # field :Berries, !types[Types::BerryType] do
-  #   description "Berries!"
-
-  #   resolve -> (obj, args, ctx) { 
-  #     Berry.all
-  #   }
-  # end
 
   field :BerryFirmnesses, !types[Types::BerryFirmnessType] do
     description "Berry Firmness!"
@@ -379,7 +377,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :Pokemon, function: Resolvers::PokemonSearch
+  connection :Pokemon, function: Resolvers::PokemonSearch
 
   field :PokemonColors, !types[Types::PokemonColorType] do
     description "Pokemon Colors!"

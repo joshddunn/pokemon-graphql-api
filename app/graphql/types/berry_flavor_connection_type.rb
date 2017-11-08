@@ -1,5 +1,5 @@
-Types::BerryConnectionType = Types::BerryType.define_connection do
-  name "BerryConnection"
+Types::BerryFlavorConnectionType = Types::BerryFlavorType.define_connection do
+  name "BerryFlavorConnection"
   description ""
 
   field :totalCount do

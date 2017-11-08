@@ -5,7 +5,7 @@ class Resolvers::PokemonSearch
 
   scope { Pokemon.all }
 
-  type !types[Types::PokemonType]
+  type Types::PokemonConnectionType
 
   PokemonFilter = GraphQL::InputObjectType.define do
     name 'PokemonFilter'
