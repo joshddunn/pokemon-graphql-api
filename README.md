@@ -37,5 +37,15 @@ When accessing a `has_many` attribute type you need to put it inside of the grap
 
 ## The difference between !types.String and types.String
 
-In graphql-ruby, you can have types that are prefaced by `!`. Fields that are prefaced by `!` (like `!types.String`) will expect values to be of that type, and if they aren't the parent node will be returned as `null`. However, fields that are not prefaced with `!` (like `types.String`) will expect the returned value to be a string, but without strong consequences. If not of the defined type, it will simply return `null` for that field. 
+In graphql-ruby, you can have types that are prefaced by `!`. Fields that are
+prefaced by `!` (like `!types.String`) will expect values to be of that type,
+and if they aren't the parent node will be returned as `null`. However, fields
+that are not prefaced with `!` (like `types.String`) will expect the returned
+value to be a string, but without strong consequences. If not of the defined
+type, it will simply return `null` for that field. 
 
+## TO DO
+
+- Add connection types for each type
+- Use connection for endpoints
+- 'Advanced' filtering for each of the endpoints
