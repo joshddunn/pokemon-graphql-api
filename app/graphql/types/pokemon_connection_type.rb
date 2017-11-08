@@ -4,6 +4,7 @@ Types::PokemonConnectionType = Types::PokemonType.define_connection do
 
   field :totalCount do
     type types.Int
+
     resolve ->(obj, args, ctx) {
       obj.nodes.count
     }

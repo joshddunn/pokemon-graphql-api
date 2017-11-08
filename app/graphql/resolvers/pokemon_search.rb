@@ -24,25 +24,15 @@ class Resolvers::PokemonSearch
     argument :weightLessThan, types.Int
     argument :weight, types.Int
 
-    argument :limit, types.Int
+    argument :isDefault, types.Boolean
   end
 
   option :filter, type: PokemonFilter, with: :apply_filter
-  option :limit, type: types.Int, with: :apply_limit
-  option :offset, type: types.Int, with: :apply_offset
   option :order, type: types[types.String], with: :apply_order
 
   def apply_filter(scope, value)
     branches = normalize_filters(value).reduce { |a,b| a.or(b) }
     scope.merge branches
-  end
-
-  def apply_limit(scope, value)
-    scope.limit(value)
-  end
-
-  def apply_offset(scope, value)
-    scope.offset(value)
   end
 
   def apply_order(scope, value)
@@ -55,27 +45,29 @@ class Resolvers::PokemonSearch
   def normalize_filters(value, branches = [])
     scope = Pokemon.all
 
-    scope = scope.where(identifier: value['identifier']) if value['identifier']
+    scope = scope.where(identifier: value['identifier']) unless value['identifier'].nil?
 
-    if value['identifierContains']
+    if !value['identifierContains'].nil?
       value['identifierContains'].each do |term|
         scope = scope.where("identifier LIKE ?", "%#{term}%") 
       end
     end
 
-    if value['identifierNotContains']
+    if !value['identifierNotContains'].nil?
       value['identifierNotContains'].each do |term|
         scope = scope.where("identifier NOT LIKE ?", "%#{term}%") 
       end
     end
 
-    scope = scope.where("height > ?", value['heightGreaterThan']) if value['heightGreaterThan']
-    scope = scope.where("height < ?", value['heightLessThan']) if value['heightLessThan']
-    scope = scope.where("height = ?", value['height']) if value['height']
+    scope = scope.where("height > ?", value['heightGreaterThan']) unless value['heightGreaterThan'].nil?
+    scope = scope.where("height < ?", value['heightLessThan']) unless value['heightLessThan'].nil?
+    scope = scope.where("height = ?", value['height']) unless value['height'].nil?
 
-    scope = scope.where("weight > ?", value['weightGreaterThan']) if value['weightGreaterThan']
-    scope = scope.where("weight < ?", value['weightLessThan']) if value['weightLessThan']
-    scope = scope.where("weight = ?", value['weight']) if value['weight']
+    scope = scope.where("weight > ?", value['weightGreaterThan']) unless value['weightGreaterThan'].nil?
+    scope = scope.where("weight < ?", value['weightLessThan']) unless value['weightLessThan'].nil?
+    scope = scope.where("weight = ?", value['weight']) unless value['weight'].nil?
+
+    scope = scope.where("is_default": value['isDefault']) unless value['isDefault'].nil?
 
     branches << scope
 

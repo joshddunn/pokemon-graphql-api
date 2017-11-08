@@ -115,17 +115,6 @@ class Resolvers::PokemonSearchTest < ActiveSupport::TestCase
     assert_equal result.map(&:identifier).sort, ["bulbasaur", "mew", "mewtwo"]
   end
 
-  test 'pokemon_search: limit' do
-    result = find(
-      filter: {
-        "identifierContains" => ["mew"]
-      },
-      limit: 1
-    )
-
-    assert_equal result.map(&:identifier).sort.length, 1 
-  end
-
   test 'pokemon_search: order (identifier)' do
     result = find(
       filter: {
@@ -148,13 +137,23 @@ class Resolvers::PokemonSearchTest < ActiveSupport::TestCase
     assert_equal result.map(&:identifier), ["mewtwo", "mew"]
   end
 
-  test 'pokemon_search: offset' do
+  test 'pokemon_search: isDefault = true' do
     result = find(
       filter: {
-        "identifier" => "mewtwo"
+        "isDefault" => true
       }
     )
 
-    assert_equal result.map(&:identifier).sort, ["mewtwo"] 
+    assert result.map(&:identifier).include? "mewtwo"
+  end
+
+  test 'pokemon_search: isDefault = false' do
+    result = find(
+      filter: {
+        "isDefault" => false
+      }
+    )
+
+    assert_not result.map(&:identifier).include? "mewtwo"
   end
 end
