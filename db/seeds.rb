@@ -191,7 +191,7 @@ files.keys.each do |file|
       t = files[file].new
 
       csv.headers.each do |header|
-        t[header] = row[header]
+        t[header] = row[header].nil? ? "" : row[header]
       end
 
       t.save(validate: false)
