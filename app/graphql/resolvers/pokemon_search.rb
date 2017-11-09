@@ -11,7 +11,7 @@ class Resolvers::PokemonSearch
     name 'PokemonFilter'
 
     argument :OR, -> { types[PokemonFilter] }
-    # implement and and not
+
     argument :identifier, types.String
     argument :identifierContains, types[types.String]
     argument :identifierNotContains, types[types.String]

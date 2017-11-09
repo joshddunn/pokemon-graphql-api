@@ -1,0 +1,9 @@
+one: 
+  id: 1
+  item_id: 126
+  firmness_id: 2
+
+two:
+  id: 2
+  item_id: 127
+  firmness_id: 5

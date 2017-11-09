@@ -6,21 +6,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   # Berry access points
   # ###################
   
-  connection :Berries, Types::BerryConnectionType do 
-    description "Berries!"
-
-    argument :identifier, types.String
-    argument :identifierLike, types.String
-    argument :firmness, types.String
-
-    resolve ->(obj, args, ctx) {
-      berry = Berry.all
-      berry = berry.joins(:item).where("items.identifier": args[:identifier]) unless args[:identifier].nil?
-      berry = berry.joins(:item).where("items.identifier like ?", "%#{args[:identifierLike]}%") unless args[:identifierLike].nil?
-      berry = berry.joins(:berry_firmness).where("berry_firmnesses.identifier": args[:firmness]) unless args[:firmness].nil?
-      berry
-    }
-  end
+  connection :Berries, function: Resolvers::BerrySearch
 
   field :BerryFirmnesses, !types[Types::BerryFirmnessType] do
     description "Berry Firmness!"

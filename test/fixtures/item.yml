@@ -1,3 +1,11 @@
 one:
   id: 1
   identifier: master-ball
+
+two:
+  id: 126
+  identifier: cheri-berry
+
+three:
+  id: 127
+  identifier: chesto-berry
