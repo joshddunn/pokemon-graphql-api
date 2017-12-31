@@ -399,13 +399,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :PokemonSpecies, !types[Types::PokemonSpecyType] do
-    description "Pokemon Species!"
-
-    resolve -> (obj, args, ctx) { 
-      PokemonSpecy.all
-    }
-  end
+  connection :PokemonSpecies, function: Resolvers::PokemonSpecySearch
 
   field :Stats, !types[Types::StatType] do
     description "Stats!"
