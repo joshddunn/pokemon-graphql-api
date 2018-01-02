@@ -1,9 +1,14 @@
 <h3>
-  GraphQL Pokemon API
+  PokeQL: A BETA GraphQL Pokemon API
 </h3>
 
 <div class="query-sandbox">
-  <%= link_to "Query Tester", graphiql_rails_url %>
+  <%= link_to "Query Tester", graphiql_rails_url %><br><br>
+  POST requests should be made using <%= Rails.application.config.url %>/v1
+</div>
+
+<div class="notice">
+  This API is in beta so endpoints may be changed without notice.
 </div>
 
 <div>
