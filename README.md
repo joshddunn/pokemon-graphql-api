@@ -58,6 +58,10 @@ Need to precompile assets
 
 Also need to add `RAILS_SERVE_STATIC_FILES=true` to the `.env` file.
 
+  - SECRET_KEY_BASE
+  - RAILS_SERVE_STATIC_FILES
+  - PROD_DB_PASS
+
 ## TO DO
 
   - Add connection types for each type
