@@ -22,7 +22,7 @@ class Resolvers::PokemonSpriteUrl < GraphQL::Function
 
   def url obj
     if obj[:gender] == "" or (obj[:gender].include? "female" and obj[:obj].pokemon_specy.has_gender_differences)
-      "#{Rails.application.config.url}/sprites/pokemon/#{dir}#{obj[:type]}#{obj[:gender]}#{file obj[:obj]}.png"
+      "#{Rails.application.config.url}/v1/sprites/pokemon/#{dir}#{obj[:type]}#{obj[:gender]}#{file obj[:obj]}.png"
     else
       ""
     end
