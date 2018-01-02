@@ -62,6 +62,10 @@ Also need to add `RAILS_SERVE_STATIC_FILES=true` to the `.env` file.
   - RAILS_SERVE_STATIC_FILES
   - PROD_DB_PASS
 
+To make the production go live (and run in background)
+
+    docker-compose -f docker-compose.prod.yml up -d
+
 ## TO DO
 
   - Add connection types for each type
