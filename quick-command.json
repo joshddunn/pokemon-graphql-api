@@ -3,13 +3,18 @@
   "command": {
     "test": "echo 'qc has been installed properly and is ready to use.'",
     "rw": "docker-compose run web",
+    "prw": "docker-compose -f docker-compose.prod.yml run web",
     "ub": "docker-compose up --build",
     "dbc": "docker-compose run web rake db:create",
     "u": "docker-compose up",
+    "pu": "docker-compose -f docker-compose.prod.yml up",
+    "pub": "docker-compose -f docker-compose.prod.yml up --build",
     "d": "docker-compose down",
     "s": "rm tmp/pids/server.pid; docker-compose up",
+    "ps": "rm tmp/pids/server.pid; docker-compose -f docker-compose.prod.yml up",
     "db:reset": "qc rw rails db:reset",
     "db:migrate": "qc rw rails db:migrate",
-    "rails": "qc rw rails"
+    "rails": "qc rw rails",
+    "prails": "qc prw rails"
   }
 }

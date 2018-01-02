@@ -50,6 +50,14 @@ gwap - turns the ugly formatted paraph into a nicely formatted one.
 
 gq - formats the visually selected line
 
+## production
+
+Need to precompile assets
+
+  qc prails assets:precompile
+
+Also need to add `RAILS_SERVE_STATIC_FILES=true` to the `.env` file.
+
 ## TO DO
 
   - Add connection types for each type
