@@ -71,3 +71,7 @@ To make the production go live (and run in background)
   - Add connection types for each type
   - Use connection for endpoints
   - 'Advanced' filtering for each of the endpoints
+
+## to make nginx work
+
+  sudo ufw allow 'Nginx HTTP'
