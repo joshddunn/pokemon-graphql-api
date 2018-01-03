@@ -9,6 +9,7 @@
     "u": "docker-compose up",
     "pu": "docker-compose -f docker-compose.prod.yml up",
     "pub": "docker-compose -f docker-compose.prod.yml up --build",
+    "deploy": "docker-compose -f docker-compose.prod.yml up -d",
     "d": "docker-compose down",
     "s": "rm tmp/pids/server.pid; docker-compose up",
     "ps": "rm tmp/pids/server.pid; docker-compose -f docker-compose.prod.yml up",
