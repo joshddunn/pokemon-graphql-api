@@ -28,7 +28,7 @@ class Resolvers::PokemonSearch
   end
 
   option :filter, type: PokemonFilter, with: :apply_filter
-  # option :order, type: types[types.String], with: :apply_order
+  option :order, type: types[types.String], with: :apply_order
 
   def apply_filter(scope, value)
     branches = normalize_filters(value).reduce { |a,b| a.or(b) }
