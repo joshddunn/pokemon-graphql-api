@@ -5,12 +5,12 @@ Types::PokemonType = GraphQL::ObjectType.define do
   field :id, !types.ID, "", property: :id
   field :identifier, !types.String, "", property: :identifier
   field :species, Types::PokemonSpecyType, "", property: :pokemon_specy
-  field :height, !types.Float, "" do 
+  field :height, !types.Float, "Height of the pokemon in meters (m)" do 
     resolve -> (obj, args, ctx) {
       obj.height / 10.0 
     }
   end
-  field :weight, !types.Float, "" do
+  field :weight, !types.Float, "Weight of the pokemon in kilograms (kg)" do
     resolve -> (obj, args, ctx) {
       obj.weight / 10.0
     }
