@@ -22,7 +22,7 @@ Types::PokemonSpecyType = GraphQL::ObjectType.define do
   field :conquestOrder, !types.Int, "", property: :conquest_order
 
   field :pokemons, !types[Types::PokemonType], "", property: :pokemons
-  field :pokemonSpecies, !types[Types::PokemonSpecyType], "", property: :pokemon_species
+  field :evolvesIntoSpecies, !types[Types::PokemonSpecyType], "", property: :pokemon_species
   field :palParks, !types[Types::PalParkType], "", property: :pal_parks
   field :pokemonDexNumbers, !types[Types::PokemonDexNumberType], "", property: :pokemon_dex_numbers
   field :pokemonEggGroups, !types[Types::PokemonEggGroupType], "", property: :pokemon_egg_groups
