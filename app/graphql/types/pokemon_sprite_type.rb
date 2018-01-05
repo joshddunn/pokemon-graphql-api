@@ -13,4 +13,10 @@ Types::PokemonSpriteType = GraphQL::ObjectType.define do
       obj.merge(type: "shiny/")
     }
   end
+
+  field :silhouette, Types::PokemonSpriteGenderType do
+    resolve -> (obj, args, ctx) {
+      obj.merge(type: "silhouette/")
+    }
+  end
 end
