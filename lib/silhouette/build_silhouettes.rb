@@ -15,7 +15,7 @@ directories.each do |directory|
         image = ChunkyPNG::Image.from_file(filename)
         image.pixels.map! do |pixel|
           color = pixel
-          color = ChunkyPNG::Color.from_hsv(0, 0, 0) if ChunkyPNG::Color.a(pixel) == 255
+          color = ChunkyPNG::Color.from_hsv(0, 0, 0) unless ChunkyPNG::Color.a(pixel) == 0
           color
         end
         image.save(filename, :fast_rgba)

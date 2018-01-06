@@ -1,11 +1,25 @@
 <div id="whos-that-pokemon">
   <div id="silhouette">
-    Who's that pokemon?<br>
-    <%= image_tag pokemon["sprites"]["silhouette"]["male"]["front"] %> 
+    <div>
+      Who's that Pokemon?
+    </div>
+
+    <div>
+      <%= image_tag pokemon["sprites"]["silhouette"]["male"]["front"] %> 
+    </div>
   </div>
 
   <div id="pokemon">
-    It's <%= pokemon["identifier"].capitalize %>!<br>
-    <%= image_tag pokemon["sprites"]["normal"]["male"]["front"] %> 
+    <div>
+      It's <%= pokemon["identifier"].capitalize %>!
+    </div>
+
+    <div>
+      <%= image_tag pokemon["sprites"]["normal"]["male"]["front"] %> 
+    </div>
+  </div>
+
+  <div>
+    (click image to reveal)
   </div>
 </div>

@@ -1,4 +1,4 @@
 $ ->
-  $("#whos-that-pokemon").mouseenter ->
+  $("#whos-that-pokemon").click ->
     $("#silhouette").hide()
     $("#pokemon").show()

@@ -1,9 +1,12 @@
 <h3>
-  PokeQL: A BETA GraphQL Pokemon API
+  PokeQL: A Pokemon API using GraphQL
 </h3>
 
 <div class="query-sandbox">
-  <%= link_to "Query Tester", graphiql_rails_url %><br><br>
+  <%= link_to "Query Tester", graphiql_rails_url %>
+</div>
+
+<div>
   Requests should be made using <%= Rails.application.config.url %>/v1
 </div>
 
@@ -14,10 +17,15 @@
 <%= render "static_page/whos_that_pokemon", pokemon: random_from_date %>
 
 <div>
-  Data sourced from <%= link_to "pokeapi.co", "//pokeapi.co" %><br>
-  PokeQL is in no way affiliated or endorsed by PokeAPI.
+  <div>
+    Data sourced from <%= link_to "pokeapi.co", "//pokeapi.co" %>
+  </div>
+
+  <div>
+    PokeQL is in no way affiliated or endorsed by PokeAPI.
+  </div>
 </div>
 
-<div>
+<div class="signature">
   Built by <%= link_to "Josh Dunn", "//github.com/joshddunn" %>
 </div>

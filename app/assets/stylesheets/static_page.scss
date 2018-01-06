@@ -2,7 +2,7 @@ body {
   text-align: center;
 }
 
-.query-sandbox {
+.query-sandbox, .signature {
   margin: 20px 0px;
 }
 
@@ -13,7 +13,8 @@ body {
 
 #whos-that-pokemon {
   width: 150px;
-  margin: auto;
+  margin: 20px auto;
+  cursor: pointer;
 
   #silhouette {
   }
