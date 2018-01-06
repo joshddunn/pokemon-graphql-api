@@ -13,7 +13,7 @@ class Resolvers::PokemonSpriteUrl < GraphQL::Function
   end
 
   def file _obj
-    if _obj.identifier.include? "-"
+    if _obj.identifier.include? "-" and ( _obj.identifier.include? "-mega" or _obj.identifier.include? "-alola" )
       "#{_obj.species_id}-#{_obj.identifier.sub(/\w+-/, "")}"
     else
       _obj.id
