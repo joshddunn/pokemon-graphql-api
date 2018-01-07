@@ -1,9 +1,9 @@
 # load './lib/silhouette/build_silhouettes.rb'
 
 directories = [
-  "./public/v1/sprites/pokemon/silhouette/",
-  "./public/v1/sprites/pokemon/silhouette/female/",
-  "./public/v1/sprites/pokemon/back/silhouette/",
+  # "./public/v1/sprites/pokemon/silhouette/"
+  # "./public/v1/sprites/pokemon/silhouette/female/"
+  # "./public/v1/sprites/pokemon/back/silhouette/"
   "./public/v1/sprites/pokemon/back/silhouette/female/"
 ]
 
