@@ -62,3 +62,6 @@ gem 'graphiql-rails'
 gem 'search_object', '1.2.0'
 gem 'search_object_graphql', '0.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+
+gem 'sidekiq', '~> 5.0', '>= 5.0.5'
+gem 'graphql-docs', '~> 1.0', '>= 1.0.1'
