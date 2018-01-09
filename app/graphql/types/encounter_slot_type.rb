@@ -2,11 +2,11 @@ Types::EncounterSlotType = GraphQL::ObjectType.define do
   name "EncounterSlot"
   description ""
 
-  field :id, !types.ID, "", property: :id
+  field :id, types.ID, "", property: :id
   field :versionGroup, Types::VersionGroupType, "", property: :version_group
   field :encounterMethod, Types::EncounterMethodType, "", property: :encounter_method
-  field :slot, !types.Int, "", property: :slot
-  field :rarity, !types.Int, "", property: :rarity
+  field :slot, types.Int, "", property: :slot
+  field :rarity, types.Int, "", property: :rarity
 
-  field :encounters, !types[Types::EncounterType], "", property: :encounters
+  field :encounters, types[Types::EncounterType], "", property: :encounters
 end

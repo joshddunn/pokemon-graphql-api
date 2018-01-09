@@ -7,7 +7,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   # ###################
   
   # connection :Berries, function: Resolvers::BerrySearch
-  field :Berries, !types[Types::BerryType] do
+  field :Berries, types[Types::BerryType] do
     description "Berry!"
 
     resolve -> (obj, args, ctx) { 
@@ -15,7 +15,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :BerryFirmnesses, !types[Types::BerryFirmnessType] do
+  field :BerryFirmnesses, types[Types::BerryFirmnessType] do
     description "Berry Firmness!"
 
     resolve -> (obj, args, ctx) { 
@@ -23,7 +23,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :BerryFlavors, !types[Types::BerryFlavorType] do
+  field :BerryFlavors, types[Types::BerryFlavorType] do
     description "Berry Flavor!"
 
     resolve -> (obj, args, ctx) { 
@@ -35,7 +35,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   # Contest access points
   # #####################
 
-  field :ContestTypes, !types[Types::ContestTypeType] do
+  field :ContestTypes, types[Types::ContestTypeType] do
     description "Contest Types!"
 
     resolve -> (obj, args, ctx) { 
@@ -43,7 +43,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :ContestEffects, !types[Types::ContestEffectType] do
+  field :ContestEffects, types[Types::ContestEffectType] do
     description "Contest Effects!"
 
     resolve -> (obj, args, ctx) { 
@@ -51,7 +51,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :SuperContestEffects, !types[Types::SuperContestEffectType] do
+  field :SuperContestEffects, types[Types::SuperContestEffectType] do
     description "Super Contest Effects!"
 
     resolve -> (obj, args, ctx) { 
@@ -64,7 +64,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   # Encounter access points 
   # #######################
 
-  field :EncounterMethods, !types[Types::EncounterMethodType] do
+  field :EncounterMethods, types[Types::EncounterMethodType] do
     description "Encounter methods!"
 
     resolve -> (obj, args, ctx) { 
@@ -72,7 +72,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :EncounterConditions, !types[Types::EncounterConditionType] do
+  field :EncounterConditions, types[Types::EncounterConditionType] do
     description "Encounter conditions!"
 
     resolve -> (obj, args, ctx) { 
@@ -80,7 +80,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :EncounterConditionValues, !types[Types::EncounterConditionValueType] do
+  field :EncounterConditionValues, types[Types::EncounterConditionValueType] do
     description "Encounter condition values!"
 
     resolve -> (obj, args, ctx) { 
@@ -92,7 +92,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   # Evolution access points
   # #######################
   
-  field :EvolutionChains, !types[Types::EvolutionChainType] do
+  field :EvolutionChains, types[Types::EvolutionChainType] do
     description "Evolution chains!"
 
     resolve -> (obj, args, ctx) { 
@@ -100,7 +100,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :EvolutionTriggers, !types[Types::EvolutionTriggerType] do
+  field :EvolutionTriggers, types[Types::EvolutionTriggerType] do
     description "Evolution triggers!"
 
     resolve -> (obj, args, ctx) { 
@@ -112,7 +112,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   # Game access points
   # ##################
   
-  field :Generations, !types[Types::GenerationType] do
+  field :Generations, types[Types::GenerationType] do
     description "Generations!"
 
     resolve -> (obj, args, ctx) { 
@@ -120,7 +120,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :Pokedexes, !types[Types::PokedexType] do
+  field :Pokedexes, types[Types::PokedexType] do
     description "Pokedexes!"
 
     resolve -> (obj, args, ctx) { 
@@ -128,7 +128,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
   
-  field :Versions, !types[Types::VersionType] do
+  field :Versions, types[Types::VersionType] do
     description "Versions!"
 
     resolve -> (obj, args, ctx) { 
@@ -136,7 +136,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :VersionGroups, !types[Types::VersionGroupType] do
+  field :VersionGroups, types[Types::VersionGroupType] do
     description "Version groups!"
 
     resolve -> (obj, args, ctx) { 
@@ -148,7 +148,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   # Item access points
   # ##################
   
-  field :Item, !types[Types::ItemType] do
+  field :Item, types[Types::ItemType] do
     description "Items!"
 
     argument :identifier, types.String, default_value: nil
@@ -164,7 +164,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :ItemAttributes, !types[Types::ItemFlagType] do
+  field :ItemAttributes, types[Types::ItemFlagType] do
     description "Item attributes!"
 
     resolve -> (obj, args, ctx) { 
@@ -172,7 +172,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :ItemCategories, !types[Types::ItemCategoryType] do
+  field :ItemCategories, types[Types::ItemCategoryType] do
     description "Item categories!"
 
     resolve -> (obj, args, ctx) { 
@@ -180,7 +180,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :ItemFlingEffects, !types[Types::ItemFlingEffectType] do
+  field :ItemFlingEffects, types[Types::ItemFlingEffectType] do
     description "Item fling effects!"
 
     resolve -> (obj, args, ctx) { 
@@ -188,7 +188,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :ItemPockets, !types[Types::ItemPocketType] do
+  field :ItemPockets, types[Types::ItemPocketType] do
     description "Item pockets!"
 
     resolve -> (obj, args, ctx) { 
@@ -200,7 +200,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   # Machine access points
   # #####################
 
-  field :Machines, !types[Types::MachineType] do
+  field :Machines, types[Types::MachineType] do
     description "Machines!"
 
     resolve -> (obj, args, ctx) { 
@@ -212,7 +212,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   # Move access points
   # ##################
 
-  field :Moves, !types[Types::MoveType] do
+  field :Moves, types[Types::MoveType] do
     description "Moves!"
 
     argument :identifier, types.String, default_value: nil
@@ -228,7 +228,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :MoveAilments, !types[Types::MoveMetaAilmentType] do
+  field :MoveAilments, types[Types::MoveMetaAilmentType] do
     description "Move ailments!"
 
     resolve -> (obj, args, ctx) { 
@@ -236,7 +236,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :MoveBattleStyles, !types[Types::MoveBattleStyleType] do
+  field :MoveBattleStyles, types[Types::MoveBattleStyleType] do
     description "Move battle styles!"
 
     resolve -> (obj, args, ctx) { 
@@ -244,7 +244,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :MoveCategories, !types[Types::MoveMetaCategoryType] do
+  field :MoveCategories, types[Types::MoveMetaCategoryType] do
     description "Move categories!"
 
     resolve -> (obj, args, ctx) { 
@@ -252,7 +252,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :MoveDamageClasses, !types[Types::MoveDamageClassType] do
+  field :MoveDamageClasses, types[Types::MoveDamageClassType] do
     description "Move damage classes!"
 
     resolve -> (obj, args, ctx) { 
@@ -260,7 +260,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :MoveLearnMethods, !types[Types::PokemonMoveMethodType] do
+  field :MoveLearnMethods, types[Types::PokemonMoveMethodType] do
     description "Move learn methods!"
 
     resolve -> (obj, args, ctx) { 
@@ -268,7 +268,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :MoveTargets, !types[Types::MoveTargetType] do
+  field :MoveTargets, types[Types::MoveTargetType] do
     description "Move targets!"
 
     resolve -> (obj, args, ctx) { 
@@ -280,7 +280,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   # Location access points
   # ######################
 
-  field :Locations, !types[Types::LocationType] do
+  field :Locations, types[Types::LocationType] do
     description "Locations!"
 
     resolve -> (obj, args, ctx) { 
@@ -288,7 +288,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :LocationAreas, !types[Types::LocationAreaType] do
+  field :LocationAreas, types[Types::LocationAreaType] do
     description "Location areas!"
 
     resolve -> (obj, args, ctx) { 
@@ -296,7 +296,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :PalParkAreas, !types[Types::PalParkAreaType] do
+  field :PalParkAreas, types[Types::PalParkAreaType] do
     description "Pal park areas!"
 
     resolve -> (obj, args, ctx) { 
@@ -304,7 +304,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :Regions, !types[Types::RegionType] do
+  field :Regions, types[Types::RegionType] do
     description "Regions!"
 
     resolve -> (obj, args, ctx) { 
@@ -316,7 +316,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   # Pokemon access points
   # #####################
 
-  field :Abilities, !types[Types::AbilityType] do
+  field :Abilities, types[Types::AbilityType] do
     description "Abilities!"
 
     resolve -> (obj, args, ctx) { 
@@ -324,7 +324,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :Characteristics, !types[Types::CharacteristicType] do
+  field :Characteristics, types[Types::CharacteristicType] do
     description "Characteristics!"
 
     resolve -> (obj, args, ctx) { 
@@ -332,7 +332,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :EggGroups, !types[Types::EggGroupType] do
+  field :EggGroups, types[Types::EggGroupType] do
     description "Egg groups!"
 
     resolve -> (obj, args, ctx) { 
@@ -340,7 +340,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :Genders, !types[Types::GenderType] do
+  field :Genders, types[Types::GenderType] do
     description "Genders!"
 
     resolve -> (obj, args, ctx) { 
@@ -348,7 +348,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :GrowthRates, !types[Types::GrowthRateType] do
+  field :GrowthRates, types[Types::GrowthRateType] do
     description "Growth rates!"
 
     resolve -> (obj, args, ctx) { 
@@ -356,7 +356,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :Natures, !types[Types::NatureType] do
+  field :Natures, types[Types::NatureType] do
     description "Natures!"
 
     resolve -> (obj, args, ctx) { 
@@ -364,7 +364,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :PokeathlonStats, !types[Types::PokeathlonStatType] do
+  field :PokeathlonStats, types[Types::PokeathlonStatType] do
     description "Pokeathlon stats!"
 
     resolve -> (obj, args, ctx) { 
@@ -374,7 +374,7 @@ Types::QueryType = GraphQL::ObjectType.define do
 
   connection :Pokemon, function: Resolvers::PokemonSearch
 
-  field :PokemonColors, !types[Types::PokemonColorType] do
+  field :PokemonColors, types[Types::PokemonColorType] do
     description "Pokemon Colors!"
 
     resolve -> (obj, args, ctx) { 
@@ -382,7 +382,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :PokemonForms, !types[Types::PokemonFormType] do
+  field :PokemonForms, types[Types::PokemonFormType] do
     description "Pokemon forms!"
 
     resolve -> (obj, args, ctx) { 
@@ -390,7 +390,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :PokemonHabitats, !types[Types::PokemonHabitatType] do
+  field :PokemonHabitats, types[Types::PokemonHabitatType] do
     description "Pokemon habitats!"
 
     resolve -> (obj, args, ctx) { 
@@ -398,7 +398,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :PokemonShapes, !types[Types::PokemonShapeType] do
+  field :PokemonShapes, types[Types::PokemonShapeType] do
     description "Pokemon shapes!"
 
     resolve -> (obj, args, ctx) { 
@@ -408,7 +408,7 @@ Types::QueryType = GraphQL::ObjectType.define do
 
   connection :PokemonSpecies, function: Resolvers::PokemonSpecySearch
 
-  field :Stats, !types[Types::StatType] do
+  field :Stats, types[Types::StatType] do
     description "Stats!"
 
     resolve -> (obj, args, ctx) { 
@@ -416,7 +416,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :Types, !types[Types::TypeType] do
+  field :Types, types[Types::TypeType] do
     description "Types!"
 
     resolve -> (obj, args, ctx) { 
@@ -428,7 +428,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   # Language access points
   # ######################
 
-  field :Languages, !types[Types::LanguageType] do
+  field :Languages, types[Types::LanguageType] do
     description "Languages!"
 
     resolve -> (obj, args, ctx) { 
