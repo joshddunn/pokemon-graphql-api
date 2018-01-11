@@ -9,19 +9,16 @@ class Resolvers::PokemonSpriteUrl < GraphQL::Function
   end
 
   def call(obj, args, ctx)
-    url obj
+      url obj
   end
 
   def file _obj
-    if _obj.model_name.name == "PokemonForm"
-      "#{_obj.pokemon.species_id}-#{_obj.form_identifier}"
-    elsif _obj.model_name.name == "Pokemon"
-      file_name = "#{_obj.species_id}" 
-
-      form_identifier = _obj.pokemon_forms.first.form_identifier
-      file_name += "-#{form_identifier}" unless form_identifier.blank?
-
-      file_name
+    if not _obj[:form_identifier].nil? and not _obj[:form_identifier] == ""
+      "#{_obj.pokemon.pokemon_specy.id}-#{_obj[:form_identifier]}"
+    elsif _obj.identifier.include? "-" and ( _obj.identifier.include? "-mega" or _obj.identifier.include? "-alola" )
+      "#{_obj.species_id}-#{_obj.identifier.sub(/\w+-/, "")}"
+    else
+      _obj.id
     end
   end
 
@@ -29,7 +26,7 @@ class Resolvers::PokemonSpriteUrl < GraphQL::Function
     if obj[:gender] == "" or (obj[:gender].include? "female" and obj[:obj].pokemon_specy.has_gender_differences)
       "#{Rails.application.config.url}/v1/sprites/pokemon/#{dir}#{obj[:type]}#{obj[:gender]}#{file obj[:obj]}.png"
     else
-      "#{Rails.application.config.url}/v1/sprites/pokemon/#{dir}#{obj[:type]}#{file obj[:obj]}.png"
+      ""
     end
   end
 end
