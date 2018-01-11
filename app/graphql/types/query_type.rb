@@ -382,13 +382,7 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  field :PokemonForms, types[Types::PokemonFormType] do
-    description "Pokemon forms!"
-
-    resolve -> (obj, args, ctx) { 
-      PokemonForm.all
-    }
-  end
+  connection :PokemonForms, function: Resolvers::PokemonFormSearch 
 
   field :PokemonHabitats, types[Types::PokemonHabitatType] do
     description "Pokemon habitats!"

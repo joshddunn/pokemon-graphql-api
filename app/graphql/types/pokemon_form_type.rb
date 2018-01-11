@@ -13,6 +13,11 @@ Types::PokemonFormType = GraphQL::ObjectType.define do
   field :formOrder, types.Int, "", property: :form_order
   field :order, types.Int, "", property: :order
 
+  field :sprites, Types::PokemonSpriteType do
+    resolve -> (obj, args, ctx) {
+      {obj: obj, form: obj.form_identifier}
+    }
+  end
   field :pokemonFormGenerations, types[Types::PokemonFormGenerationType], "", property: :pokemon_form_generations
   field :pokemonFormNames, types[Types::PokemonFormNameType], "", property: :pokemon_form_names
   field :pokemonFormPokeathlonStats, types[Types::PokemonFormPokeathlonStatType], "", property: :pokemon_form_pokeathlon_stats
