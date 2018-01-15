@@ -16,6 +16,7 @@
     "db:reset": "qc rw rails db:reset",
     "db:migrate": "qc rw rails db:migrate",
     "rails": "qc rw rails",
-    "prails": "qc prw rails"
+    "prails": "qc prw rails",
+    "prune": "docker system prune -a -f"
   }
 }
