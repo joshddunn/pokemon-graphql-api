@@ -3,6 +3,4 @@ Rails.application.routes.draw do
 
   post "/v1", to: "graphql#execute"
   get "/v1", to: "static_page#query"
-
-  root "static_page#home"
 end

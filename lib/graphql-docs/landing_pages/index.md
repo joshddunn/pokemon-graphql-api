@@ -6,6 +6,8 @@ title: GraphQL documentation
 
 PokeQL is a GraphQL API for the Pokemon video games.
 
+The documentation for PokeQL is incomplete, but is currently being worked on.
+
 This API is in *beta* so endpoints and structure may change without notice.
 
 Requests should be made to
@@ -27,6 +29,6 @@ PokeQL is not affiliated with PokeAPI or The Pokemon Company in any way.
 
 PokeQL was built by [Josh Dunn](https://joshddunn.com).
 
-## PokeQL
+## MTGQL
 
-If you like the pokemon video games, check out [pokeql.com](http://pokeql.com).
+If you like Magic: The Gathering, check out [mtgql.com](http://mtgql.com).
