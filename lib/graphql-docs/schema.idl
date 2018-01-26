@@ -1,0 +1,2713 @@
+type Ability {
+  abilityChangelog: [AbilityChangelog]
+
+  abilityFlavorTexts: [AbilityFlavorText]
+
+  abilityNames: [AbilityName]
+
+  abilityProse: [AbilityProse]
+
+  conquestPokemonAbilities: [ConquestPokemonAbility]
+
+  generation: Generation
+
+  id: ID
+
+  identifier: String
+
+  isMainSeries: Boolean
+
+  pokemonAbilities: [PokemonAbility]
+}
+
+type AbilityChangelog {
+  ability: Ability
+
+  abilityChangelogProses: [AbilityChangelogProse]
+
+  changedInVersionGroup: VersionGroup
+
+  id: ID
+}
+
+type AbilityChangelogProse {
+  abilityChangelog: AbilityChangelog
+
+  effect: String
+
+  id: ID
+
+  localLanguage: Language
+}
+
+type AbilityFlavorText {
+  ability: Ability
+
+  flavorText: String
+
+  id: ID
+
+  language: Language
+
+  versionGroup: VersionGroup
+}
+
+type AbilityName {
+  ability: Ability
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+}
+
+type AbilityProse {
+  ability: Ability
+
+  effect: String
+
+  id: ID
+
+  localLanguage: Language
+
+  shortEffect: String
+}
+
+type Berry {
+  berryFlavors: [BerryFlavor]
+
+  firmness: BerryFirmness
+
+  growthTime: Int
+
+  id: ID
+
+  item: Item
+
+  maxHarvest: Int
+
+  naturalGiftPower: Int
+
+  naturalGiftType: Type
+
+  size: Int
+
+  smoothness: Int
+
+  soilDryness: Int
+}
+
+type BerryFirmness {
+  berries: [Berry]
+
+  berryFirmnessNames: [BerryFirmnessName]
+
+  id: ID
+
+  identifier: String
+}
+
+type BerryFirmnessName {
+  berryFirmness: BerryFirmness
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+}
+
+type BerryFlavor {
+  berry: Berry
+
+  contestType: ContestType
+
+  flavor: Int
+
+  hatesFlavors: [Nature]
+
+  id: ID
+
+  likesFlavors: [Nature]
+}
+
+type Characteristic {
+  characteristicTexts: [CharacteristicText]
+
+  geneMod5: Int
+
+  id: ID
+
+  stat: Stat
+}
+
+type CharacteristicText {
+  characteristic: Characteristic
+
+  id: ID
+
+  localLanguage: Language
+
+  message: String
+}
+
+type ConquestEpisode {
+  completedEpisodes: [ConquestWarriorTransformation]
+
+  conquestEpisodeNames: [ConquestEpisodeName]
+
+  conquestEpisodeWarriors: [ConquestEpisodeWarrior]
+
+  currentEpisodes: [ConquestWarriorTransformation]
+
+  id: ID
+
+  identifier: String
+}
+
+type ConquestEpisodeName {
+  episode: ConquestEpisode
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+}
+
+type ConquestEpisodeWarrior {
+  episode: ConquestEpisode
+
+  id: ID
+
+  warrior: ConquestWarrior
+}
+
+type ConquestKingdom {
+  conquestKingdomNames: [ConquestKingdomName]
+
+  conquestPokemonEvolutions: [ConquestPokemonEvolution]
+
+  id: ID
+
+  identifier: String
+
+  type: Type
+}
+
+type ConquestKingdomName {
+  id: ID
+
+  kingdom: ConquestKingdom
+
+  localLanguage: Language
+
+  name: String
+}
+
+type ConquestMaxLink {
+  id: ID
+
+  maxLink: Int
+
+  pokemonSpecies: PokemonSpecy
+
+  warriorRank: ConquestWarriorRank
+}
+
+type ConquestMoveDatum {
+  accuracy: Int
+
+  displacement: ConquestMoveDisplacement
+
+  effect: ConquestMoveEffect
+
+  effectChance: Int
+
+  id: ID
+
+  move: Move
+
+  power: Int
+
+  range: ConquestMoveRange
+}
+
+type ConquestMoveDisplacement {
+  affectsTarget: Boolean
+
+  conquestMoveData: [ConquestMoveDatum]
+
+  conquestMoveDisplacementProses: [ConquestMoveDisplacementProse]
+
+  id: ID
+
+  identifier: String
+}
+
+type ConquestMoveDisplacementProse {
+  effect: String
+
+  id: ID
+
+  localLanguage: Language
+
+  moveDisplacement: ConquestMoveDisplacement
+
+  name: String
+
+  shortEffect: String
+}
+
+type ConquestMoveEffect {
+  conquestMoveData: [ConquestMoveDatum]
+
+  conquestMoveEffectProses: [ConquestMoveEffectProse]
+
+  id: ID
+}
+
+type ConquestMoveEffectProse {
+  conquestMoveEffect: ConquestMoveEffect
+
+  effect: String
+
+  id: ID
+
+  localLanguage: Language
+
+  shortEffect: String
+}
+
+type ConquestMoveRange {
+  conquestMoveData: [ConquestMoveDatum]
+
+  conquestMoveRangeProses: [ConquestMoveRangeProse]
+
+  id: ID
+
+  identifier: String
+
+  targets: Int
+}
+
+type ConquestMoveRangeProse {
+  conquestMoveRange: ConquestMoveRange
+
+  description: String
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+}
+
+type ConquestPokemonAbility {
+  ability: Ability
+
+  id: ID
+
+  pokemonSpecies: PokemonSpecy
+
+  slot: Int
+}
+
+type ConquestPokemonEvolution {
+  evolvedSpecies: PokemonSpecy
+
+  id: ID
+
+  item: Item
+
+  kingdom: ConquestKingdom
+
+  minimumLink: Int
+
+  minimumStat: Int
+
+  recruitingKoRequired: Boolean
+
+  requiredStat: Stat
+
+  warriorGender: Gender
+}
+
+type ConquestPokemonMove {
+  id: ID
+
+  move: Move
+
+  pokemonSpecies: PokemonSpecy
+}
+
+type ConquestPokemonStat {
+  baseStat: Int
+
+  conquestStat: ConquestStat
+
+  id: ID
+
+  pokemonSpecies: PokemonSpecy
+}
+
+type ConquestStat {
+  conquestPokemonStats: [ConquestPokemonStat]
+
+  conquestStatNames: [ConquestStatName]
+
+  id: ID
+
+  identifier: String
+
+  isBase: Boolean
+}
+
+type ConquestStatName {
+  conquestStat: ConquestStat
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+}
+
+type ConquestTransformationPokemon {
+  id: ID
+
+  pokemonSpecies: PokemonSpecy
+
+  transformation: ConquestWarriorRank
+}
+
+type ConquestTransformationWarrior {
+  id: ID
+
+  presentWarrior: ConquestWarrior
+
+  transformation: ConquestWarriorRank
+}
+
+type ConquestWarrior {
+  archetype: ConquestWarriorArchetype
+
+  conquestEpisodeWarriors: [ConquestEpisodeWarrior]
+
+  conquestTransformationWarriors: [ConquestTransformationWarrior]
+
+  conquestWarriorNames: [ConquestWarriorName]
+
+  conquestWarriorRanks: [ConquestWarriorRank]
+
+  conquestWarriorSpecialties: [ConquestWarriorSpecialty]
+
+  conquestWarriorTransformations: [ConquestWarriorTransformation]
+
+  gender: Gender
+
+  id: ID
+
+  identifier: String
+}
+
+type ConquestWarriorArchetype {
+  conquestWarriors: [ConquestWarrior]
+
+  id: ID
+
+  identifier: String
+}
+
+type ConquestWarriorName {
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  warrior: ConquestWarrior
+}
+
+type ConquestWarriorRank {
+  conquestMaxLinks: [ConquestMaxLink]
+
+  conquestTransformationPokemons: [ConquestTransformationPokemon]
+
+  conquestTransformationWarriors: [ConquestTransformationWarrior]
+
+  conquestWarriorRankStatMaps: [ConquestWarriorRankStatMap]
+
+  conquestWarriorTransformations: [ConquestWarriorTransformation]
+
+  id: ID
+
+  rank: Int
+
+  skill: ConquestWarriorSkill
+
+  warrior: ConquestWarrior
+}
+
+type ConquestWarriorRankStatMap {
+  baseStat: Int
+
+  id: ID
+
+  warriorRank: ConquestWarriorRank
+
+  warriorStat: ConquestWarriorStat
+}
+
+type ConquestWarriorSkill {
+  conquestWarriorRanks: [ConquestWarriorRank]
+
+  conquestWarriorSkillNames: [ConquestWarriorSkillName]
+
+  id: ID
+
+  identifier: String
+}
+
+type ConquestWarriorSkillName {
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  skill: ConquestWarriorSkill
+}
+
+type ConquestWarriorSpecialty {
+  id: ID
+
+  slot: Int
+
+  type: Type
+
+  warrior: ConquestWarrior
+}
+
+type ConquestWarriorStat {
+  conquestWarriorRankStatMaps: [ConquestWarriorRankStatMap]
+
+  conquestWarriorStatNames: [ConquestWarriorStatName]
+
+  id: ID
+
+  identifier: String
+}
+
+type ConquestWarriorStatName {
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  warriorStat: ConquestWarriorStat
+}
+
+type ConquestWarriorTransformation {
+  collectionType: Type
+
+  completedEpisode: ConquestEpisode
+
+  currentEpisode: ConquestEpisode
+
+  distantWarrior: ConquestWarrior
+
+  femaleWarlordCount: Int
+
+  id: ID
+
+  isAutomatic: Boolean
+
+  pokemonCount: Int
+
+  requiredLink: Int
+
+  transformedWarriorRank: ConquestWarriorRank
+
+  warriorCount: Int
+}
+
+type ContestCombo {
+  firstMove: Move
+
+  id: ID
+
+  secondMove: Move
+}
+
+type ContestEffect {
+  appeal: Int
+
+  contestEffectProses: [ContestEffectProse]
+
+  id: ID
+
+  jam: Int
+
+  moves: [Move]
+}
+
+type ContestEffectProse {
+  contestEffect: Int
+
+  effect: String
+
+  flavorText: String
+
+  id: ID
+
+  localLanguage: Int
+}
+
+type ContestType {
+  berryFlavors: [BerryFlavor]
+
+  contestTypeNames: [ContestTypeName]
+
+  id: ID
+
+  identifier: String
+
+  moves: [Move]
+}
+
+type ContestTypeName {
+  color: String
+
+  contestType: ContestType
+
+  flavor: String
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+}
+
+type EggGroup {
+  eggGroupProses: [EggGroupProse]
+
+  id: ID
+
+  identifier: String
+
+  pokemonEggGroups: [PokemonEggGroup]
+}
+
+type EggGroupProse {
+  eggGroup: EggGroup
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+}
+
+type Encounter {
+  encounterConditionValueMaps: [EncounterConditionValueMap]
+
+  encounterSlot: EncounterSlot
+
+  id: ID
+
+  locationArea: LocationArea
+
+  maxLevel: Int
+
+  minLevel: Int
+
+  pokemon: Pokemon
+
+  version: Version
+}
+
+type EncounterCondition {
+  encounterConditionProses: [EncounterConditionProse]
+
+  encounterConditionValues: [EncounterConditionValue]
+
+  id: ID
+
+  identifier: String
+}
+
+type EncounterConditionProse {
+  encounterCondition: EncounterCondition
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+}
+
+type EncounterConditionValue {
+  encounterCondition: EncounterCondition
+
+  encounterConditionValueMaps: [EncounterConditionValueMap]
+
+  encounterConditionValueProses: [EncounterConditionValueProse]
+
+  id: ID
+
+  identifier: String
+
+  isDefault: Boolean
+}
+
+type EncounterConditionValueMap {
+  encounter: Encounter
+
+  encounterConditionValue: EncounterConditionValue
+
+  id: ID
+}
+
+type EncounterConditionValueProse {
+  encounterConditionValue: EncounterConditionValue
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+}
+
+type EncounterMethod {
+  encounterMethodProses: [EncounterMethodProse]
+
+  encounterSlots: [EncounterSlot]
+
+  id: ID
+
+  identifier: String
+
+  locationAreaEncounterRates: [LocationAreaEncounterRate]
+
+  order: Int
+}
+
+type EncounterMethodProse {
+  encounterMethod: EncounterMethod
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+}
+
+type EncounterSlot {
+  encounterMethod: EncounterMethod
+
+  encounters: [Encounter]
+
+  id: ID
+
+  rarity: Int
+
+  slot: Int
+
+  versionGroup: VersionGroup
+}
+
+type EvolutionChain {
+  babyTriggerItem: Item
+
+  id: ID
+
+  pokemonSpecies: [PokemonSpecy]
+}
+
+type EvolutionTrigger {
+  evolutionTriggerProses: [EvolutionTriggerProse]
+
+  id: ID
+
+  identifier: String
+
+  pokemonEvolutions: [PokemonEvolution]
+}
+
+type EvolutionTriggerProse {
+  evolutionTrigger: EvolutionTrigger
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+}
+
+type Experience {
+  experience: Int
+
+  growthRate: GrowthRate
+
+  id: ID
+
+  level: Int
+}
+
+type Gender {
+  conquestPokemonEvolutions: [ConquestPokemonEvolution]
+
+  conquestWarriors: [ConquestWarrior]
+
+  id: ID
+
+  identifier: String
+
+  pokemonEvolutions: [PokemonEvolution]
+}
+
+type Generation {
+  abilities: [Ability]
+
+  generationNames: [GenerationName]
+
+  id: ID
+
+  identifier: String
+
+  itemGameIndices: [ItemGameIndex]
+
+  locationGameIndices: [LocationGameIndex]
+
+  mainRegion: Region
+
+  moves: [Move]
+
+  pokemonFormGenerations: [PokemonFormGeneration]
+
+  pokemonSpecies: [PokemonSpecy]
+
+  typeGameIndices: [TypeGameIndex]
+
+  types: [Type]
+
+  versionGroups: [VersionGroup]
+}
+
+type GenerationName {
+  generation: Generation
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+}
+
+type GrowthRate {
+  experiences: [Experience]
+
+  formula: String
+
+  growthRateProses: [GrowthRateProse]
+
+  id: ID
+
+  identifier: String
+
+  pokemonSpecies: [PokemonSpecy]
+}
+
+type GrowthRateProse {
+  growthRate: GrowthRate
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+}
+
+type Item {
+  berries: [Berry]
+
+  category: ItemCategory
+
+  conquestPokemonEvolutions: [ConquestPokemonEvolution]
+
+  cost: Int
+
+  evolutionChains: [EvolutionChain]
+
+  flingEffect: ItemFlingEffect
+
+  flingPower: Int
+
+  heldItems: [PokemonEvolution]
+
+  id: ID
+
+  identifier: String
+
+  itemFlagMaps: [ItemFlagMap]
+
+  itemFlavorSummaries: [ItemFlavorSummary]
+
+  itemFlavorTexts: [ItemFlavorText]
+
+  itemGameIndices: [ItemGameIndex]
+
+  itemNames: [ItemName]
+
+  itemProses: [ItemProse]
+
+  machines: [Machine]
+
+  pokemonItems: [PokemonItem]
+  sprite: String
+
+  triggerItems: [PokemonEvolution]
+}
+
+type ItemCategory {
+  id: ID
+
+  identifier: String
+
+  itemCategoryProses: [ItemCategoryProse]
+
+  items: [Item]
+
+  pocket: ItemPocket
+}
+
+type ItemCategoryProse {
+  id: ID
+
+  itemCategory: ItemCategory
+
+  localLanguage: Language
+
+  name: String
+}
+
+type ItemFlag {
+  id: ID
+
+  identifier: String
+
+  itemFlagMaps: [ItemFlagMap]
+
+  itemFlagProses: [ItemFlagProse]
+}
+
+type ItemFlagMap {
+  id: ID
+
+  item: Item
+
+  itemFlag: ItemFlag
+}
+
+type ItemFlagProse {
+  description: String
+
+  id: ID
+
+  itemFlag: ItemFlag
+
+  localLanguage: Language
+
+  name: String
+}
+
+type ItemFlavorSummary {
+  flavorSummary: String
+
+  id: ID
+
+  item: Item
+
+  localLanguage: Language
+}
+
+type ItemFlavorText {
+  flavorText: String
+
+  id: ID
+
+  item: Item
+
+  language: Language
+
+  versionGroup: VersionGroup
+}
+
+type ItemFlingEffect {
+  id: ID
+
+  identifier: String
+
+  itemFlingEffectProses: [ItemFlingEffectProse]
+
+  items: [Item]
+}
+
+type ItemFlingEffectProse {
+  effect: String
+
+  id: ID
+
+  itemFlingEffect: ItemFlingEffect
+
+  localLanguage: Language
+}
+
+type ItemGameIndex {
+  gameIndex: Int
+
+  generation: Generation
+
+  id: ID
+
+  item: Item
+}
+
+type ItemName {
+  id: ID
+
+  item: Item
+
+  localLanguage: Language
+
+  name: String
+}
+
+type ItemPocket {
+  id: ID
+
+  identifier: String
+
+  itemCategories: [ItemCategory]
+
+  itemPocketNames: [ItemPocketName]
+}
+
+type ItemPocketName {
+  id: ID
+
+  itemPocket: ItemPocket
+
+  localLanguage: Language
+
+  name: String
+}
+
+type ItemProse {
+  effect: String
+
+  id: ID
+
+  item: Item
+
+  localLanguage: Language
+
+  shortEffect: String
+}
+
+type Language {
+  abilityChangelogProses: [AbilityChangelogProse]
+
+  abilityFlavorTexts: [AbilityFlavorText]
+
+  abilityNames: [AbilityName]
+
+  abilityProse: [AbilityProse]
+
+  berryFirmnessNames: [BerryFirmnessName]
+
+  characteristicTexts: [CharacteristicText]
+
+  conquestEpisodeNames: [ConquestEpisodeName]
+
+  conquestKingdomNames: [ConquestKingdomName]
+
+  conquestMoveDisplacementProses: [ConquestMoveDisplacementProse]
+
+  conquestMoveEffectProses: [ConquestMoveEffectProse]
+
+  conquestMoveRangeProses: [ConquestMoveRangeProse]
+
+  conquestStatNames: [ConquestStatName]
+
+  conquestWarriorNames: [ConquestWarriorName]
+
+  conquestWarriorSkillNames: [ConquestWarriorSkillName]
+
+  conquestWarriorStatNames: [ConquestWarriorStatName]
+
+  contestEffectProses: [ContestEffectProse]
+
+  contestTypeNames: [ContestTypeName]
+
+  eggGroupProses: [EggGroupProse]
+
+  encounterConditionProses: [EncounterConditionProse]
+
+  encounterConditionValueProses: [EncounterConditionValueProse]
+
+  encounterMethodProses: [EncounterMethodProse]
+
+  evolutionTriggerProses: [EvolutionTriggerProse]
+
+  generationNames: [GenerationName]
+
+  growthRateProses: [GrowthRateProse]
+
+  id: ID
+
+  identifier: String
+
+  iso3166: String
+
+  iso639: String
+
+  itemCategoryProses: [ItemCategoryProse]
+
+  itemFlagProses: [ItemFlagProse]
+
+  itemFlavorSummaries: [ItemFlavorSummary]
+
+  itemFlavorTexts: [ItemFlavorText]
+
+  itemFlingEffectProses: [ItemFlingEffectProse]
+
+  itemNames: [ItemName]
+
+  itemPocketNames: [ItemPocketName]
+
+  itemProses: [ItemProse]
+
+  languageNames: [LanguageName]
+
+  localLanguageNames: [LanguageName]
+
+  locationAreaProses: [LocationAreaProse]
+
+  locationNames: [LocationName]
+
+  moveBattleStyleProses: [MoveBattleStyleProse]
+
+  moveDamageClassProses: [MoveDamageClassProse]
+
+  moveEffectChangelogProses: [MoveEffectChangelogProse]
+
+  moveEffectProses: [MoveEffectProse]
+
+  moveFlagProses: [MoveFlagProse]
+
+  moveFlavorSummaries: [MoveFlavorSummary]
+
+  moveFlavorTexts: [MoveFlavorText]
+
+  moveMetaAilmentNames: [MoveMetaAilmentName]
+
+  moveMetaCategoryProses: [MoveMetaCategoryProse]
+
+  moveNames: [MoveName]
+
+  moveTargetProses: [MoveTargetProse]
+
+  natureNames: [NatureName]
+
+  official: Boolean
+
+  order: Int
+
+  palParkAreaNames: [PalParkAreaName]
+
+  pokeathlonStatNames: [PokeathlonStatName]
+
+  pokedexProses: [PokedexProse]
+
+  pokemonColorNames: [PokemonColorName]
+
+  pokemonFormNames: [PokemonFormName]
+
+  pokemonHabitatNames: [PokemonHabitatName]
+
+  pokemonMoveMethodProses: [PokemonMoveMethodProse]
+
+  pokemonShapeProses: [PokemonShapeProse]
+
+  pokemonSpeciesFlavorSummaries: [PokemonSpeciesFlavorSummary]
+
+  pokemonSpeciesFlavorTexts: [PokemonSpeciesFlavorText]
+
+  pokemonSpeciesNames: [PokemonSpeciesName]
+
+  pokemonSpeciesProses: [PokemonSpeciesProse]
+
+  regionNames: [RegionName]
+
+  statNames: [StatName]
+
+  superContestEffectProses: [SuperContestEffectProse]
+
+  typeNames: [TypeName]
+
+  versionNames: [VersionName]
+}
+
+type LanguageName {
+  id: ID
+
+  language: Language
+
+  localLanguage: Language
+
+  name: String
+}
+
+type Location {
+  id: ID
+
+  identifier: String
+
+  locationAreas: [LocationArea]
+
+  locationGameIndices: [LocationGameIndex]
+
+  locationNames: [LocationName]
+
+  pokemonEvolutions: [PokemonEvolution]
+
+  region: Region
+}
+
+type LocationArea {
+  encounters: [Encounter]
+
+  gameIndex: Int
+
+  id: ID
+
+  identifier: String
+
+  location: Location
+
+  locationAreaEncounterRates: [LocationAreaEncounterRate]
+
+  locationAreaProses: [LocationAreaProse]
+}
+
+type LocationAreaEncounterRate {
+  encounterMethod: EncounterMethod
+
+  id: ID
+
+  locationArea: LocationArea
+
+  rate: Int
+
+  version: Version
+}
+
+type LocationAreaProse {
+  id: ID
+
+  localLanguage: Language
+
+  locationArea: LocationArea
+
+  name: String
+}
+
+type LocationGameIndex {
+  gameIndex: Int
+
+  generation: Generation
+
+  id: ID
+
+  location: Location
+}
+
+type LocationName {
+  id: ID
+
+  localLanguage: Language
+
+  location: Location
+
+  name: String
+}
+
+type Machine {
+  id: ID
+
+  item: Item
+
+  machineNumber: Int
+
+  move: Move
+
+  versionGroup: VersionGroup
+}
+
+type Move {
+  accuracy: Int
+
+  conquestMoveData: [ConquestMoveDatum]
+
+  conquestPokemonMoves: [ConquestPokemonMove]
+
+  contestComboFirstMoves: [ContestCombo]
+
+  contestComboSecondMoves: [ContestCombo]
+
+  contestEffect: ContestEffect
+
+  contestType: ContestType
+
+  damageClass: MoveDamageClass
+
+  effect: MoveEffect
+
+  effectChance: Int
+
+  generation: Generation
+
+  id: ID
+
+  identifier: String
+
+  machines: [Machine]
+
+  moveChangelogs: [MoveChangelog]
+
+  moveFlagMaps: [MoveFlagMap]
+
+  moveFlavorSummaries: [MoveFlavorSummary]
+
+  moveFlavorTexts: [MoveFlavorText]
+
+  moveMeta: [MoveMetum]
+
+  moveMetaStatChanges: [MoveMetaStatChange]
+
+  moveNames: [MoveName]
+
+  pokemonEvolutions: [PokemonEvolution]
+
+  pokemonMoves: [PokemonMove]
+
+  power: Int
+
+  pp: Int
+
+  priority: Int
+
+  superContestComboFirstMoves: [SuperContestCombo]
+
+  superContestComboSecondMoves: [SuperContestCombo]
+
+  superContestEffect: SuperContestEffect
+
+  target: MoveTarget
+
+  type: Type
+}
+
+type MoveBattleStyle {
+  id: ID
+
+  identifier: String
+
+  moveBattleStyleProses: [MoveBattleStyleProse]
+
+  natureBattleStylePreferences: [NatureBattleStylePreference]
+}
+
+type MoveBattleStyleProse {
+  id: ID
+
+  localLanguage: Language
+
+  moveBattleStyle: MoveBattleStyle
+
+  name: String
+}
+
+type MoveChangelog {
+  accuracy: Int
+
+  changedInVersionGroup: VersionGroup
+
+  effect: MoveEffect
+
+  effectChance: Int
+
+  id: ID
+
+  move: Move
+
+  power: Int
+
+  pp: Int
+
+  priority: Int
+
+  target: MoveTarget
+
+  type: Type
+}
+
+type MoveDamageClass {
+  id: ID
+
+  identifier: String
+
+  moveDamageClassProses: [MoveDamageClassProse]
+
+  moves: [Move]
+
+  stats: [Stat]
+
+  types: [Type]
+}
+
+type MoveDamageClassProse {
+  description: String
+
+  id: ID
+
+  localLanguage: Language
+
+  moveDamageClass: MoveDamageClass
+
+  name: String
+}
+
+type MoveEffect {
+  id: ID
+
+  moveChangelogs: [MoveChangelog]
+
+  moveEffectChangelogs: [MoveEffectChangelog]
+
+  moveEffectProses: [MoveEffectProse]
+
+  moves: [Move]
+}
+
+type MoveEffectChangelog {
+  changedInVersionGroup: VersionGroup
+
+  effect: MoveEffect
+
+  id: ID
+
+  moveEffectChangelogProses: [MoveEffectChangelogProse]
+}
+
+type MoveEffectChangelogProse {
+  effect: String
+
+  id: ID
+
+  localLanguage: Language
+
+  moveEffectChangelog: MoveEffectChangelog
+}
+
+type MoveEffectProse {
+  effect: String
+
+  id: ID
+
+  localLanguage: Language
+
+  moveEffect: MoveEffect
+
+  shortEffect: String
+}
+
+type MoveFlag {
+  id: ID
+
+  identifier: String
+
+  moveFlagMaps: [MoveFlagMap]
+
+  moveFlagProses: [MoveFlagProse]
+}
+
+type MoveFlagMap {
+  id: ID
+
+  move: Move
+
+  moveFlag: MoveFlag
+}
+
+type MoveFlagProse {
+  description: String
+
+  id: ID
+
+  localLanguage: Language
+
+  moveFlag: MoveFlag
+
+  name: String
+}
+
+type MoveFlavorSummary {
+  flavorSummary: String
+
+  id: ID
+
+  localLanguage: Language
+
+  move: Move
+}
+
+type MoveFlavorText {
+  flavorText: String
+
+  id: ID
+
+  language: Language
+
+  move: Move
+
+  versionGroup: VersionGroup
+}
+
+type MoveMetaAilment {
+  id: ID
+
+  identifier: String
+
+  moveMeta: [MoveMetum]
+
+  moveMetaAilmentNames: [MoveMetaAilmentName]
+}
+
+type MoveMetaAilmentName {
+  id: ID
+
+  localLanguage: Language
+
+  moveMetaAilment: MoveMetaAilment
+
+  name: String
+}
+
+type MoveMetaCategory {
+  id: ID
+
+  identifier: String
+
+  moveMeta: [MoveMetum]
+
+  moveMetaCategoryProses: [MoveMetaCategoryProse]
+}
+
+type MoveMetaCategoryProse {
+  description: String
+
+  id: ID
+
+  localLanguage: Language
+
+  moveMetaCategory: MoveMetaCategory
+}
+
+type MoveMetaStatChange {
+  change: Int
+
+  id: ID
+
+  move: Move
+
+  stat: Stat
+}
+
+type MoveMetum {
+  ailmentChance: Int
+
+  critRate: Boolean
+
+  drain: Int
+
+  flinchChance: Int
+
+  healing: Int
+
+  id: ID
+
+  maxHits: Int
+
+  maxTurns: Int
+
+  metaAilment: MoveMetaAilment
+
+  metaCategory: MoveMetaCategory
+
+  minHits: Int
+
+  minTurns: Int
+
+  move: Move
+
+  statChance: Int
+}
+
+type MoveName {
+  id: ID
+
+  localLanguage: Language
+
+  move: Move
+
+  name: String
+}
+
+type MoveTarget {
+  id: ID
+
+  identifier: String
+
+  moveChangelogs: [MoveChangelog]
+
+  moveTargetProses: [MoveTargetProse]
+
+  moves: [Move]
+}
+
+type MoveTargetProse {
+  description: String
+
+  id: ID
+
+  localLanguage: Language
+
+  moveTarget: MoveTarget
+
+  name: String
+}
+
+type Nature {
+  decreasedStat: Stat
+
+  gameIndex: Int
+
+  hatesFlavor: BerryFlavor
+
+  id: ID
+
+  identifier: String
+
+  increasedStat: Stat
+
+  likesFlavor: BerryFlavor
+
+  natureBattleStylePreferences: [NatureBattleStylePreference]
+
+  natureNames: [NatureName]
+
+  naturePokeathlonStats: [NaturePokeathlonStat]
+}
+
+type NatureBattleStylePreference {
+  highHpPreference: Int
+
+  id: ID
+
+  lowHpPreference: Int
+
+  moveBattleStyle: MoveBattleStyle
+
+  nature: Nature
+}
+
+type NatureName {
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  nature: Nature
+}
+
+type NaturePokeathlonStat {
+  id: ID
+
+  maxChange: Int
+
+  nature: Nature
+
+  pokeathlonStat: PokeathlonStat
+}
+
+# Information about pagination in a connection.
+type PageInfo {
+  # When paginating forwards, the cursor to continue.
+  endCursor: String
+
+  # When paginating forwards, are there more items?
+  hasNextPage: Boolean!
+
+  # When paginating backwards, are there more items?
+  hasPreviousPage: Boolean!
+
+  # When paginating backwards, the cursor to continue.
+  startCursor: String
+}
+
+type PalPark {
+  area: PalParkArea
+
+  baseScore: Int
+
+  id: ID
+
+  rate: Int
+
+  species: PokemonSpecy
+}
+
+type PalParkArea {
+  id: ID
+
+  identifier: String
+
+  palParkAreaNames: [PalParkAreaName]
+
+  palParks: [PalPark]
+}
+
+type PalParkAreaName {
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  palParkArea: PalParkArea
+}
+
+type PokeathlonStat {
+  id: ID
+
+  identifier: String
+
+  naturePokeathlonStats: [NaturePokeathlonStat]
+
+  pokeathlonStatNames: [PokeathlonStatName]
+
+  pokemonFormPokeathlonStats: [PokemonFormPokeathlonStat]
+}
+
+type PokeathlonStatName {
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  pokeathlonStat: PokeathlonStat
+}
+
+type Pokedex {
+  id: ID
+
+  identifier: String
+
+  isMainSeries: Boolean
+
+  pokedexProses: [PokedexProse]
+
+  pokedexVersionGroups: [PokedexVersionGroup]
+
+  pokemonDexNumbers: [PokemonDexNumber]
+
+  region: Region
+}
+
+type PokedexProse {
+  description: String
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  pokedex: Pokedex
+}
+
+type PokedexVersionGroup {
+  id: ID
+
+  pokedex: Pokedex
+
+  versionGroup: VersionGroup
+}
+
+type Pokemon {
+  baseExperience: Int
+
+  encounters: [Encounter]
+
+  # Height of the pokemon in meters (m)
+  height: Float
+
+  id: ID
+
+  identifier: String
+
+  isDefault: Boolean
+
+  order: Int
+
+  pokemonAbilities: [PokemonAbility]
+
+  pokemonForms: [PokemonForm]
+
+  pokemonGameIndices: [PokemonGameIndex]
+
+  pokemonItems: [PokemonItem]
+
+  pokemonMoves: [PokemonMove]
+
+  pokemonStats: [PokemonStat]
+
+  pokemonTypes: [PokemonType]
+
+  species: PokemonSpecy
+  sprites: PokemonSprite
+
+  # Weight of the pokemon in kilograms (kg)
+  weight: Float
+}
+
+type PokemonAbility {
+  ability: Ability
+
+  id: ID
+
+  isHidden: Boolean
+
+  pokemon: Pokemon
+
+  slot: Int
+}
+
+type PokemonColor {
+  id: ID
+
+  identifier: String
+
+  pokemonColorNames: [PokemonColorName]
+
+  pokemonSpecies: [PokemonSpecy]
+}
+
+type PokemonColorName {
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  pokemonColor: PokemonColor
+}
+
+type PokemonConnection {
+  # A list of edges.
+  edges: [PokemonEdge]
+
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+  totalCount: Int
+}
+
+type PokemonDexNumber {
+  id: ID
+
+  pokedex: Pokedex
+
+  pokedexNumber: Int
+
+  species: PokemonSpecy
+}
+
+# An edge in a connection.
+type PokemonEdge {
+  # A cursor for use in pagination.
+  cursor: String!
+
+  # The item at the end of the edge.
+  node: Pokemon
+}
+
+type PokemonEggGroup {
+  eggGroup: EggGroup
+
+  id: ID
+
+  species: PokemonSpecy
+}
+
+type PokemonEvolution {
+  evolutionTrigger: EvolutionTrigger
+
+  evolvedSpecies: PokemonSpecy
+
+  gender: Gender
+
+  heldItem: Item
+
+  id: ID
+
+  knownMove: Move
+
+  knownMoveType: Type
+
+  location: Location
+
+  minimumAffection: Int
+
+  minimumBeauty: Int
+
+  minimumHappiness: Int
+
+  minimumLevel: Int
+
+  needsOverworldRain: Boolean
+
+  partySpecies: PokemonSpecy
+
+  partyType: Type
+
+  relativePhysicalStats: Int
+
+  timeOfDay: String
+
+  tradeSpecies: PokemonSpecy
+
+  triggerItem: Item
+
+  turnUpsideDown: Boolean
+}
+
+input PokemonFilter {
+  OR: [PokemonFilter]
+  identifier: String
+}
+
+type PokemonForm {
+  formIdentifier: String
+
+  formOrder: Int
+
+  id: ID
+
+  identifier: String
+
+  introducedInVersionGroup: VersionGroup
+
+  isBattleOnly: Boolean
+
+  isDefault: Boolean
+
+  isMega: Boolean
+
+  order: Int
+
+  pokemon: Pokemon
+
+  pokemonFormGenerations: [PokemonFormGeneration]
+
+  pokemonFormNames: [PokemonFormName]
+
+  pokemonFormPokeathlonStats: [PokemonFormPokeathlonStat]
+  sprites: PokemonSprite
+}
+
+type PokemonFormConnection {
+  # A list of edges.
+  edges: [PokemonFormEdge]
+
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+  totalCount: Int
+}
+
+# An edge in a connection.
+type PokemonFormEdge {
+  # A cursor for use in pagination.
+  cursor: String!
+
+  # The item at the end of the edge.
+  node: PokemonForm
+}
+
+input PokemonFormFilter {
+  OR: [PokemonFormFilter]
+  formIdentifier: String
+  id: Int
+  identifier: String
+  identifierLike: String
+  isMega: Boolean
+}
+
+type PokemonFormGeneration {
+  gameIndex: Int
+
+  generation: Generation
+
+  id: ID
+
+  pokemonForm: PokemonForm
+}
+
+type PokemonFormName {
+  formName: String
+
+  id: ID
+
+  localLanguage: Language
+
+  pokemonForm: PokemonForm
+
+  pokemonName: String
+}
+
+type PokemonFormPokeathlonStat {
+  baseStat: Int
+
+  id: ID
+
+  maximumStat: Int
+
+  minimumStat: Int
+
+  pokeathlonStat: PokeathlonStat
+
+  pokemonForm: PokemonForm
+}
+
+type PokemonGameIndex {
+  gameIndex: Int
+
+  id: ID
+
+  pokemon: Pokemon
+
+  version: Version
+}
+
+type PokemonHabitat {
+  id: ID
+
+  identifier: String
+
+  pokemonHabitatNames: [PokemonHabitatName]
+
+  pokemonSpecies: [PokemonSpecy]
+}
+
+type PokemonHabitatName {
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  pokemonHabitat: PokemonHabitat
+}
+
+type PokemonItem {
+  id: ID
+
+  item: Item
+
+  pokemon: Pokemon
+
+  rarity: Int
+
+  version: Version
+}
+
+type PokemonMove {
+  id: ID
+
+  level: Int
+
+  move: Move
+
+  order: Int
+
+  pokemon: Pokemon
+
+  pokemonMoveMethod: PokemonMoveMethod
+
+  versionGroup: VersionGroup
+}
+
+type PokemonMoveMethod {
+  id: ID
+
+  identifier: String
+
+  pokemonMoveMethodProses: [PokemonMoveMethodProse]
+
+  pokemonMoves: [PokemonMove]
+
+  versionGroupPokemonMoveMethods: [VersionGroupPokemonMoveMethod]
+}
+
+type PokemonMoveMethodProse {
+  description: String
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  pokemonMoveMethod: PokemonMoveMethod
+}
+
+type PokemonShape {
+  id: ID
+
+  identifier: String
+
+  pokemonShapeProses: [PokemonShapeProse]
+
+  pokemonSpecies: [PokemonSpecy]
+}
+
+type PokemonShapeProse {
+  awesomeName: String
+
+  description: String
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  pokemonShape: PokemonShape
+}
+
+type PokemonSpeciesFlavorSummary {
+  flavorSummary: String
+
+  id: ID
+
+  localLanguage: Language
+
+  pokemonSpecies: PokemonSpecy
+}
+
+type PokemonSpeciesFlavorText {
+  flavorText: String
+
+  id: ID
+
+  language: Language
+
+  species: PokemonSpecy
+
+  version: Version
+}
+
+type PokemonSpeciesName {
+  genus: String
+
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  pokemonSpecies: PokemonSpecy
+}
+
+type PokemonSpeciesProse {
+  formDescription: String
+
+  id: ID
+
+  localLanguage: Language
+
+  pokemonSpecies: PokemonSpecy
+}
+
+type PokemonSpecy {
+  baseHappiness: Int
+
+  captureRate: Int
+
+  color: PokemonColor
+
+  conquestMaxLinks: [ConquestMaxLink]
+
+  conquestOrder: Int
+
+  conquestPokemonAbilities: [ConquestPokemonAbility]
+
+  conquestPokemonEvolutions: [ConquestPokemonEvolution]
+
+  conquestPokemonMoves: [ConquestPokemonMove]
+
+  conquestPokemonStats: [ConquestPokemonStat]
+
+  conquestTransformationPokemons: [ConquestTransformationPokemon]
+
+  evolutionChain: EvolutionChain
+
+  evolvedSpecies: [PokemonEvolution]
+
+  evolvesFromSpecies: PokemonSpecy
+
+  evolvesIntoSpecies: [PokemonSpecy]
+
+  formsSwitchable: Boolean
+
+  genderRate: Int
+
+  generation: Generation
+
+  growthRate: GrowthRate
+
+  habitat: PokemonHabitat
+
+  hasGenderDifferences: Boolean
+
+  hatchCounter: Int
+
+  id: ID
+
+  identifier: String
+
+  isBaby: Boolean
+
+  order: Int
+
+  palParks: [PalPark]
+
+  partySpecies: [PokemonEvolution]
+
+  pokemonDexNumbers: [PokemonDexNumber]
+
+  pokemonEggGroups: [PokemonEggGroup]
+
+  pokemonSpeciesFlavorSummaries: [PokemonSpeciesFlavorSummary]
+
+  pokemonSpeciesFlavorTexts: [PokemonSpeciesFlavorText]
+
+  pokemonSpeciesNames: [PokemonSpeciesName]
+
+  pokemonSpeciesProses: [PokemonSpeciesProse]
+
+  pokemons: [Pokemon]
+
+  shape: PokemonShape
+
+  tradeSpecies: [PokemonEvolution]
+}
+
+type PokemonSpecyConnection {
+  # A list of edges.
+  edges: [PokemonSpecyEdge]
+
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+  totalCount: Int
+}
+
+# An edge in a connection.
+type PokemonSpecyEdge {
+  # A cursor for use in pagination.
+  cursor: String!
+
+  # The item at the end of the edge.
+  node: PokemonSpecy
+}
+
+input PokemonSpecyFilter {
+  OR: [PokemonSpecyFilter]
+  id: Int
+  identifier: String
+}
+
+type PokemonSprite {
+  normal: PokemonSpriteGender
+  shiny: PokemonSpriteGender
+  silhouette: PokemonSpriteGender
+}
+
+type PokemonSpriteGender {
+  female: PokemonSpriteOrientation
+  male: PokemonSpriteOrientation
+}
+
+type PokemonSpriteOrientation {
+  back: String
+  front: String
+}
+
+type PokemonStat {
+  baseStat: Int
+
+  effort: Int
+
+  id: ID
+
+  pokemon: Pokemon
+
+  stat: Stat
+}
+
+type PokemonType {
+  id: ID
+
+  pokemon: Pokemon
+
+  slot: Int
+
+  type: Type
+}
+
+type Query {
+  # Abilities!
+  Abilities: [Ability]
+
+  # Berry!
+  Berries: [Berry]
+
+  # Berry Firmness!
+  BerryFirmnesses: [BerryFirmness]
+
+  # Berry Flavor!
+  BerryFlavors: [BerryFlavor]
+
+  # Characteristics!
+  Characteristics: [Characteristic]
+
+  # Contest Effects!
+  ContestEffects: [ContestEffect]
+
+  # Contest Types!
+  ContestTypes: [ContestType]
+
+  # Egg groups!
+  EggGroups: [EggGroup]
+
+  # Encounter condition values!
+  EncounterConditionValues: [EncounterConditionValue]
+
+  # Encounter conditions!
+  EncounterConditions: [EncounterCondition]
+
+  # Encounter methods!
+  EncounterMethods: [EncounterMethod]
+
+  # Evolution chains!
+  EvolutionChains: [EvolutionChain]
+
+  # Evolution triggers!
+  EvolutionTriggers: [EvolutionTrigger]
+
+  # Genders!
+  Genders: [Gender]
+
+  # Generations!
+  Generations: [Generation]
+
+  # Growth rates!
+  GrowthRates: [GrowthRate]
+
+  # Items!
+  Item(identifier: String = null, identifierLike: String = null, limit: Int = null): [Item]
+
+  # Item attributes!
+  ItemAttributes: [ItemFlag]
+
+  # Item categories!
+  ItemCategories: [ItemCategory]
+
+  # Item fling effects!
+  ItemFlingEffects: [ItemFlingEffect]
+
+  # Item pockets!
+  ItemPockets: [ItemPocket]
+
+  # Languages!
+  Languages: [Language]
+
+  # Location areas!
+  LocationAreas: [LocationArea]
+
+  # Locations!
+  Locations: [Location]
+
+  # Machines!
+  Machines: [Machine]
+
+  # Move ailments!
+  MoveAilments: [MoveMetaAilment]
+
+  # Move battle styles!
+  MoveBattleStyles: [MoveBattleStyle]
+
+  # Move categories!
+  MoveCategories: [MoveMetaCategory]
+
+  # Move damage classes!
+  MoveDamageClasses: [MoveDamageClass]
+
+  # Move learn methods!
+  MoveLearnMethods: [PokemonMoveMethod]
+
+  # Move targets!
+  MoveTargets: [MoveTarget]
+
+  # Moves!
+  Moves(identifier: String = null, identifierLike: String = null, limit: Int = null): [Move]
+
+  # Natures!
+  Natures: [Nature]
+
+  # Pal park areas!
+  PalParkAreas: [PalParkArea]
+
+  # Pokeathlon stats!
+  PokeathlonStats: [PokeathlonStat]
+
+  # Pokedexes!
+  Pokedexes: [Pokedex]
+  Pokemon(
+    # Returns the elements in the list that come after the specified global ID.
+    after: String
+
+    # Returns the elements in the list that come before the specified global ID.
+    before: String
+    filter: PokemonFilter
+
+    # Returns the first _n_ elements from the list.
+    first: Int
+
+    # Returns the last _n_ elements from the list.
+    last: Int
+    order: [String]
+  ): PokemonConnection
+
+  # Pokemon Colors!
+  PokemonColors: [PokemonColor]
+  PokemonForms(
+    # Returns the elements in the list that come after the specified global ID.
+    after: String
+
+    # Returns the elements in the list that come before the specified global ID.
+    before: String
+    filter: PokemonFormFilter
+
+    # Returns the first _n_ elements from the list.
+    first: Int
+
+    # Returns the last _n_ elements from the list.
+    last: Int
+  ): PokemonFormConnection
+
+  # Pokemon habitats!
+  PokemonHabitats: [PokemonHabitat]
+
+  # Pokemon shapes!
+  PokemonShapes: [PokemonShape]
+  PokemonSpecies(
+    # Returns the elements in the list that come after the specified global ID.
+    after: String
+
+    # Returns the elements in the list that come before the specified global ID.
+    before: String
+    filter: PokemonSpecyFilter
+
+    # Returns the first _n_ elements from the list.
+    first: Int
+
+    # Returns the last _n_ elements from the list.
+    last: Int
+  ): PokemonSpecyConnection
+
+  # Regions!
+  Regions: [Region]
+
+  # Stats!
+  Stats: [Stat]
+
+  # Super Contest Effects!
+  SuperContestEffects: [SuperContestEffect]
+
+  # Types!
+  Types: [Type]
+
+  # Version groups!
+  VersionGroups: [VersionGroup]
+
+  # Versions!
+  Versions: [Version]
+}
+
+type Region {
+  generations: [Generation]
+
+  id: ID
+
+  identifier: String
+
+  locations: [Location]
+
+  pokedexes: [Pokedex]
+
+  regionNames: [RegionName]
+
+  versionGroupRegions: [VersionGroupRegion]
+}
+
+type RegionName {
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  region: Region
+}
+
+type Stat {
+  characteristics: [Characteristic]
+
+  conquestPokemonEvolutions: [ConquestPokemonEvolution]
+
+  damageClass: MoveDamageClass
+
+  decreasedStats: [Nature]
+
+  gameIndex: Int
+
+  id: ID
+
+  identifier: String
+
+  increasedStats: [Nature]
+
+  isBattleOnly: Boolean
+
+  moveMetaStatChanges: [MoveMetaStatChange]
+
+  pokemonStats: [PokemonStat]
+
+  statNames: [StatName]
+}
+
+type StatName {
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  stat: Stat
+}
+
+type SuperContestCombo {
+  firstMove: Move
+
+  id: ID
+
+  secondMove: Move
+}
+
+type SuperContestEffect {
+  appeal: Int
+
+  id: ID
+
+  moves: [Move]
+
+  superContestEffectProses: [SuperContestEffectProse]
+}
+
+type SuperContestEffectProse {
+  flavorText: String
+
+  id: ID
+
+  localLanguage: Language
+
+  superContestEffect: SuperContestEffect
+}
+
+type Type {
+  berries: [Berry]
+
+  conquestKingdoms: [ConquestKingdom]
+
+  conquestWarriorSpecialties: [ConquestWarriorSpecialty]
+
+  conquestWarriorTransformations: [ConquestWarriorTransformation]
+
+  damageClass: MoveDamageClass
+
+  damageTypes: [TypeEfficacy]
+
+  generation: Generation
+
+  id: ID
+
+  identifier: String
+
+  knownMoveTypes: [PokemonEvolution]
+
+  moveChangelogs: [MoveChangelog]
+
+  moves: [Move]
+
+  partyTypes: [PokemonEvolution]
+
+  pokemonTypes: [PokemonType]
+
+  targetTypes: [TypeEfficacy]
+
+  typeGameIndices: [TypeGameIndex]
+
+  typeNames: [TypeName]
+}
+
+type TypeEfficacy {
+  damageFactor: Int
+
+  damageType: Type
+
+  id: ID
+
+  targetType: Type
+}
+
+type TypeGameIndex {
+  gameIndex: Int
+
+  generation: Generation
+
+  id: ID
+
+  type: Type
+}
+
+type TypeName {
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  type: Type
+}
+
+type Version {
+  encounters: [Encounter]
+
+  id: ID
+
+  identifier: String
+
+  locationAreaEncounterRates: [LocationAreaEncounterRate]
+
+  pokemonGameIndices: [PokemonGameIndex]
+
+  pokemonItems: [PokemonItem]
+
+  pokemonSpeciesFlavorTexts: [PokemonSpeciesFlavorText]
+
+  versionGroup: VersionGroup
+
+  versionNames: [VersionName]
+}
+
+type VersionGroup {
+  abilityChangelogs: [AbilityChangelog]
+
+  abilityFlavorTexts: [AbilityFlavorText]
+
+  encounterSlots: [EncounterSlot]
+
+  generation: Generation
+
+  id: ID
+
+  identifier: String
+
+  itemFlavorTexts: [ItemFlavorText]
+
+  machines: [Machine]
+
+  moveChangelogs: [MoveChangelog]
+
+  moveEffectChangelogs: [MoveEffectChangelog]
+
+  moveFlavorTexts: [MoveFlavorText]
+
+  order: Int
+
+  pokedexVersionGroups: [PokedexVersionGroup]
+
+  pokemonForms: [PokemonForm]
+
+  pokemonMoves: [PokemonMove]
+
+  versionGroupPokemonMoveMethods: [VersionGroupPokemonMoveMethod]
+
+  versionGroupRegions: [VersionGroupRegion]
+
+  versions: [Version]
+}
+
+type VersionGroupPokemonMoveMethod {
+  id: ID
+
+  pokemonMoveMethod: PokemonMoveMethod
+
+  versionGroup: VersionGroup
+}
+
+type VersionGroupRegion {
+  id: ID
+
+  region: Region
+
+  versionGroup: VersionGroup
+}
+
+type VersionName {
+  id: ID
+
+  localLanguage: Language
+
+  name: String
+
+  version: Version
+}

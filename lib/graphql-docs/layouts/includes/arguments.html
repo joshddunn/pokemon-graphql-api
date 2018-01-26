@@ -1,0 +1,22 @@
+<table class="arguments">
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% arguments.each do |argument| %>
+  <tr>
+    <td><code><%= argument[:name] %></code></td>
+    <td>
+      <code><a href="<%= base_url %>/<%= argument[:type][:path]%>"><%= argument[:type][:info] %></a></code>
+    </td>
+    <td>
+      <p><%= markdownify.(argument[:description]) %></p>
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

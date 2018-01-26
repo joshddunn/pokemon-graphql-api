@@ -39,6 +39,9 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+
+  gem 'graphql-docs', '~> 1.0', '>= 1.0.1'
+  gem 'commonmarker', '~> 0.17.7.1'
 end
 
 group :development do
@@ -64,4 +67,3 @@ gem 'search_object_graphql', '0.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 # gem 'sidekiq', '~> 5.0', '>= 5.0.5'
-# gem 'graphql-docs', '~> 1.0', '>= 1.0.1'

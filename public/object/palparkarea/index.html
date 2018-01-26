@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="PalParkArea GraphQL documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>PokeQL | Palparkarea</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js"></script>
+    <script>
+
+    // Add anchors on DOMContentLoaded
+    document.addEventListener("DOMContentLoaded", function(event) {
+      anchors.options = {
+        placement: 'left',
+        visible: 'hover',
+        icon: '¶'
+      };
+      anchors.add('h3');
+
+      document.getElementById("menu-button").addEventListener("click", function() {
+        document.getElementsByTagName("body")[0].classList.toggle("sidebar-open");
+      });
+    });
+
+
+    </script>
+  </head>
+  <body>
+
+    <div id="wrap">
+      <div id="header">
+      </div>
+      <div id="sidebar">
+        <ul class="categories">
+  <li>
+    <ul class="menu-root">
+      <li>
+        <a href="/">PokeQL (beta)</a>
+    </ul>
+  </li>
+
+  <li>
+    <p>Queries</p>
+    <ul class="menu-root">
+      <li>
+        <a href="/operation/query/" class="sidebar-link">
+          Query
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="/object">Objects</a></p>
+    <ul class="menu-root">
+      
+        
+      <li>
+        <a href="/object/ability/" class="sidebar-link">
+          Ability
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/abilitychangelog/" class="sidebar-link">
+          AbilityChangelog
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/abilitychangelogprose/" class="sidebar-link">
+          AbilityChangelogProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/abilityflavortext/" class="sidebar-link">
+          AbilityFlavorText
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/abilityname/" class="sidebar-link">
+          AbilityName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/abilityprose/" class="sidebar-link">
+          AbilityProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/berry/" class="sidebar-link">
+          Berry
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/berryfirmness/" class="sidebar-link">
+          BerryFirmness
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/berryfirmnessname/" class="sidebar-link">
+          BerryFirmnessName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/berryflavor/" class="sidebar-link">
+          BerryFlavor
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/characteristic/" class="sidebar-link">
+          Characteristic
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/characteristictext/" class="sidebar-link">
+          CharacteristicText
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestepisode/" class="sidebar-link">
+          ConquestEpisode
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestepisodename/" class="sidebar-link">
+          ConquestEpisodeName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestepisodewarrior/" class="sidebar-link">
+          ConquestEpisodeWarrior
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestkingdom/" class="sidebar-link">
+          ConquestKingdom
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestkingdomname/" class="sidebar-link">
+          ConquestKingdomName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestmaxlink/" class="sidebar-link">
+          ConquestMaxLink
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestmovedatum/" class="sidebar-link">
+          ConquestMoveDatum
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestmovedisplacement/" class="sidebar-link">
+          ConquestMoveDisplacement
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestmovedisplacementprose/" class="sidebar-link">
+          ConquestMoveDisplacementProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestmoveeffect/" class="sidebar-link">
+          ConquestMoveEffect
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestmoveeffectprose/" class="sidebar-link">
+          ConquestMoveEffectProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestmoverange/" class="sidebar-link">
+          ConquestMoveRange
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestmoverangeprose/" class="sidebar-link">
+          ConquestMoveRangeProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestpokemonability/" class="sidebar-link">
+          ConquestPokemonAbility
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestpokemonevolution/" class="sidebar-link">
+          ConquestPokemonEvolution
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestpokemonmove/" class="sidebar-link">
+          ConquestPokemonMove
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestpokemonstat/" class="sidebar-link">
+          ConquestPokemonStat
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conqueststat/" class="sidebar-link">
+          ConquestStat
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conqueststatname/" class="sidebar-link">
+          ConquestStatName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquesttransformationpokemon/" class="sidebar-link">
+          ConquestTransformationPokemon
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquesttransformationwarrior/" class="sidebar-link">
+          ConquestTransformationWarrior
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestwarrior/" class="sidebar-link">
+          ConquestWarrior
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestwarriorarchetype/" class="sidebar-link">
+          ConquestWarriorArchetype
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestwarriorname/" class="sidebar-link">
+          ConquestWarriorName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestwarriorrank/" class="sidebar-link">
+          ConquestWarriorRank
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestwarriorrankstatmap/" class="sidebar-link">
+          ConquestWarriorRankStatMap
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestwarriorskill/" class="sidebar-link">
+          ConquestWarriorSkill
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestwarriorskillname/" class="sidebar-link">
+          ConquestWarriorSkillName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestwarriorspecialty/" class="sidebar-link">
+          ConquestWarriorSpecialty
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestwarriorstat/" class="sidebar-link">
+          ConquestWarriorStat
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestwarriorstatname/" class="sidebar-link">
+          ConquestWarriorStatName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/conquestwarriortransformation/" class="sidebar-link">
+          ConquestWarriorTransformation
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/contestcombo/" class="sidebar-link">
+          ContestCombo
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/contesteffect/" class="sidebar-link">
+          ContestEffect
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/contesteffectprose/" class="sidebar-link">
+          ContestEffectProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/contesttype/" class="sidebar-link">
+          ContestType
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/contesttypename/" class="sidebar-link">
+          ContestTypeName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/egggroup/" class="sidebar-link">
+          EggGroup
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/egggroupprose/" class="sidebar-link">
+          EggGroupProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/encounter/" class="sidebar-link">
+          Encounter
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/encountercondition/" class="sidebar-link">
+          EncounterCondition
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/encounterconditionprose/" class="sidebar-link">
+          EncounterConditionProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/encounterconditionvalue/" class="sidebar-link">
+          EncounterConditionValue
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/encounterconditionvaluemap/" class="sidebar-link">
+          EncounterConditionValueMap
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/encounterconditionvalueprose/" class="sidebar-link">
+          EncounterConditionValueProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/encountermethod/" class="sidebar-link">
+          EncounterMethod
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/encountermethodprose/" class="sidebar-link">
+          EncounterMethodProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/encounterslot/" class="sidebar-link">
+          EncounterSlot
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/evolutionchain/" class="sidebar-link">
+          EvolutionChain
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/evolutiontrigger/" class="sidebar-link">
+          EvolutionTrigger
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/evolutiontriggerprose/" class="sidebar-link">
+          EvolutionTriggerProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/experience/" class="sidebar-link">
+          Experience
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/gender/" class="sidebar-link">
+          Gender
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/generation/" class="sidebar-link">
+          Generation
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/generationname/" class="sidebar-link">
+          GenerationName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/growthrate/" class="sidebar-link">
+          GrowthRate
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/growthrateprose/" class="sidebar-link">
+          GrowthRateProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/item/" class="sidebar-link">
+          Item
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/itemcategory/" class="sidebar-link">
+          ItemCategory
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/itemcategoryprose/" class="sidebar-link">
+          ItemCategoryProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/itemflag/" class="sidebar-link">
+          ItemFlag
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/itemflagmap/" class="sidebar-link">
+          ItemFlagMap
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/itemflagprose/" class="sidebar-link">
+          ItemFlagProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/itemflavorsummary/" class="sidebar-link">
+          ItemFlavorSummary
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/itemflavortext/" class="sidebar-link">
+          ItemFlavorText
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/itemflingeffect/" class="sidebar-link">
+          ItemFlingEffect
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/itemflingeffectprose/" class="sidebar-link">
+          ItemFlingEffectProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/itemgameindex/" class="sidebar-link">
+          ItemGameIndex
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/itemname/" class="sidebar-link">
+          ItemName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/itempocket/" class="sidebar-link">
+          ItemPocket
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/itempocketname/" class="sidebar-link">
+          ItemPocketName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/itemprose/" class="sidebar-link">
+          ItemProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/language/" class="sidebar-link">
+          Language
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/languagename/" class="sidebar-link">
+          LanguageName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/location/" class="sidebar-link">
+          Location
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/locationarea/" class="sidebar-link">
+          LocationArea
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/locationareaencounterrate/" class="sidebar-link">
+          LocationAreaEncounterRate
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/locationareaprose/" class="sidebar-link">
+          LocationAreaProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/locationgameindex/" class="sidebar-link">
+          LocationGameIndex
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/locationname/" class="sidebar-link">
+          LocationName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/machine/" class="sidebar-link">
+          Machine
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/move/" class="sidebar-link">
+          Move
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/movebattlestyle/" class="sidebar-link">
+          MoveBattleStyle
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/movebattlestyleprose/" class="sidebar-link">
+          MoveBattleStyleProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/movechangelog/" class="sidebar-link">
+          MoveChangelog
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/movedamageclass/" class="sidebar-link">
+          MoveDamageClass
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/movedamageclassprose/" class="sidebar-link">
+          MoveDamageClassProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/moveeffect/" class="sidebar-link">
+          MoveEffect
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/moveeffectchangelog/" class="sidebar-link">
+          MoveEffectChangelog
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/moveeffectchangelogprose/" class="sidebar-link">
+          MoveEffectChangelogProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/moveeffectprose/" class="sidebar-link">
+          MoveEffectProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/moveflag/" class="sidebar-link">
+          MoveFlag
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/moveflagmap/" class="sidebar-link">
+          MoveFlagMap
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/moveflagprose/" class="sidebar-link">
+          MoveFlagProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/moveflavorsummary/" class="sidebar-link">
+          MoveFlavorSummary
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/moveflavortext/" class="sidebar-link">
+          MoveFlavorText
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/movemetaailment/" class="sidebar-link">
+          MoveMetaAilment
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/movemetaailmentname/" class="sidebar-link">
+          MoveMetaAilmentName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/movemetacategory/" class="sidebar-link">
+          MoveMetaCategory
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/movemetacategoryprose/" class="sidebar-link">
+          MoveMetaCategoryProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/movemetastatchange/" class="sidebar-link">
+          MoveMetaStatChange
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/movemetum/" class="sidebar-link">
+          MoveMetum
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/movename/" class="sidebar-link">
+          MoveName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/movetarget/" class="sidebar-link">
+          MoveTarget
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/movetargetprose/" class="sidebar-link">
+          MoveTargetProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/nature/" class="sidebar-link">
+          Nature
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/naturebattlestylepreference/" class="sidebar-link">
+          NatureBattleStylePreference
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/naturename/" class="sidebar-link">
+          NatureName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/naturepokeathlonstat/" class="sidebar-link">
+          NaturePokeathlonStat
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pageinfo/" class="sidebar-link">
+          PageInfo
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/palpark/" class="sidebar-link">
+          PalPark
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/palparkarea/" class="sidebar-link">
+          PalParkArea
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/palparkareaname/" class="sidebar-link">
+          PalParkAreaName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokeathlonstat/" class="sidebar-link">
+          PokeathlonStat
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokeathlonstatname/" class="sidebar-link">
+          PokeathlonStatName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokedex/" class="sidebar-link">
+          Pokedex
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokedexprose/" class="sidebar-link">
+          PokedexProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokedexversiongroup/" class="sidebar-link">
+          PokedexVersionGroup
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemon/" class="sidebar-link">
+          Pokemon
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonability/" class="sidebar-link">
+          PokemonAbility
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemoncolor/" class="sidebar-link">
+          PokemonColor
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemoncolorname/" class="sidebar-link">
+          PokemonColorName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonconnection/" class="sidebar-link">
+          PokemonConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemondexnumber/" class="sidebar-link">
+          PokemonDexNumber
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonedge/" class="sidebar-link">
+          PokemonEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonegggroup/" class="sidebar-link">
+          PokemonEggGroup
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonevolution/" class="sidebar-link">
+          PokemonEvolution
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonform/" class="sidebar-link">
+          PokemonForm
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonformconnection/" class="sidebar-link">
+          PokemonFormConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonformedge/" class="sidebar-link">
+          PokemonFormEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonformgeneration/" class="sidebar-link">
+          PokemonFormGeneration
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonformname/" class="sidebar-link">
+          PokemonFormName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonformpokeathlonstat/" class="sidebar-link">
+          PokemonFormPokeathlonStat
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemongameindex/" class="sidebar-link">
+          PokemonGameIndex
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonhabitat/" class="sidebar-link">
+          PokemonHabitat
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonhabitatname/" class="sidebar-link">
+          PokemonHabitatName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonitem/" class="sidebar-link">
+          PokemonItem
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonmove/" class="sidebar-link">
+          PokemonMove
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonmovemethod/" class="sidebar-link">
+          PokemonMoveMethod
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonmovemethodprose/" class="sidebar-link">
+          PokemonMoveMethodProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonshape/" class="sidebar-link">
+          PokemonShape
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonshapeprose/" class="sidebar-link">
+          PokemonShapeProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonspeciesflavorsummary/" class="sidebar-link">
+          PokemonSpeciesFlavorSummary
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonspeciesflavortext/" class="sidebar-link">
+          PokemonSpeciesFlavorText
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonspeciesname/" class="sidebar-link">
+          PokemonSpeciesName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonspeciesprose/" class="sidebar-link">
+          PokemonSpeciesProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonspecy/" class="sidebar-link">
+          PokemonSpecy
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonspecyconnection/" class="sidebar-link">
+          PokemonSpecyConnection
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonspecyedge/" class="sidebar-link">
+          PokemonSpecyEdge
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonsprite/" class="sidebar-link">
+          PokemonSprite
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonspritegender/" class="sidebar-link">
+          PokemonSpriteGender
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonspriteorientation/" class="sidebar-link">
+          PokemonSpriteOrientation
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemonstat/" class="sidebar-link">
+          PokemonStat
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/pokemontype/" class="sidebar-link">
+          PokemonType
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/region/" class="sidebar-link">
+          Region
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/regionname/" class="sidebar-link">
+          RegionName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/stat/" class="sidebar-link">
+          Stat
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/statname/" class="sidebar-link">
+          StatName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/supercontestcombo/" class="sidebar-link">
+          SuperContestCombo
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/supercontesteffect/" class="sidebar-link">
+          SuperContestEffect
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/supercontesteffectprose/" class="sidebar-link">
+          SuperContestEffectProse
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/type/" class="sidebar-link">
+          Type
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/typeefficacy/" class="sidebar-link">
+          TypeEfficacy
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/typegameindex/" class="sidebar-link">
+          TypeGameIndex
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/typename/" class="sidebar-link">
+          TypeName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/version/" class="sidebar-link">
+          Version
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/versiongroup/" class="sidebar-link">
+          VersionGroup
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/versiongrouppokemonmovemethod/" class="sidebar-link">
+          VersionGroupPokemonMoveMethod
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/versiongroupregion/" class="sidebar-link">
+          VersionGroupRegion
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/versionname/" class="sidebar-link">
+          VersionName
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/__directive/" class="sidebar-link">
+          __Directive
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/__enumvalue/" class="sidebar-link">
+          __EnumValue
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/__field/" class="sidebar-link">
+          __Field
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/__inputvalue/" class="sidebar-link">
+          __InputValue
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/__schema/" class="sidebar-link">
+          __Schema
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/object/__type/" class="sidebar-link">
+          __Type
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+
+  
+
+  
+
+  <li>
+    <p><a href="/enum">Enums</a></p>
+    <ul class="menu-root">
+      
+      
+      <li>
+        <a href="/enum/__directivelocation/" class="sidebar-link">
+          __DirectiveLocation
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/enum/__typekind/" class="sidebar-link">
+          __TypeKind
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+
+  
+
+  <li>
+    <p><a href="/input_object">Input Objects</a></p>
+    <ul class="menu-root">
+      
+      
+      <li>
+        <a href="/input_object/pokemonfilter/" class="sidebar-link">
+          PokemonFilter
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/input_object/pokemonformfilter/" class="sidebar-link">
+          PokemonFormFilter
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/input_object/pokemonspecyfilter/" class="sidebar-link">
+          PokemonSpecyFilter
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="/scalar">Scalars</a></p>
+    <ul class="menu-root">
+      
+      
+      <li>
+        <a href="/scalar/boolean/" class="sidebar-link">
+          Boolean
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/scalar/float/" class="sidebar-link">
+          Float
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/scalar/id/" class="sidebar-link">
+          ID
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/scalar/int/" class="sidebar-link">
+          Int
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/scalar/string/" class="sidebar-link">
+          String
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+      </div>
+      <div id="content">
+
+        <h1>
+<a id="palparkarea" class="anchor" href="#palparkarea" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PalParkArea</h1>
+<h2>
+<a id="fields" class="anchor" href="#fields" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fields</h2>
+<div class="field-entry ">
+  <span id="id" class="field-name">id (<code><a href="/scalar/id">ID</a></code>)</span>
+  <div class="description-wrapper">
+  </div>
+</div>
+<div class="field-entry ">
+  <span id="identifier" class="field-name">identifier (<code><a href="/scalar/string">String</a></code>)</span>
+  <div class="description-wrapper">
+  </div>
+</div>
+<div class="field-entry ">
+  <span id="palparkareanames" class="field-name">palParkAreaNames (<code><a href="/object/palparkareaname">[PalParkAreaName]</a></code>)</span>
+  <div class="description-wrapper">
+  </div>
+</div>
+<div class="field-entry ">
+  <span id="palparks" class="field-name">palParks (<code><a href="/object/palpark">[PalPark]</a></code>)</span>
+  <div class="description-wrapper">
+  </div>
+</div>
+
+      </div>
+
+      <!-- mobile only -->
+      <div id="mobile-header">
+        <a id="menu-button" class="menu-button"></a>
+        <a class="logo" href="/">
+
+        </a>
+      </div>
+      <div id="mobile-shade"></div>
+
+    </div>
+
+  </body>
+</html>

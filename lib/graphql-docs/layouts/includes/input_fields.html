@@ -1,0 +1,15 @@
+<% input_fields.each do |field| %>
+
+<div class="field-entry <%= classes[:field_entry] %>">
+  <span id="<%= slugify.(field[:name]) %>" class="field-name"><%= field[:name] %> (<a href="<%= base_url %>/<%= field[:type][:path] %>"><code><%= field[:type][:info] %></code></a>)</span>
+
+  <div class="description-wrapper">
+    <%= field[:description] %>
+
+    <% unless field[:arguments].empty? %>
+      <%= include.('arguments.html', arguments: field[:arguments]) %>
+    <% end %>
+  </div>
+</div>
+
+<% end %>
