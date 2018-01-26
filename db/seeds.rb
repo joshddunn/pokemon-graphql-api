@@ -187,7 +187,6 @@ files.keys.each do |file|
     # need to temporarily disable the triggers because of foreign keys
     connection.execute("ALTER TABLE #{files[file].table_name} DISABLE TRIGGER ALL")
 
-    data = []
     csv.each do |row|
       t = files[file].new
 
@@ -195,10 +194,8 @@ files.keys.each do |file|
         t[header] = row[header].nil? ? "" : row[header]
       end
 
-      data.push t
+      t.save(validate: false)
     end
-
-    files[file].import data, validate: false, batch_size: 1000
 
     # reenable the triggers
     connection.execute("ALTER TABLE #{files[file].table_name} ENABLE TRIGGER ALL")
