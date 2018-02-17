@@ -1762,40 +1762,59 @@ type PokedexVersionGroup {
   versionGroup: VersionGroup
 }
 
+# Contains information about pokemon.
 type Pokemon {
+  # Returns the base experience of the pokemon.
   baseExperience: Int
 
+  # Returns an array of encounters the pokemon is in.
   encounters: [Encounter]
 
-  # Height of the pokemon in meters (m)
+  # Returns the formatted english name of this pokemon
+  englishName: String
+
+  # Returns the height of the pokemon in meters (m).
   height: Float
 
+  # Returns the id of the pokemon.
   id: ID
 
+  # Returns the identifier of the pokemon.
   identifier: String
 
+  # Returns whether the pokemon is the default form. For example, Charizard is default, but Mega Charizard X is not.
   isDefault: Boolean
 
+  # Returns the pokemon's position in the list of all pokemon.
   order: Int
 
+  # Returns an array of the abilities the pokemon could possess.
   pokemonAbilities: [PokemonAbility]
 
+  # Returns an array of the forms the pokemon has.
   pokemonForms: [PokemonForm]
 
+  # Returns an array of the index of the pokemon in other games.
   pokemonGameIndices: [PokemonGameIndex]
 
+  # Returns an array of items the pokemon could have when acquired.
   pokemonItems: [PokemonItem]
 
+  # Returns an array of the moves the pokemon learns.
   pokemonMoves: [PokemonMove]
 
+  # Returns an array of the pokemon's stats.
   pokemonStats: [PokemonStat]
 
+  # Returns an array of the pokemon's type information.
   pokemonTypes: [PokemonType]
 
   species: PokemonSpecy
+
+  # Returns a url to the requested pokemon's sprite.
   sprites: PokemonSprite
 
-  # Weight of the pokemon in kilograms (kg)
+  # Returns the weight of the pokemon in kilograms (kg).
   weight: Float
 }
 
@@ -1831,12 +1850,15 @@ type PokemonColorName {
   pokemonColor: PokemonColor
 }
 
+# Returns paginated information about pokemon.
 type PokemonConnection {
   # A list of edges.
   edges: [PokemonEdge]
 
   # Information to aid in pagination.
   pageInfo: PageInfo!
+
+  # Returns the total number of nodes found by the query.
   totalCount: Int
 }
 
@@ -1914,41 +1936,60 @@ input PokemonFilter {
   identifier: String
 }
 
+# Contains information about pokemon forms.
 type PokemonForm {
+  # Returns the form identifier of the pokemon form.
   formIdentifier: String
 
+  # Returns the order of the pokemon form.
   formOrder: Int
 
+  # Returns the id of the pokemon form.
   id: ID
 
+  # Returns the identifier of the pokemon form.
   identifier: String
 
+  # Returns the version the pokemon form was introduced in.
   introducedInVersionGroup: VersionGroup
 
+  # Returns whether the pokemon form is only for battles.
   isBattleOnly: Boolean
 
+  # Returns whether the pokemon form is the default form.
   isDefault: Boolean
 
+  # Returns whether the pokemon form is classified as a mega form.
   isMega: Boolean
 
+  # Returns the order of the pokemon.
   order: Int
 
+  # Returns the pokemon that is of this pokemon form.
   pokemon: Pokemon
 
+  # Returns an array of generations the form is found in.
   pokemonFormGenerations: [PokemonFormGeneration]
 
+  # Returns an array of the names of the pokemon form.
   pokemonFormNames: [PokemonFormName]
 
+  # Returns an array of the pokemon form's pokeathlon stats.
   pokemonFormPokeathlonStats: [PokemonFormPokeathlonStat]
+
+  # Returns sprites for this pokemon form.
   sprites: PokemonSprite
 }
 
+# Returns paginated information about pokemon forms.
 type PokemonFormConnection {
   # A list of edges.
   edges: [PokemonFormEdge]
 
   # Information to aid in pagination.
   pageInfo: PageInfo!
+
+  # Returns the total number of nodes found by the query.
   totalCount: Int
 }
 
@@ -2156,86 +2197,126 @@ type PokemonSpeciesProse {
   pokemonSpecies: PokemonSpecy
 }
 
+# Contains information about pokemon species.
 type PokemonSpecy {
+  # Returns the base happiness of this pokemon species.
   baseHappiness: Int
 
+  # Returns the capture rate of this pokemon species.
   captureRate: Int
 
+  # Returns information about the color of this pokemon species.
   color: PokemonColor
 
+  # Returns an array of information about conquest max links for this pokemon species.
   conquestMaxLinks: [ConquestMaxLink]
 
+  # Returns the conquest order of this pokemon species.
   conquestOrder: Int
 
+  # Returns an array of information about conquest abilities for this pokemon species.
   conquestPokemonAbilities: [ConquestPokemonAbility]
 
+  # Returns an array of information about conquest evolutions for this pokemon species.
   conquestPokemonEvolutions: [ConquestPokemonEvolution]
 
+  # Returns an array of information about conquest moves for this pokemon species.
   conquestPokemonMoves: [ConquestPokemonMove]
 
+  # Returns an array of information about conquest stats for this pokemon species.
   conquestPokemonStats: [ConquestPokemonStat]
 
+  # Returns an array of information about conquest transformations for this pokemon species.
   conquestTransformationPokemons: [ConquestTransformationPokemon]
 
+  # Returns information about the evolution chain of this pokemon species.
   evolutionChain: EvolutionChain
 
+  # Returns an array of the evolved species of this pokemon species.
   evolvedSpecies: [PokemonEvolution]
 
+  # Returns informaiton about the pokemon species that this pokemon species evolves from.
   evolvesFromSpecies: PokemonSpecy
 
+  # Returns an array of pokemon species that this pokemon species can evolve into.
   evolvesIntoSpecies: [PokemonSpecy]
 
+  # Returns whether the forms of this pokemon species are switchable.
   formsSwitchable: Boolean
 
+  # Returns the gender rate of this pokemon species.
   genderRate: Int
 
+  # Returns information about the generation of the pokemon species.
   generation: Generation
 
+  # Returns information about the growth rate of this pokemon species.
   growthRate: GrowthRate
 
+  # Returns information about the habitat of this pokemon species' habitat.
   habitat: PokemonHabitat
 
+  # Returns whether this pokemon species has gender differences.
   hasGenderDifferences: Boolean
 
+  # Returns the hatch counter for this pokemon species.
   hatchCounter: Int
 
+  # Returns the id of the pokemon species.
   id: ID
 
+  # Returns the identifier of the pokemon species.
   identifier: String
 
+  # Returns whether this pokemon species is classified as a baby.
   isBaby: Boolean
 
+  # Returns the order of this pokemon species.
   order: Int
 
+  # Returns an array of pal parks this pokemon species can be found in.
   palParks: [PalPark]
 
+  # Returns an array of the party species of this pokemon species.
   partySpecies: [PokemonEvolution]
 
+  # Returns an array of pokedex information for this pokemon species.
   pokemonDexNumbers: [PokemonDexNumber]
 
+  # Returns an array of egg group information this pokemon species belongs to.
   pokemonEggGroups: [PokemonEggGroup]
 
+  # Returns an array of information about the flavor summaries for this pokemon species.
   pokemonSpeciesFlavorSummaries: [PokemonSpeciesFlavorSummary]
 
+  # Returns an array of information about flavor text for this pokemon species.
   pokemonSpeciesFlavorTexts: [PokemonSpeciesFlavorText]
 
+  # Returns an array of informaiton about names for this pokemon species.
   pokemonSpeciesNames: [PokemonSpeciesName]
 
+  # Returns an array of informaiton about pokemon species prose.
   pokemonSpeciesProses: [PokemonSpeciesProse]
 
+  # Returns an array of pokemon that are of this pokemon species.
   pokemons: [Pokemon]
 
+  # Returns informaiton about the shape of this pokemon species.
   shape: PokemonShape
 
+  # Returns an array of the trade species of this pokemon species.
   tradeSpecies: [PokemonEvolution]
 }
 
+# Returns information about pokemon species.
 type PokemonSpecyConnection {
   # A list of edges.
   edges: [PokemonSpecyEdge]
 
   # Information to aid in pagination.
   pageInfo: PageInfo!
+
+  # Returns the total number of nodes found by the query.
   totalCount: Int
 }
 
