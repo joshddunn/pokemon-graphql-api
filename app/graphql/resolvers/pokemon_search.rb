@@ -13,6 +13,7 @@ class Resolvers::PokemonSearch
     argument :OR, -> { types[PokemonFilter] }
 
     argument :identifier, types.String
+    argument :identifierLike, types.String, description: "Will return results whose identifier is like this string. Single wildcard."
   end
 
   option :filter, type: PokemonFilter, with: :apply_filter
@@ -34,6 +35,7 @@ class Resolvers::PokemonSearch
     scope = Pokemon.all
 
     scope = scope.where(identifier: value['identifier']) unless value['identifier'].nil?
+    scope = scope.where("identifier like ?", "#{value['identifierLike'].gsub("%", "")}%") unless value['identifierLike'].nil?
 
     branches << scope
 
