@@ -1934,6 +1934,9 @@ type PokemonEvolution {
 input PokemonFilter {
   OR: [PokemonFilter]
   identifier: String
+
+  # Will return results whose identifier is like this string. Single wildcard.
+  identifierLike: String
 }
 
 # Contains information about pokemon forms.

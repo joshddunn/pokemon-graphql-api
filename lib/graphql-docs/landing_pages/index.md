@@ -16,6 +16,8 @@ Requests should be made to
 
 You can test queries [here](http://pokeql.com/graphiql).
 
+Want to contribute? Check out the [source code](https://github.com/joshddunn/pokemon-graphql-api).
+
 
 ## New to GraphQL?
 
