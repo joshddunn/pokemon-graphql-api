@@ -37,7 +37,7 @@ class Resolvers::PokemonFormSearch
     scope = PokemonForm.all
 
     scope = scope.where(identifier: value['identifier']) unless value['identifier'].nil?
-    scope = scope.where("identifier LIKE ?", "#{value['identifierLike']}%") unless value['identifierLike'].nil?
+    scope = scope.where("identifier LIKE ?", "#{value['identifierLike'].gsub(/[^0-9a-zA-Z\-]/, "")}%") unless value['identifierLike'].nil?
     scope = scope.where(form_identifier: value['formIdentifier']) unless value['formIdentifier'].nil?
     scope = scope.where(is_mega: value['isMega']) unless value['isMega'].nil?
     scope = scope.where(id: value['id']) unless value['id'].nil?

@@ -35,7 +35,7 @@ class Resolvers::PokemonSearch
     scope = Pokemon.all
 
     scope = scope.where(identifier: value['identifier']) unless value['identifier'].nil?
-    scope = scope.where("identifier like ?", "#{value['identifierLike'].gsub("%", "")}%") unless value['identifierLike'].nil?
+    scope = scope.where("identifier like ?", "#{value['identifierLike'].gsub(/[^0-9a-zA-Z\-]/, "")}%") unless value['identifierLike'].nil?
 
     branches << scope
 
