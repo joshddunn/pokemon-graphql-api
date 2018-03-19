@@ -12,8 +12,8 @@ class Resolvers::PokemonSearch
 
     argument :OR, -> { types[PokemonFilter] }
 
-    argument :identifier, types.String
-    argument :identifierLike, types.String, description: "Will return results whose identifier is like this string. Single wildcard."
+    argument :identifier, types.String, description: "Filter Pokemon to those that have a given identifier."
+    argument :identifierLike, types.String, description: "Filter Pokemon to those that have an identifier similar to a given identifier. Single wildcard."
   end
 
   option :filter, type: PokemonFilter, with: :apply_filter

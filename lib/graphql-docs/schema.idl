@@ -1830,13 +1830,18 @@ type PokemonAbility {
   slot: Int
 }
 
+# Contains information about pokemon colors.
 type PokemonColor {
+  # Returns the id of the pokemon color.
   id: ID
 
+  # Returns the identifier of the pokemon color.
   identifier: String
 
+  # Returns an array of names for this pokemon color.
   pokemonColorNames: [PokemonColorName]
 
+  # Returns an array of pokemon species that are of this pokemon color.
   pokemonSpecies: [PokemonSpecy]
 }
 
@@ -1933,9 +1938,11 @@ type PokemonEvolution {
 
 input PokemonFilter {
   OR: [PokemonFilter]
+
+  # Filter Pokemon to those that have a given identifier.
   identifier: String
 
-  # Will return results whose identifier is like this string. Single wildcard.
+  # Filter Pokemon to those that have an identifier similar to a given identifier. Single wildcard.
   identifierLike: String
 }
 
@@ -2007,10 +2014,20 @@ type PokemonFormEdge {
 
 input PokemonFormFilter {
   OR: [PokemonFormFilter]
+
+  # Filter Pokemon forms to those that have a given form identifier.
   formIdentifier: String
+
+  # Filter Pokemon form to those that have a given id.
   id: Int
+
+  # Filter Pokemon forms to those that have a given identifier.
   identifier: String
+
+  # Filter Pokemon forms to those that have an identifier similar to a given identifier. Single wildcard.
   identifierLike: String
+
+  # Filter Pokemon forms to those that are mega.
   isMega: Boolean
 }
 
@@ -2334,7 +2351,11 @@ type PokemonSpecyEdge {
 
 input PokemonSpecyFilter {
   OR: [PokemonSpecyFilter]
+
+  # Filter Pokemon species to those that have a given id.
   id: Int
+
+  # Filter Pokemon species to those that have a given identifier.
   identifier: String
 }
 

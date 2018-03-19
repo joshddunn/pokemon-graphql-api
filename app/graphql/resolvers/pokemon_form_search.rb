@@ -12,11 +12,11 @@ class Resolvers::PokemonFormSearch
 
     argument :OR, -> { types[PokemonFormFilter] }
 
-    argument :identifier, types.String
-    argument :identifierLike, types.String
-    argument :formIdentifier, types.String
-    argument :isMega, types.Boolean
-    argument :id, types.Int
+    argument :identifier, types.String, description: "Filter Pokemon forms to those that have a given identifier."
+    argument :identifierLike, types.String, description: "Filter Pokemon forms to those that have an identifier similar to a given identifier. Single wildcard."
+    argument :formIdentifier, types.String, description: "Filter Pokemon forms to those that have a given form identifier."
+    argument :isMega, types.Boolean, description: "Filter Pokemon forms to those that are mega."
+    argument :id, types.Int, description: "Filter Pokemon form to those that have a given id."
   end
 
   option :filter, type: PokemonFormFilter, with: :apply_filter

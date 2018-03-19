@@ -12,8 +12,8 @@ class Resolvers::PokemonSpecySearch
 
     argument :OR, -> { types[PokemonSpecyFilter] }
 
-    argument :identifier, types.String
-    argument :id, types.Int
+    argument :identifier, types.String, description: "Filter Pokemon species to those that have a given identifier." 
+    argument :id, types.Int, description: "Filter Pokemon species to those that have a given id."
   end
 
   option :filter, type: PokemonSpecyFilter, with: :apply_filter
