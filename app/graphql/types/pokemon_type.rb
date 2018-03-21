@@ -39,8 +39,8 @@ Types::PokemonType = GraphQL::ObjectType.define do
   field :englishName, types.String do
     description "Returns the formatted english name of this pokemon"
     resolve -> (obj, args, ctx) {
-      form_name = obj.pokemon_forms.map { |e| e.pokemon_form_names.joins(:language).find_by("languages.identifier": "en") }.first
-      return form_name.pokemon_name if form_name.present? and form_name.pokemon_name.present?
+      form_name = obj.pokemon_forms.map { |e| e.pokemon_form_names.joins(:language).find_by("languages.identifier": "en") }
+      return form_name.first.pokemon_name if form_name.present? and form_name.length == 1 and form_name.first.pokemon_name.present?
 
       obj.pokemon_specy.pokemon_species_names.joins(:language).find_by("languages.identifier": "en").name
     }
