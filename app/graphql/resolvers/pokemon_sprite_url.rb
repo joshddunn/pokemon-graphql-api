@@ -24,7 +24,9 @@ class Resolvers::PokemonSpriteUrl < GraphQL::Function
 
   def url obj
     if obj[:gender] == "" or (obj[:gender].include? "female" and obj[:obj].pokemon_specy.has_gender_differences)
-      "#{Rails.application.config.url}/v1/sprites/pokemon/#{dir}#{obj[:type]}#{obj[:gender]}#{file obj[:obj]}.png"
+      file = "/v1/sprites/pokemon/#{dir}#{obj[:type]}#{obj[:gender]}#{file obj[:obj]}.png"
+      return "#{Rails.application.config.url}#{file}" if File.exists? "public#{file}"
+      "#{Rails.application.config.url}/v1/sprites/pokemon/0.png"
     else
       ""
     end
