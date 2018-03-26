@@ -1770,7 +1770,7 @@ type Pokemon {
   # Returns an array of encounters the pokemon is in.
   encounters: [Encounter]
 
-  # Returns the formatted english name of this pokemon
+  # Returns the formatted english name of the pokemon.
   englishName: String
 
   # Returns the height of the pokemon in meters (m).
