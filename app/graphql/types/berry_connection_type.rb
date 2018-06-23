@@ -1,6 +1,6 @@
 Types::BerryConnectionType = Types::BerryType.define_connection do
-  name "BerryConnection"
-  description ""
+  name 'BerryConnection'
+  description ''
 
   field :totalCount do
     type types.Int
