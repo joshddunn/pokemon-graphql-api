@@ -42,6 +42,7 @@ group :development, :test do
 
   gem 'graphql-docs', '~> 1.0', '>= 1.0.1'
   gem 'commonmarker', '~> 0.17.7.1'
+  gem 'pry', '~> 0.11.3'
 end
 
 group :development do
